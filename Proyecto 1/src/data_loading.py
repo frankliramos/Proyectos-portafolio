@@ -5,8 +5,8 @@ Este módulo contiene funciones para cargar y preparar los datos
 del dataset NASA CMAPSS (conjunto FD001) para tareas de
 mantenimiento predictivo (predicción de RUL).
 
-Author: [Tu Nombre]
-Date: 2026-01-28
+Author: Franklin Ramos
+Date: 2026-02-03
 """
 
 from pathlib import Path
