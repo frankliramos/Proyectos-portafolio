@@ -4,8 +4,13 @@ Feature Engineering para NASA CMAPSS FD001
 Este módulo contiene funciones para crear features derivados
 a partir de los datos de sensores para mejorar la predicción de RUL.
 
-Author: [Tu Nombre]
-Date: 2026-01-28
+Incluye:
+- Lag features: Valores pasados de sensores (t-1, t-3, t-5)
+- Rolling features: Estadísticas móviles (media, desviación estándar)
+- Trend features: Diferencias respecto a medias móviles
+
+Author: Franklin Ramos
+Date: 2026-02-03
 """
 
 import pandas as pd
