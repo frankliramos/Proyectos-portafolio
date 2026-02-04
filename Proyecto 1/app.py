@@ -72,7 +72,7 @@ infer_engine = load_inference_engine()
 def load_data() -> Optional[pd.DataFrame]:
     """Carga y valida datos procesados."""
     try:
-        data_path = PROJECT_ROOT / "data" / "processed" / "fd001_prepared.parquet"
+        data_path = PROJECT_ROOT / "data" / "processed" / "fd001_test_prepared.parquet"
         if not data_path.exists():
             logger.error(f"Archivo de datos no encontrado: {data_path}")
             st.error(f"❌ Error: Archivo de datos no encontrado en {data_path}")

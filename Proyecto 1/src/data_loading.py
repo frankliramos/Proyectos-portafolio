@@ -150,7 +150,8 @@ def add_true_rul_to_test(test_df: pd.DataFrame) -> pd.DataFrame:
     )
 
     # Ajustar RUL por ciclo (contando hacia atrás desde el último ciclo)
-    df["RUL"] = df["RUL"] + (df["time_cycles"] - df["last_cycle"])
+    # RUL aumenta a medida que vamos hacia atrás en el tiempo
+    df["RUL"] = df["RUL"] + (df["last_cycle"] - df["time_cycles"])
     df = df.drop(columns=["last_cycle"])
 
     return df
