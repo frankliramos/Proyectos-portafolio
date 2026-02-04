@@ -312,7 +312,16 @@ print(f"   - Features derivados: {len(feature_cols) - len(RELEVANT_SENSORS) - 3}
 X_train = train_features[feature_cols]
 y_train = train_features["RUL"]
 
-# Para test: seleccionar solo el último ciclo de cada unidad y asignar true_RUL
+# ⚠️ IMPORTANTE: Para EVALUACIÓN de modelos, usar solo el último ciclo
+# Esto es correcto para calcular métricas (MAE, RMSE, R²) porque:
+# - En producción, se predice el RUL una sola vez al final
+# - Evita inflar métricas con múltiples predicciones del mismo motor
+# - Es el estándar en la literatura de mantenimiento predictivo
+#
+# 📊 Para el DASHBOARD o ANÁLISIS temporal, NO usar .tail(1)
+# Los datos procesados (fd001_test_prepared.parquet) incluyen TODOS los ciclos
+# para visualizar evolución temporal y estados de salud variados.
+
 test_last_cycles = test_features.groupby("unit_id").tail(1).copy()
 test_last_cycles = test_last_cycles.reset_index(drop=True)
 test_last_cycles["true_RUL"] = rul_df["RUL"].values
@@ -323,7 +332,7 @@ y_test = test_last_cycles["true_RUL"]
 print(f"✅ Conjuntos preparados:")
 print(f"   - X_train: {X_train.shape}")
 print(f"   - y_train: {y_train.shape}")
-print(f"   - X_test: {X_test.shape}")
+print(f"   - X_test: {X_test.shape} (solo últimos ciclos para evaluación)")
 print(f"   - y_test: {y_test.shape}")
 
 # %%
