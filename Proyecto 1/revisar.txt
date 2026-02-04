@@ -1,0 +1,78 @@
+===============================================================================
+ANÁLISIS DEL PROBLEMA: 100% de Motores Críticos
+===============================================================================
+
+PROBLEMA IDENTIFICADO:
+----------------------
+El dashboard muestra que TODOS los 100 motores (100%) están en estado crítico.
+Esto NO es realista para un sistema de monitoreo de mantenimiento predictivo.
+
+CAUSA RAÍZ:
+-----------
+El archivo procesado actual (data/processed/fd001_prepared.parquet) contiene
+DATOS DE ENTRENAMIENTO donde cada motor tiene su trayectoria COMPLETA hasta
+la falla. Esto significa que todos los motores eventualmente llegan a RUL=0
+(falla total), por lo que al hacer predicciones en el "último ciclo conocido",
+todos aparecen como críticos o ya fallidos.
+
+SOLUCIÓN PROPUESTA:
+-------------------
+Usar los DATOS DE PRUEBA (test_FD001.txt) en lugar de datos de entrenamiento.
+Los datos de prueba contienen:
+- 100 motores censados (cortados en un punto aleatorio antes de la falla)
+- Distribución REALISTA de estados de salud:
+  * 🔴 Críticos (RUL < 30):    25 motores (25%)
+  * 🟡 Precaución (30-70):     17 motores (17%)
+  * 🟢 Saludables (RUL >= 70): 58 motores (58%)
+
+DATOS DISPONIBLES:
+------------------
+1. test_FD001.txt  - Datos de sensores de 100 motores (estado actual)
+2. RUL_FD001.txt   - RUL real de cada motor de prueba (para validación)
+3. Modelo LSTM ya entrenado (models/lstm_model_v1.pth)
+4. Scaler entrenado (models/scaler_v1.pkl)
+
+DATASETS ALTERNATIVOS DISPONIBLES:
+-----------------------------------
+- FD001: 100 motores test (condiciones operacionales simples) ⭐ RECOMENDADO
+- FD002: 259 motores test (6 condiciones operacionales)
+- FD003: 100 motores test (similar a FD001)
+- FD004: 248 motores test (6 condiciones operacionales)
+
+PLAN DE IMPLEMENTACIÓN:
+------------------------
+1. Crear script de preprocesamiento para datos de prueba (test_FD001.txt)
+   - Cargar datos de sensores
+   - Aplicar el mismo preprocesamiento que en entrenamiento
+   - Normalizar con el mismo StandardScaler
+   - Guardar como fd001_test_prepared.parquet
+
+2. Actualizar app.py para cargar datos de prueba en lugar de entrenamiento
+   - Cambiar ruta de datos: fd001_prepared.parquet → fd001_test_prepared.parquet
+   - Mantener toda la lógica existente del dashboard
+
+3. Validar resultados:
+   - Verificar que las predicciones sean razonables
+   - Comparar con RUL reales cuando sea posible
+   - Confirmar distribución realista de estados (no 100% críticos)
+
+VENTAJAS DE ESTA SOLUCIÓN:
+---------------------------
+✅ Cambios MÍNIMOS en el código (solo ruta del archivo)
+✅ NO requiere reentrenar el modelo (usamos el modelo existente)
+✅ Dashboard mostrará datos realistas de "operación actual"
+✅ Mantiene toda la funcionalidad existente
+✅ Los usuarios verán un escenario de monitoreo productivo realista
+
+PRÓXIMOS PASOS:
+---------------
+1. Crear script de preprocesamiento de datos de prueba
+2. Generar archivo fd001_test_prepared.parquet
+3. Actualizar app.py para usar el nuevo archivo
+4. Verificar resultados en el dashboard
+5. Documentar cambios
+
+===============================================================================
+Fecha: 2026-02-04
+Analista: GitHub Copilot Agent
+===============================================================================
