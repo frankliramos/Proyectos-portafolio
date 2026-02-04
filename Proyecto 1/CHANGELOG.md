@@ -5,6 +5,30 @@ All notable changes to the Turbofan RUL Prediction project are documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-02-04
+
+### Fixed
+- **Critical Dashboard Issue**: Fixed issue where all motors showed as 100% critical
+  - Root cause: Dashboard was using training data where all motors eventually fail (RUL → 0)
+  - Solution: Switched to test data representing motors at various health states
+  - Added `prepare_test_data.py` script to preprocess test data
+  - Created `fd001_test_prepared.parquet` with realistic motor distribution
+  - Bug fix in `add_true_rul_to_test()`: Corrected RUL calculation formula
+  - Updated `app.py` to load test data instead of training data
+  - Updated `src/config.py` to include test data file path
+
+### Changed
+- **Dashboard Data Source**: Now displays realistic operational scenario:
+  - 🔴 Critical (RUL < 30): ~25 motors (25%)
+  - 🟡 Warning (30-70): ~17 motors (17%)
+  - 🟢 Healthy (RUL >= 70): ~58 motors (58%)
+- **Documentation**: Added `revisar.txt` with detailed analysis of the issue and solution
+
+### Added
+- New preprocessing script: `prepare_test_data.py`
+- New processed data file: `data/processed/fd001_test_prepared.parquet`
+- Analysis document: `revisar.txt` explaining the problem and solution approach
+
 ## [1.0.0] - 2026-02-03
 
 ### Added - Documentation

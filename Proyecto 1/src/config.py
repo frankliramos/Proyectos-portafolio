@@ -41,6 +41,7 @@ FD001_TRAIN_FILE = RAW_DATA_DIR / "train_FD001.txt"
 FD001_TEST_FILE = RAW_DATA_DIR / "test_FD001.txt"
 FD001_RUL_FILE = RAW_DATA_DIR / "RUL_FD001.txt"
 FD001_PROCESSED_FILE = PROCESSED_DATA_DIR / "fd001_prepared.parquet"
+FD001_TEST_PROCESSED_FILE = PROCESSED_DATA_DIR / "fd001_test_prepared.parquet"
 
 # ===========================
 # ARCHIVOS DE MODELO
