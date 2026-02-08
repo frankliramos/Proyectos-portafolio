@@ -418,6 +418,5 @@ This project is now production-ready and suitable for:
 - Job applications
 - Technical interviews
 - GitHub showcase
-- LinkedIn projects
 
-**Last Updated**: February 3, 2026
+**Last Updated**: February 2026
