@@ -1,4 +1,4 @@
-# Portafolio de Data Science y Machine Learning
+# Portafolio de Data Science & Machine Learning
 
 **Franklin Ramos**
 
@@ -6,117 +6,108 @@
 
 ---
 
-## 📊 Descripción del Portafolio
+## 📊 Visión General del Portafolio
 
-Este repositorio presenta proyectos profesionales de ciencia de datos y aprendizaje automático, demostrando experiencia en modelado predictivo, deep learning y sistemas de ML listos para producción.
+Bienvenido a mi portafolio de Data Science y Machine Learning. Este repositorio presenta proyectos profesionales end-to-end que demuestran experiencia en modelado predictivo, deep learning, pronóstico de series temporales y sistemas ML listos para producción.
 
 ---
 
-## 🚀 Proyecto Destacado: Mantenimiento Predictivo de Turbofan
+## 🚀 Proyectos
 
-### [Dashboard Interactivo →](./turbofan-predictive-maintenance)
+### Proyecto 1: Mantenimiento Predictivo de Turbofán
+**Estado**: ✅ Completo | **Tipo**: Deep Learning, Series Temporales, Mantenimiento Predictivo
 
-![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)
+Sistema de mantenimiento predictivo listo para producción para motores turbofán de aeronaves usando redes neuronales LSTM.
 
-**Sistema de mantenimiento predictivo listo para producción para motores turbofan de aeronaves**
+- **Impacto de Negocio**: Predice fallos de motor con 30-40 ciclos de anticipación
+- **Stack Tecnológico**: PyTorch, LSTM, Dashboard Streamlit
+- **Dataset**: NASA CMAPSS (200 motores, 33K+ ciclos)
+- **Rendimiento**: MAE ~14.2 ciclos, RMSE ~19.7, R² 0.78
 
-#### 🎯 Aspectos Destacados del Proyecto
+[📂 Ver Proyecto →](./Proyecto%201/turbofan-predictive-maintenance)
 
-- **Impacto de Negocio**: Predice fallas de motores antes de que ocurran, reduciendo mantenimiento no programado en 30-40%
-- **Stack Técnico**: Redes neuronales LSTM, PyTorch, dashboard de monitoreo en tiempo real
-- **Dataset**: NASA CMAPSS - 100+ motores con trayectorias completas hasta falla
-- **Rendimiento**: MAE ~14.2 ciclos, RMSE ~19.7 ciclos, R² 0.78
+**Características Clave**:
+- Predicciones de RUL (Vida Útil Restante) en tiempo real
+- Dashboard interactivo con 21 flujos de sensores
+- Monitoreo de gestión de flota
+- Documentación completa (Inglés y Español)
 
-#### 🔧 Características Principales
+---
 
-✅ **Monitoreo de Salud en Tiempo Real** - Predicciones de RUL (Vida Útil Remanente) en vivo  
-✅ **Dashboard Interactivo** - Visualización basada en Streamlit con 21 flujos de sensores  
-✅ **Arquitectura de Deep Learning** - LSTM multicapa con regularización dropout  
-✅ **Gestión de Flota** - Monitoreo del estado de salud de toda la flota de un vistazo  
-✅ **Listo para Producción** - Testing exhaustivo, documentación y manejo de errores completo  
+### Proyecto 2: Sistema de Pronóstico de Ventas
+**Estado**: 🚧 Próximamente | **Tipo**: Series Temporales, XGBoost, Pronóstico de Demanda
 
-#### 📱 Inicio Rápido
+Sistema avanzado de pronóstico de ventas para optimización de cadena retail.
 
-```bash
-cd turbofan-predictive-maintenance
-pip install -r requirements.txt
-streamlit run app.py
-```
+[📂 Ver Proyecto →](./Proyecto%202)
 
-El dashboard se lanzará en `http://localhost:8501`
+**Características Planificadas**:
+- Predicción de demanda a nivel de tienda
+- Modelado de impacto de feriados y promociones
+- Dashboard interactivo Streamlit
+- Modelos ensemble XGBoost
 
-#### 📖 Documentación Completa
+---
 
-- [🇬🇧 Documentación en Inglés](./turbofan-predictive-maintenance/README.md)
-- [🇪🇸 Documentación en Español](./turbofan-predictive-maintenance/README_ES.md)
-- [📊 Ficha Técnica del Modelo](./turbofan-predictive-maintenance/MODEL_CARD.md)
-- [⚡ Guía de Inicio Rápido](./turbofan-predictive-maintenance/QUICKSTART.md)
+### Proyecto 3: Próximamente
+**Estado**: 🔜 En Planificación
+
+[📂 Ver Proyecto →](./Proyecto%203)
+
+---
+
+### Proyecto 4: Próximamente
+**Estado**: 🔜 En Planificación
+
+[📂 Ver Proyecto →](./Proyecto%204)
 
 ---
 
 ## 🛠️ Habilidades Técnicas Demostradas
 
-### Machine Learning y Deep Learning
-- **Pronóstico de Series Temporales** - Redes LSTM para datos secuenciales
-- **Ingeniería de Características** - Preprocesamiento y normalización de datos de sensores
-- **Optimización de Modelos** - Ajuste de hiperparámetros, early stopping
-- **Evaluación de Modelos** - Métricas MAE, RMSE, R² con estrategias de validación
+### Machine Learning & Deep Learning
+- **Pronóstico de Series Temporales** - LSTM, XGBoost, patrones estacionales
+- **Ingeniería de Características** - Datos de sensores, métricas retail, conocimiento del dominio
+- **Optimización de Modelos** - Ajuste de hiperparámetros, validación cruzada
+- **Evaluación de Modelos** - MAE, RMSE, R², métricas de negocio
 
 ### Ingeniería de Software
 - **Código de Producción** - Arquitectura modular, manejo de errores, logging
-- **Desarrollo de Dashboard** - Aplicaciones interactivas con Streamlit
-- **Pipeline de Datos** - Procesos ETL para dataset NASA CMAPSS
-- **Testing** - Pruebas unitarias y validación de datos
-- **Documentación** - Documentación técnica y de usuario exhaustiva
+- **Desarrollo de Dashboards** - Aplicaciones Streamlit interactivas
+- **Pipelines de Datos** - Procesos ETL, validación de datos
+- **Testing** - Pruebas unitarias, pruebas de integración, verificación de calidad
+- **Documentación** - Documentos técnicos, guías de usuario, model cards
 
-### Herramientas y Tecnologías
+### Herramientas & Tecnologías
 - **Lenguajes**: Python 3.12+
-- **Frameworks ML**: PyTorch, scikit-learn
+- **Frameworks ML**: PyTorch, scikit-learn, XGBoost
 - **Procesamiento de Datos**: Pandas, NumPy
 - **Visualización**: Matplotlib, Seaborn, Streamlit
 - **Desarrollo**: Git, Docker, Jupyter
 
 ---
 
-## 📊 Métricas del Proyecto
+## 📊 Métricas del Portafolio
 
 | Métrica | Valor |
 |---------|-------|
-| **Líneas de Código** | 2,500+ |
-| **Cobertura de Tests** | Validación de datos comprehensiva |
-| **Páginas de Documentación** | 5 documentos técnicos |
-| **Datos Procesados** | 33,727 ciclos en 200 motores |
-| **Precisión del Modelo** | R² = 0.78 |
+| **Proyectos Totales** | 4 (2 completos, 2 planificados) |
+| **Líneas de Código** | 5,000+ |
+| **Páginas de Documentación** | 15+ documentos técnicos |
+| **Tecnologías** | 10+ frameworks y herramientas |
+| **Docs Bilingües** | Inglés y Español |
 
 ---
 
-## 🎯 Objetivos Profesionales
+## 🎯 Enfoque Profesional
 
 Este portafolio demuestra:
 
-- Capacidad para traducir problemas de negocio en soluciones ML
-- Ejecución de proyectos ML de extremo a extremo desde EDA hasta despliegue
-- Código listo para producción con estándares profesionales
-- Documentación clara y habilidades de comunicación
-- Comprensión de aspectos técnicos y de negocio
-
----
-
-## 📬 Contacto
-
-**Franklin Ramos**
-
-- 📧 Email: Disponible bajo solicitud
-- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
-- 🌐 Portafolio: Este repositorio
-
----
-
-## 📄 Licencia
-
-Este proyecto está disponible para fines educativos y de revisión de portafolio. Ver directorios de proyectos individuales para información específica de licencia.
+1. **Valor de Negocio** - Resolviendo problemas del mundo real con impacto medible
+2. **Excelencia Técnica** - Código listo para producción con mejores prácticas
+3. **Comunicación** - Documentación clara para audiencias técnicas y no técnicas
+4. **Ejecución End-to-End** - Desde definición del problema hasta despliegue
+5. **Escalabilidad** - Estructura organizada para múltiples proyectos
 
 ---
 
@@ -124,21 +115,64 @@ Este proyecto está disponible para fines educativos y de revisión de portafoli
 
 ```
 Proyectos-portafolio/
-├── README.md                           # Versión en inglés
-├── README_ES.md                        # Este archivo (Español)
-└── turbofan-predictive-maintenance/   # Proyecto de mantenimiento predictivo
-    ├── app.py                         # Aplicación dashboard
-    ├── README.md                      # Documentación del proyecto (EN)
-    ├── README_ES.md                   # Documentación del proyecto (ES)
-    ├── MODEL_CARD.md                  # Especificaciones del modelo
-    ├── QUICKSTART.md                  # Guía de inicio rápido
-    ├── requirements.txt               # Dependencias
-    ├── data/                          # Dataset NASA CMAPSS
-    ├── models/                        # Modelos entrenados
-    ├── notebooks/                     # Jupyter notebooks
-    ├── src/                           # Código fuente
-    └── results/                       # Resultados del modelo
+├── README.md                                # Versión en inglés
+├── README_ES.md                             # Este archivo (Español)
+├── .gitignore                               # Gitignore global
+│
+├── Proyecto 1/                              # Mantenimiento Predictivo Turbofán
+│   └── turbofan-predictive-maintenance/
+│       ├── app.py                           # Dashboard interactivo
+│       ├── README.md                        # Documentación del proyecto
+│       ├── data/                            # Dataset NASA CMAPSS
+│       ├── models/                          # Modelos entrenados
+│       ├── notebooks/                       # Análisis Jupyter
+│       ├── src/                             # Código fuente
+│       └── results/                         # Evaluación de modelos
+│
+├── Proyecto 2/                              # Pronóstico de Ventas (Próximamente)
+│   ├── dashboard/                           # Aplicación Streamlit
+│   ├── data/                                # Datos retail
+│   ├── models/                              # Modelos XGBoost
+│   ├── notebooks/                           # EDA y modelado
+│   └── src/                                 # Código fuente
+│
+├── Proyecto 3/                              # Próximamente
+│   └── README.md
+│
+└── Proyecto 4/                              # Próximamente
+    └── README.md
 ```
+
+---
+
+## 🚀 Inicio Rápido
+
+### Ejecutar Dashboard del Proyecto 1
+
+```bash
+git clone https://github.com/frankliramos/Proyectos-portafolio.git
+cd "Proyectos-portafolio/Proyecto 1/turbofan-predictive-maintenance"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+El dashboard se abre en `http://localhost:8501`
+
+---
+
+## 📬 Contacto
+
+**Franklin Ramos**
+
+- 📧 Email: Disponible bajo petición
+- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
+- 🌐 Portafolio: Este repositorio
+
+---
+
+## 📄 Licencia
+
+Este proyecto está disponible para propósitos educativos y revisión de portafolio. Ver directorios de proyectos individuales para información específica de licencia.
 
 ---
 

@@ -1,10 +1,29 @@
-/.continue
-/4_PROYECTOS_PORTAFOLIO_DESTACADOS.pdf
-/EXPLICACION_PROYECTOS_CLIENTE.pdf
-/chatllm
-/llm.env
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
 
-# Large model files
+# Jupyter
+.ipynb_checkpoints
+
+# Data
+*.csv
+*.parquet
 *.pkl
-!**/scaler*.pkl
-!**/feature_cols*.pkl
+*.h5
+
+# Models
+*.json
+*.joblib
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
