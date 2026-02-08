@@ -14,7 +14,7 @@ Get the Turbofan RUL Prediction dashboard running in minutes!
 
 ```bash
 git clone https://github.com/frankliramos/Proyectos-portafolio.git
-cd "Proyectos-portafolio/Proyecto 1"
+cd Proyectos-portafolio/turbofan-predictive-maintenance
 ```
 
 ### 2. Create Virtual Environment
@@ -56,7 +56,7 @@ The dashboard will open automatically in your browser at `http://localhost:8501`
 ```bash
 # Clone and navigate to project
 git clone https://github.com/frankliramos/Proyectos-portafolio.git
-cd "Proyectos-portafolio/Proyecto 1"
+cd Proyectos-portafolio/turbofan-predictive-maintenance
 
 # Start the dashboard
 docker-compose up -d
@@ -91,7 +91,7 @@ docker run -p 8501:8501 \
 2. Go to [share.streamlit.io](https://share.streamlit.io)
 3. Sign in with GitHub
 4. Click "New app"
-5. Select your fork and choose `Proyecto 1/app.py`
+5. Select your fork and choose `turbofan-predictive-maintenance/app.py`
 6. Deploy!
 
 ### Deploy to Heroku
@@ -135,7 +135,7 @@ pip install --upgrade -r requirements.txt
 **Solution:**
 Ensure you're in the correct directory:
 ```bash
-cd "Proyecto 1"
+cd turbofan-predictive-maintenance
 ls models/  # Should show lstm_model_v1.pth, scaler_v1.pkl, etc.
 ```
 
