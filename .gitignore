@@ -3,3 +3,8 @@
 /EXPLICACION_PROYECTOS_CLIENTE.pdf
 /chatllm
 /llm.env
+
+# Large model files
+*.pkl
+!**/scaler*.pkl
+!**/feature_cols*.pkl
