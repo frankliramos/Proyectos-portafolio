@@ -8,99 +8,155 @@
 
 ## 📊 Portfolio Overview
 
-This repository showcases professional data science and machine learning projects, demonstrating expertise in predictive modeling, deep learning, and production-ready ML systems.
+Welcome to my Data Science and Machine Learning portfolio. This repository showcases professional end-to-end projects demonstrating expertise in predictive modeling, deep learning, time series forecasting, and production-ready ML systems.
 
 ---
 
-## 🚀 Featured Project: Turbofan Predictive Maintenance
+## 🚀 Projects
 
-### [Interactive Dashboard →](./turbofan-predictive-maintenance)
+### Proyecto 1: Turbofan Predictive Maintenance
+**Status**: ✅ Complete | **Type**: Deep Learning, Time Series, Predictive Maintenance
 
-![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)
+Production-ready predictive maintenance system for aircraft turbofan engines using LSTM neural networks.
 
-**Production-ready predictive maintenance system for aircraft turbofan engines**
+- **Business Impact**: Predicts engine failures 30-40 cycles in advance
+- **Tech Stack**: PyTorch, LSTM, Streamlit Dashboard
+- **Dataset**: NASA CMAPSS (200 engines, 33K+ cycles)
+- **Performance**: MAE ~14.2 cycles, RMSE ~19.7, R² 0.78
 
-#### 🎯 Project Highlights
+[📂 View Project →](./Proyecto%201/turbofan-predictive-maintenance)
 
-- **Business Impact**: Predicts engine failures before they occur, reducing unscheduled maintenance by 30-40%
-- **Technical Stack**: LSTM neural networks, PyTorch, real-time monitoring dashboard
-- **Dataset**: NASA CMAPSS - 100+ engines with complete run-to-failure trajectories
-- **Performance**: MAE ~14.2 cycles, RMSE ~19.7 cycles, R² 0.78
+**Key Features**:
+- Real-time RUL (Remaining Useful Life) predictions
+- Interactive dashboard with 21 sensor streams
+- Fleet management monitoring
+- Comprehensive documentation (English & Spanish)
 
-#### 🔧 Key Features
+---
 
-✅ **Real-time Health Monitoring** - Live RUL (Remaining Useful Life) predictions  
-✅ **Interactive Dashboard** - Streamlit-based visualization with 21 sensor streams  
-✅ **Deep Learning Architecture** - Multi-layer LSTM with dropout regularization  
-✅ **Fleet Management** - Monitor entire fleet health status at a glance  
-✅ **Production Ready** - Comprehensive testing, documentation, and error handling  
+### Proyecto 2: Sales Forecasting System
+**Status**: 🚧 Coming Soon | **Type**: Time Series, XGBoost, Demand Forecasting
 
-#### 📱 Quick Start
+Advanced sales forecasting system for retail chain optimization.
 
-```bash
-cd turbofan-predictive-maintenance
-pip install -r requirements.txt
-streamlit run app.py
-```
+[📂 View Project →](./Proyecto%202)
 
-The dashboard will launch at `http://localhost:8501`
+**Planned Features**:
+- Store-level demand prediction
+- Holiday and promotional impact modeling
+- Interactive Streamlit dashboard
+- XGBoost ensemble models
 
-#### 📖 Full Documentation
+---
 
-- [🇬🇧 English Documentation](./turbofan-predictive-maintenance/README.md)
-- [🇪🇸 Spanish Documentation](./turbofan-predictive-maintenance/README_ES.md)
-- [📊 Model Card](./turbofan-predictive-maintenance/MODEL_CARD.md)
-- [⚡ Quick Start Guide](./turbofan-predictive-maintenance/QUICKSTART.md)
+### Proyecto 3: Coming Soon
+**Status**: 🔜 In Planning
+
+[📂 View Project →](./Proyecto%203)
+
+---
+
+### Proyecto 4: Coming Soon
+**Status**: 🔜 In Planning
+
+[📂 View Project →](./Proyecto%204)
 
 ---
 
 ## 🛠️ Technical Skills Demonstrated
 
 ### Machine Learning & Deep Learning
-- **Time Series Forecasting** - LSTM networks for sequential data
-- **Feature Engineering** - Sensor data preprocessing and normalization
-- **Model Optimization** - Hyperparameter tuning, early stopping
-- **Model Evaluation** - MAE, RMSE, R² metrics with validation strategies
+- **Time Series Forecasting** - LSTM, XGBoost, seasonal patterns
+- **Feature Engineering** - Sensor data, retail metrics, domain knowledge
+- **Model Optimization** - Hyperparameter tuning, cross-validation
+- **Model Evaluation** - MAE, RMSE, R², business metrics
 
 ### Software Engineering
 - **Production Code** - Modular architecture, error handling, logging
 - **Dashboard Development** - Interactive Streamlit applications
-- **Data Pipeline** - ETL processes for NASA CMAPSS dataset
-- **Testing** - Unit tests and data validation
-- **Documentation** - Comprehensive technical and user documentation
+- **Data Pipelines** - ETL processes, data validation
+- **Testing** - Unit tests, integration tests, data quality checks
+- **Documentation** - Technical docs, user guides, model cards
 
 ### Tools & Technologies
 - **Languages**: Python 3.12+
-- **ML Frameworks**: PyTorch, scikit-learn
+- **ML Frameworks**: PyTorch, scikit-learn, XGBoost
 - **Data Processing**: Pandas, NumPy
 - **Visualization**: Matplotlib, Seaborn, Streamlit
 - **Development**: Git, Docker, Jupyter
 
 ---
 
-## 📊 Project Metrics
+## 📊 Portfolio Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Lines of Code** | 2,500+ |
-| **Test Coverage** | Comprehensive data validation |
-| **Documentation Pages** | 5 technical documents |
-| **Data Points Processed** | 33,727 cycles across 200 engines |
-| **Model Accuracy** | R² = 0.78 |
+| **Total Projects** | 4 (2 complete, 2 planned) |
+| **Lines of Code** | 5,000+ |
+| **Documentation Pages** | 15+ technical documents |
+| **Technologies** | 10+ frameworks and tools |
+| **Bilingual Docs** | English & Spanish |
 
 ---
 
-## 🎯 Professional Goals
+## 🎯 Professional Approach
 
 This portfolio demonstrates:
 
-- Ability to translate business problems into ML solutions
-- End-to-end ML project execution from EDA to deployment
-- Production-ready code with professional standards
-- Clear documentation and communication skills
-- Understanding of both technical and business aspects
+1. **Business Value** - Solving real-world problems with measurable impact
+2. **Technical Excellence** - Production-ready code with best practices
+3. **Communication** - Clear documentation for technical and non-technical audiences
+4. **End-to-End Execution** - From problem definition to deployment
+5. **Scalability** - Organized structure for multiple projects
+
+---
+
+## 🔍 Repository Structure
+
+```
+Proyectos-portafolio/
+├── README.md                                # This file (English)
+├── README_ES.md                             # Spanish version
+├── .gitignore                               # Global gitignore
+│
+├── Proyecto 1/                              # Turbofan Predictive Maintenance
+│   └── turbofan-predictive-maintenance/
+│       ├── app.py                           # Interactive dashboard
+│       ├── README.md                        # Project documentation
+│       ├── data/                            # NASA CMAPSS dataset
+│       ├── models/                          # Trained models
+│       ├── notebooks/                       # Jupyter analysis
+│       ├── src/                             # Source code
+│       └── results/                         # Model evaluation
+│
+├── Proyecto 2/                              # Sales Forecasting (Coming Soon)
+│   ├── dashboard/                           # Streamlit app
+│   ├── data/                                # Retail data
+│   ├── models/                              # XGBoost models
+│   ├── notebooks/                           # EDA and modeling
+│   └── src/                                 # Source code
+│
+├── Proyecto 3/                              # Coming Soon
+│   └── README.md
+│
+└── Proyecto 4/                              # Coming Soon
+    └── README.md
+```
+
+---
+
+## 🚀 Quick Start
+
+### Running Proyecto 1 Dashboard
+
+```bash
+git clone https://github.com/frankliramos/Proyectos-portafolio.git
+cd "Proyectos-portafolio/Proyecto 1/turbofan-predictive-maintenance"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Dashboard launches at `http://localhost:8501`
 
 ---
 
@@ -117,28 +173,6 @@ This portfolio demonstrates:
 ## 📄 License
 
 This project is available for educational and portfolio review purposes. See individual project directories for specific license information.
-
----
-
-## 🔍 Repository Structure
-
-```
-Proyectos-portafolio/
-├── README.md                           # This file (English)
-├── README_ES.md                        # Spanish version
-└── turbofan-predictive-maintenance/   # Predictive maintenance project
-    ├── app.py                         # Dashboard application
-    ├── README.md                      # Project documentation (EN)
-    ├── README_ES.md                   # Project documentation (ES)
-    ├── MODEL_CARD.md                  # Model specifications
-    ├── QUICKSTART.md                  # Quick start guide
-    ├── requirements.txt               # Dependencies
-    ├── data/                          # NASA CMAPSS dataset
-    ├── models/                        # Trained models
-    ├── notebooks/                     # Jupyter notebooks
-    ├── src/                           # Source code
-    └── results/                       # Model results
-```
 
 ---
 
