@@ -25,6 +25,8 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+📖 **[Guía Completa de Acceso a Dashboards →](./DASHBOARD_ACCESS.md)**
+
 ---
 
 ## 🚀 Proyectos
