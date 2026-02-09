@@ -10,6 +10,23 @@
 
 Welcome to my Data Science and Machine Learning portfolio. This repository showcases professional end-to-end projects demonstrating expertise in predictive modeling, deep learning, time series forecasting, and production-ready ML systems.
 
+### 🖥️ Interactive Dashboards
+
+All projects include **interactive Streamlit dashboards** for real-time visualization and exploration:
+
+- **Proyecto 1**: Engine health monitoring with RUL predictions
+- **Proyecto 2**: Sales forecasting with inventory recommendations
+
+**Quick Start**:
+```bash
+# For any project with a dashboard
+cd "Proyecto X/[project-directory]"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+📖 **[Complete Dashboard Access Guide →](./DASHBOARD_ACCESS.md)**
+
 ---
 
 ## 🚀 Projects
@@ -35,17 +52,23 @@ Production-ready predictive maintenance system for aircraft turbofan engines usi
 ---
 
 ### Proyecto 2: Sales Forecasting System
-**Status**: 🚧 Coming Soon | **Type**: Time Series, XGBoost, Demand Forecasting
+**Status**: ✅ Complete | **Type**: Time Series, XGBoost, Demand Forecasting
 
-Advanced sales forecasting system for retail chain optimization.
+Advanced retail sales forecasting system for Ecuadorian stores using XGBoost with GPU acceleration.
+
+- **Business Impact**: 83% prediction accuracy (WAPE 16.9%), 15-20% reduction in inventory costs
+- **Tech Stack**: XGBoost GPU, Streamlit Dashboard, Pandas
+- **Dataset**: 2.9M+ transactions, 54 stores, 33 product categories
+- **Performance**: RMSLE 0.40, WAPE 16.9%
 
 [📂 View Project →](./Proyecto%202)
 
-**Planned Features**:
-- Store-level demand prediction
-- Holiday and promotional impact modeling
-- Interactive Streamlit dashboard
-- XGBoost ensemble models
+**Key Features**:
+- 15-day sales forecasting by store and product family
+- Interactive dashboard with real-time predictions
+- Inventory optimization recommendations
+- External factors integration (oil prices, holidays)
+- Comprehensive documentation (English & Spanish)
 
 ---
 

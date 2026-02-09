@@ -10,6 +10,23 @@
 
 Bienvenido a mi portafolio de Data Science y Machine Learning. Este repositorio presenta proyectos profesionales end-to-end que demuestran experiencia en modelado predictivo, deep learning, pronóstico de series temporales y sistemas ML listos para producción.
 
+### 🖥️ Dashboards Interactivos
+
+Todos los proyectos incluyen **dashboards interactivos de Streamlit** para visualización y exploración en tiempo real:
+
+- **Proyecto 1**: Monitoreo de salud de motores con predicciones de RUL
+- **Proyecto 2**: Pronóstico de ventas con recomendaciones de inventario
+
+**Inicio Rápido**:
+```bash
+# Para cualquier proyecto con dashboard
+cd "Proyecto X/[directorio-del-proyecto]"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+📖 **[Guía Completa de Acceso a Dashboards →](./DASHBOARD_ACCESS.md)**
+
 ---
 
 ## 🚀 Proyectos
@@ -35,17 +52,23 @@ Sistema de mantenimiento predictivo listo para producción para motores turbofá
 ---
 
 ### Proyecto 2: Sistema de Pronóstico de Ventas
-**Estado**: 🚧 Próximamente | **Tipo**: Series Temporales, XGBoost, Pronóstico de Demanda
+**Estado**: ✅ Completo | **Tipo**: Series Temporales, XGBoost, Pronóstico de Demanda
 
-Sistema avanzado de pronóstico de ventas para optimización de cadena retail.
+Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas usando XGBoost con aceleración GPU.
+
+- **Impacto de Negocio**: 83% de precisión en predicciones (WAPE 16.9%), 15-20% reducción en costos de inventario
+- **Stack Tecnológico**: XGBoost GPU, Dashboard Streamlit, Pandas
+- **Dataset**: 2.9M+ transacciones, 54 tiendas, 33 categorías de productos
+- **Rendimiento**: RMSLE 0.40, WAPE 16.9%
 
 [📂 Ver Proyecto →](./Proyecto%202)
 
-**Características Planificadas**:
-- Predicción de demanda a nivel de tienda
-- Modelado de impacto de feriados y promociones
-- Dashboard interactivo Streamlit
-- Modelos ensemble XGBoost
+**Características Principales**:
+- Pronóstico de ventas a 15 días por tienda y familia de producto
+- Dashboard interactivo con predicciones en tiempo real
+- Recomendaciones de optimización de inventario
+- Integración de factores externos (precios del petróleo, feriados)
+- Documentación completa (Inglés y Español)
 
 ---
 

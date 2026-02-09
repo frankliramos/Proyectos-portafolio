@@ -120,7 +120,27 @@ streamlit run app.py
 
 El dashboard se abrirá en tu navegador en `http://localhost:8501`.
 
-## 📱 Características del Dashboard
+## 📱 Dashboard Interactivo
+
+### 🌐 Visualización del Dashboard
+
+El proyecto incluye un **dashboard interactivo de Streamlit** para monitoreo de salud de motores en tiempo real y predicciones de RUL.
+
+**Acceso Rápido**:
+```bash
+# Desde el directorio turbofan-predictive-maintenance
+streamlit run app.py
+```
+
+El dashboard se abre automáticamente en `http://localhost:8501` y proporciona:
+- Predicciones de RUL para motores individuales
+- Análisis de salud de toda la flota
+- Visualización de datos de sensores
+- Filtrado y exploración interactiva
+
+![Dashboard de Mantenimiento Predictivo](../../assets/proyecto1-dashboard.png)
+
+### Características del Dashboard
 
 ### 1. **Monitoreo de Salud del Motor**
 - Predicciones de RUL en tiempo real para motores individuales
