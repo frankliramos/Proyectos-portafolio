@@ -119,7 +119,27 @@ streamlit run app.py
 
 The dashboard will open in your browser at `http://localhost:8501`.
 
-## 📱 Dashboard Features
+## 📱 Interactive Dashboard
+
+### 🌐 Viewing the Dashboard
+
+The project includes an interactive **Streamlit dashboard** for real-time engine health monitoring and RUL predictions.
+
+**Quick Access**:
+```bash
+# From the turbofan-predictive-maintenance directory
+streamlit run app.py
+```
+
+The dashboard opens automatically at `http://localhost:8501` and provides:
+- Individual engine RUL predictions
+- Fleet-wide health analytics
+- Sensor data visualization
+- Interactive filtering and exploration
+
+![Predictive Maintenance Dashboard](../../assets/proyecto1-dashboard.png)
+
+### Dashboard Features
 
 ### 1. **Engine Health Monitoring**
 - Real-time RUL predictions for individual engines
