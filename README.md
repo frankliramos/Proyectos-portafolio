@@ -16,6 +16,7 @@ All projects include **interactive Streamlit dashboards** for real-time visualiz
 
 - **Proyecto 1**: Engine health monitoring with RUL predictions
 - **Proyecto 2**: Sales forecasting with inventory recommendations
+- **Proyecto 3**: Customer churn risk assessment and retention strategies
 
 **Quick Start**:
 ```bash
@@ -72,10 +73,24 @@ Advanced retail sales forecasting system for Ecuadorian stores using XGBoost wit
 
 ---
 
-### Proyecto 3: Coming Soon
-**Status**: 🔜 In Planning
+### Proyecto 3: Customer Churn Prediction System
+**Status**: ✅ Complete | **Type**: Classification, Customer Analytics, Banking
+
+Advanced customer churn prediction system for banking institutions using ensemble machine learning.
+
+- **Business Impact**: 25-35% churn reduction, $11M+ annual savings, 650% ROI
+- **Tech Stack**: XGBoost, Random Forest, SMOTE, Streamlit Dashboard
+- **Dataset**: 10,000 customers with demographics and banking behavior
+- **Performance**: 86.5% accuracy, F1-Score 82.7%, ROC-AUC 0.91
 
 [📂 View Project →](./Proyecto%203)
+
+**Key Features**:
+- Real-time churn risk assessment (individual and batch)
+- Interactive customer segmentation dashboard
+- Personalized retention strategy recommendations
+- SHAP-based model interpretability
+- Comprehensive documentation (English & Spanish)
 
 ---
 
@@ -90,9 +105,11 @@ Advanced retail sales forecasting system for Ecuadorian stores using XGBoost wit
 
 ### Machine Learning & Deep Learning
 - **Time Series Forecasting** - LSTM, XGBoost, seasonal patterns
-- **Feature Engineering** - Sensor data, retail metrics, domain knowledge
+- **Classification** - Ensemble methods, imbalanced data handling (SMOTE)
+- **Feature Engineering** - Sensor data, retail metrics, customer behavior, domain knowledge
 - **Model Optimization** - Hyperparameter tuning, cross-validation
-- **Model Evaluation** - MAE, RMSE, R², business metrics
+- **Model Evaluation** - MAE, RMSE, R², F1-Score, ROC-AUC, business metrics
+- **Model Interpretability** - SHAP values, feature importance
 
 ### Software Engineering
 - **Production Code** - Modular architecture, error handling, logging
@@ -103,9 +120,10 @@ Advanced retail sales forecasting system for Ecuadorian stores using XGBoost wit
 
 ### Tools & Technologies
 - **Languages**: Python 3.12+
-- **ML Frameworks**: PyTorch, scikit-learn, XGBoost
+- **ML Frameworks**: PyTorch, scikit-learn, XGBoost, imbalanced-learn
 - **Data Processing**: Pandas, NumPy
-- **Visualization**: Matplotlib, Seaborn, Streamlit
+- **Visualization**: Matplotlib, Seaborn, Plotly, Streamlit
+- **Interpretability**: SHAP
 - **Development**: Git, Docker, Jupyter
 
 ---
@@ -114,10 +132,10 @@ Advanced retail sales forecasting system for Ecuadorian stores using XGBoost wit
 
 | Metric | Value |
 |--------|-------|
-| **Total Projects** | 4 (2 complete, 2 planned) |
-| **Lines of Code** | 5,000+ |
-| **Documentation Pages** | 15+ technical documents |
-| **Technologies** | 10+ frameworks and tools |
+| **Total Projects** | 4 (3 complete, 1 planned) |
+| **Lines of Code** | 8,000+ |
+| **Documentation Pages** | 20+ technical documents |
+| **Technologies** | 15+ frameworks and tools |
 | **Bilingual Docs** | English & Spanish |
 
 ---

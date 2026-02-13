@@ -16,6 +16,7 @@ Todos los proyectos incluyen **dashboards interactivos de Streamlit** para visua
 
 - **Proyecto 1**: Monitoreo de salud de motores con predicciones de RUL
 - **Proyecto 2**: Pronóstico de ventas con recomendaciones de inventario
+- **Proyecto 3**: Evaluación de riesgo de abandono de clientes y estrategias de retención
 
 **Inicio Rápido**:
 ```bash
@@ -72,10 +73,24 @@ Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas u
 
 ---
 
-### Proyecto 3: Próximamente
-**Estado**: 🔜 En Planificación
+### Proyecto 3: Sistema de Predicción de Abandono de Clientes
+**Estado**: ✅ Completo | **Tipo**: Clasificación, Analítica de Clientes, Banca
+
+Sistema avanzado de predicción de abandono de clientes para instituciones bancarias usando ensemble de machine learning.
+
+- **Impacto de Negocio**: 25-35% reducción de abandono, $11M+ ahorro anual, 650% ROI
+- **Stack Tecnológico**: XGBoost, Random Forest, SMOTE, Dashboard Streamlit
+- **Dataset**: 10,000 clientes con demografía y comportamiento bancario
+- **Rendimiento**: 86.5% precisión, F1-Score 82.7%, ROC-AUC 0.91
 
 [📂 Ver Proyecto →](./Proyecto%203)
+
+**Características Clave**:
+- Evaluación de riesgo de abandono en tiempo real (individual y lotes)
+- Dashboard de segmentación de clientes interactivo
+- Recomendaciones de estrategia de retención personalizadas
+- Interpretabilidad del modelo basada en SHAP
+- Documentación completa (Inglés y Español)
 
 ---
 
@@ -90,9 +105,11 @@ Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas u
 
 ### Machine Learning & Deep Learning
 - **Pronóstico de Series Temporales** - LSTM, XGBoost, patrones estacionales
-- **Ingeniería de Características** - Datos de sensores, métricas retail, conocimiento del dominio
+- **Clasificación** - Métodos ensemble, manejo de datos desbalanceados (SMOTE)
+- **Ingeniería de Características** - Datos de sensores, métricas retail, comportamiento de clientes, conocimiento del dominio
 - **Optimización de Modelos** - Ajuste de hiperparámetros, validación cruzada
-- **Evaluación de Modelos** - MAE, RMSE, R², métricas de negocio
+- **Evaluación de Modelos** - MAE, RMSE, R², F1-Score, ROC-AUC, métricas de negocio
+- **Interpretabilidad de Modelos** - Valores SHAP, importancia de características
 
 ### Ingeniería de Software
 - **Código de Producción** - Arquitectura modular, manejo de errores, logging
@@ -103,9 +120,10 @@ Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas u
 
 ### Herramientas & Tecnologías
 - **Lenguajes**: Python 3.12+
-- **Frameworks ML**: PyTorch, scikit-learn, XGBoost
+- **Frameworks ML**: PyTorch, scikit-learn, XGBoost, imbalanced-learn
 - **Procesamiento de Datos**: Pandas, NumPy
-- **Visualización**: Matplotlib, Seaborn, Streamlit
+- **Visualización**: Matplotlib, Seaborn, Plotly, Streamlit
+- **Interpretabilidad**: SHAP
 - **Desarrollo**: Git, Docker, Jupyter
 
 ---
@@ -114,10 +132,10 @@ Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas u
 
 | Métrica | Valor |
 |---------|-------|
-| **Proyectos Totales** | 4 (2 completos, 2 planificados) |
-| **Líneas de Código** | 5,000+ |
-| **Páginas de Documentación** | 15+ documentos técnicos |
-| **Tecnologías** | 10+ frameworks y herramientas |
+| **Proyectos Totales** | 4 (3 completos, 1 planificado) |
+| **Líneas de Código** | 8,000+ |
+| **Páginas de Documentación** | 20+ documentos técnicos |
+| **Tecnologías** | 15+ frameworks y herramientas |
 | **Docs Bilingües** | Inglés y Español |
 
 ---

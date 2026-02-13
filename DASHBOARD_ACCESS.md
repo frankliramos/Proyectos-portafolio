@@ -2,7 +2,7 @@
 
 ## How to View Project Dashboards
 
-This portfolio includes interactive **Streamlit dashboards** for both projects. Follow these simple steps to view them on your local machine.
+This portfolio includes interactive **Streamlit dashboards** for all three projects. Follow these simple steps to view them on your local machine.
 
 ---
 
@@ -59,6 +59,25 @@ streamlit run app.py
 
 **Note**: Proyecto 2 requires `data_forecast.csv` in the dashboard directory. If this file is missing, please contact me for the dataset.
 
+#### Option C: Proyecto 3 - Customer Churn Prediction Dashboard
+
+```bash
+cd "Proyecto 3"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+**What you'll see**:
+- Individual customer churn risk assessment
+- Customer segmentation by risk level
+- Feature importance visualization
+- Retention strategy recommendations
+- Real-time predictions with demo data
+
+**Dashboard opens at**: `http://localhost:8501`
+
+**Note**: Proyecto 3 includes sample data for demonstration. The dashboard is fully functional without additional data files.
+
 ---
 
 ## 🔧 Troubleshooting
@@ -80,6 +99,10 @@ pip install -r requirements.txt
 
 # For Proyecto 2
 cd "Proyecto 2"
+pip install -r requirements.txt
+
+# For Proyecto 3
+cd "Proyecto 3"
 pip install -r requirements.txt
 ```
 
@@ -115,11 +138,19 @@ streamlit run app.py --server.port 8502
 - 📈 15-day sales forecast
 - 💰 Inventory optimization suggestions
 
+### Proyecto 3: Customer Churn Prediction
+- ✅ **100% Functional** - Demo data included
+- 👤 Individual customer risk assessment
+- 📊 Customer segmentation dashboard
+- 🎯 Risk classification (Low/Medium/High)
+- 💡 Personalized retention strategies
+- 📈 Feature importance and analytics
+
 ---
 
 ## 💼 For Clients & Recruiters
 
-Both dashboards are **production-ready prototypes** demonstrating:
+All three dashboards are **production-ready prototypes** demonstrating:
 
 1. **Real-time Analytics**: Interactive data exploration
 2. **Business Insights**: Actionable predictions and recommendations
@@ -147,6 +178,7 @@ If you encounter any issues accessing the dashboards:
 
 - [ ] Proyecto 1 Dashboard Walkthrough
 - [ ] Proyecto 2 Dashboard Walkthrough
+- [ ] Proyecto 3 Dashboard Walkthrough
 - [ ] Installation Guide for Windows
 - [ ] Installation Guide for Mac/Linux
 
