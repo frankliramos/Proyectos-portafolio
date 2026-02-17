@@ -20,16 +20,34 @@ This directory contains screenshots of the interactive dashboards for portfolio 
   - Forecast accuracy metrics
   - Inventory recommendations
 
+### Proyecto 3: Customer Churn Dashboard
+- **Status**: Screenshot pending
+- **To view live**: Run `streamlit run app.py` from `Proyecto 3/`
+- **Features shown**:
+  - Individual customer churn risk
+  - Customer segmentation
+  - Retention strategies
+
+### Proyecto 4: Product Recommendation Dashboard
+- **Status**: Screenshot pending
+- **To view live**: Run `streamlit run app.py` from `Proyecto 4/`
+- **Features shown**:
+  - Personalized product recommendations
+  - Similar product discovery
+  - User analytics and A/B testing results
+
 ## How to Take Screenshots
 
 To capture dashboard screenshots for the portfolio:
 
 1. Run the dashboard locally
-2. Navigate to interesting views (select specific engines/stores)
+2. Navigate to interesting views (select specific engines/stores/users)
 3. Take full-page screenshots (F12 > Ctrl+Shift+P > "Capture full size screenshot" in Chrome)
 4. Save as:
    - `proyecto1-dashboard.png`
    - `proyecto2-dashboard.png`
+   - `proyecto3-dashboard.png`
+   - `proyecto4-dashboard.png`
 5. Place files in this directory
 
 ## Recommended Resolution

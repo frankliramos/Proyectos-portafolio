@@ -2,7 +2,7 @@
 
 ## How to View Project Dashboards
 
-This portfolio includes interactive **Streamlit dashboards** for all three projects. Follow these simple steps to view them on your local machine.
+This portfolio includes interactive **Streamlit dashboards** for all four projects. Follow these simple steps to view them on your local machine.
 
 ---
 
@@ -77,6 +77,25 @@ streamlit run app.py
 **Dashboard opens at**: `http://localhost:8501`
 
 **Note**: Proyecto 3 includes sample data for demonstration. The dashboard is fully functional without additional data files.
+
+#### Option D: Proyecto 4 - Product Recommendation Dashboard
+
+```bash
+cd "Proyecto 4"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+**What you'll see**:
+- Personalized product recommendations
+- Similar product discovery
+- User behavior analytics
+- A/B testing results visualization
+- Real-time recommendation engine with demo data
+
+**Dashboard opens at**: `http://localhost:8501`
+
+**Note**: Proyecto 4 includes sample data for demonstration. The dashboard generates interactive recommendations without requiring external datasets.
 
 ---
 
