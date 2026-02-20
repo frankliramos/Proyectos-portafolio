@@ -1,0 +1,110 @@
+name: Portfolio CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-validate:
+    name: Lint & Validate Code
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install linting tools
+        run: |
+          pip install flake8 black
+
+      - name: Check code formatting (black)
+        run: |
+          black --check --diff \
+            "Proyecto 1/turbofan-predictive-maintenance/src" \
+            "Proyecto 3/src" \
+            "Proyecto 4/src" || true
+
+      - name: Lint with flake8
+        run: |
+          flake8 \
+            "Proyecto 1/turbofan-predictive-maintenance/src" \
+            "Proyecto 3/src" \
+            "Proyecto 4/src" \
+            --max-line-length=120 \
+            --ignore=E203,W503 || true
+
+  test-proyecto1:
+    name: Test Proyecto 1 - Predictive Maintenance
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          cd "Proyecto 1/turbofan-predictive-maintenance"
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: |
+          cd "Proyecto 1/turbofan-predictive-maintenance"
+          python -m pytest test_data_preparation.py test_eda_simple.py -v
+
+  validate-dashboards:
+    name: Validate Dashboard Syntax
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install common dependencies
+        run: |
+          pip install streamlit pandas numpy plotly
+
+      - name: Check dashboard syntax - Proyecto 3
+        run: |
+          python -m py_compile "Proyecto 3/app.py"
+          echo "✅ Proyecto 3 dashboard syntax OK"
+
+      - name: Check dashboard syntax - Proyecto 4
+        run: |
+          python -m py_compile "Proyecto 4/app.py"
+          echo "✅ Proyecto 4 dashboard syntax OK"
+
+      - name: Check src module syntax - Proyecto 3
+        run: |
+          python -m py_compile "Proyecto 3/src/config.py"
+          python -m py_compile "Proyecto 3/src/data_loader.py"
+          python -m py_compile "Proyecto 3/src/inference.py"
+          echo "✅ Proyecto 3 src modules syntax OK"
+
+      - name: Check src module syntax - Proyecto 4
+        run: |
+          python -m py_compile "Proyecto 4/src/config.py"
+          python -m py_compile "Proyecto 4/src/data_loader.py"
+          echo "✅ Proyecto 4 src modules syntax OK"

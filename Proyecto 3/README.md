@@ -432,7 +432,6 @@ print(f"High-risk customers: {len(high_risk)}")
 
 **Franklin Ramos**
 - Portfolio: [GitHub Portfolio](https://github.com/frankliramos/Proyectos-portafolio)
-- LinkedIn: [linkedin.com/in/frankliramos](#)
 
 ## 📄 License
 
