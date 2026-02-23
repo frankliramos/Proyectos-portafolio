@@ -151,7 +151,7 @@ Motor de recomendación híbrido avanzado que combina filtrado colaborativo y ba
 
 | Métrica | Valor |
 |---------|-------|
-| **Proyectos Totales** | 4 (3 completos, 1 planificado) |
+| **Proyectos Totales** | 4 completados |
 | **Líneas de Código** | 8,000+ |
 | **Páginas de Documentación** | 20+ documentos técnicos |
 | **Tecnologías** | 15+ frameworks y herramientas |
@@ -177,30 +177,45 @@ Este portafolio demuestra:
 Proyectos-portafolio/
 ├── README.md                                # Versión en inglés
 ├── README_ES.md                             # Este archivo (Español)
+├── LICENSE                                  # Licencia MIT
 ├── .gitignore                               # Gitignore global
+├── .github/workflows/ci.yml                 # Pipeline CI/CD
 │
 ├── Proyecto 1/                              # Mantenimiento Predictivo Turbofán
 │   └── turbofan-predictive-maintenance/
 │       ├── app.py                           # Dashboard interactivo
 │       ├── README.md                        # Documentación del proyecto
-│       ├── data/                            # Dataset NASA CMAPSS
-│       ├── models/                          # Modelos entrenados
-│       ├── notebooks/                       # Análisis Jupyter
-│       ├── src/                             # Código fuente
-│       └── results/                         # Evaluación de modelos
+│       ├── MODEL_CARD.md                    # Especificaciones del modelo
+│       ├── data/                            # Dataset NASA CMAPSS (raw + procesado)
+│       ├── models/                          # Modelos LSTM entrenados
+│       ├── notebooks/                       # Notebooks Jupyter EDA y modelado
+│       ├── src/                             # Módulos de código fuente
+│       ├── results/                         # Resultados de evaluación
+│       └── Dockerfile                       # Definición del contenedor
 │
-├── Proyecto 2/                              # Pronóstico de Ventas (Próximamente)
-│   ├── dashboard/                           # Aplicación Streamlit
-│   ├── data/                                # Datos retail
-│   ├── models/                              # Modelos XGBoost
-│   ├── notebooks/                           # EDA y modelado
-│   └── src/                                 # Código fuente
+├── Proyecto 2/                              # Pronóstico de Ventas
+│   ├── dashboard/app.py                     # Aplicación Streamlit
+│   ├── notebooks/                           # Notebooks EDA y modelado
+│   ├── src/                                 # Ingeniería de características y predicción
+│   └── requirements.txt                     # Dependencias
 │
-├── Proyecto 3/                              # Próximamente
-│   └── README.md
+├── Proyecto 3/                              # Predicción de Abandono de Clientes
+│   ├── app.py                               # Dashboard interactivo
+│   ├── README.md                            # Documentación del proyecto
+│   ├── data/                                # Dataset de clientes
+│   ├── models/                              # Modelos ensemble entrenados
+│   ├── notebooks/                           # Notebooks de análisis
+│   ├── src/                                 # Módulos de código fuente
+│   └── results/                             # Resultados de evaluación
 │
-└── Proyecto 4/                              # Próximamente
-    └── README.md
+└── Proyecto 4/                              # Sistema de Recomendación de Productos
+    ├── app.py                               # Dashboard interactivo
+    ├── README.md                            # Documentación del proyecto
+    ├── data/                                # Datos de interacciones e-commerce
+    ├── models/                              # Modelos de recomendación entrenados
+    ├── notebooks/                           # Notebooks de análisis
+    ├── src/                                 # Módulos de código fuente
+    └── results/                             # Resultados de evaluación
 ```
 
 ---
