@@ -167,11 +167,19 @@ streamlit run app.py --server.port 8502
 - 💡 Personalized retention strategies
 - 📈 Feature importance and analytics
 
+#### Proyecto 4: Product Recommendation System
+- ✅ **100% Functional** - Demo data included
+- 🛍️ Personalized product recommendations
+- 🔗 Similar product discovery
+- 📊 User behavior analytics
+- 🧪 A/B testing results visualization
+- ⚡ Real-time recommendation engine
+
 ---
 
 ### 💼 For Clients & Recruiters
 
-All three dashboards are **production-ready prototypes** demonstrating:
+All four dashboards are **production-ready prototypes** demonstrating:
 
 1. **Real-time Analytics**: Interactive data exploration
 2. **Business Insights**: Actionable predictions and recommendations
@@ -325,6 +333,22 @@ streamlit run app.py --server.port 8502
 - Seleccion de categoria (33 familias)
 - Pronostico a 15 dias
 - Recomendaciones de inventario
+
+#### Proyecto 3: Prediccion de abandono de clientes
+- 100% funcional - Datos de demo incluidos
+- Evaluacion de riesgo individual de cliente
+- Dashboard de segmentacion de clientes
+- Clasificacion de riesgo (Bajo/Medio/Alto)
+- Estrategias de retencion personalizadas
+- Importancia de caracteristicas y analitica
+
+#### Proyecto 4: Sistema de recomendacion de productos
+- 100% funcional - Datos de demo incluidos
+- Recomendaciones personalizadas de productos
+- Descubrimiento de productos similares
+- Analitica de comportamiento de usuario
+- Visualizacion de resultados A/B testing
+- Motor de recomendacion en tiempo real
 
 ---
 
