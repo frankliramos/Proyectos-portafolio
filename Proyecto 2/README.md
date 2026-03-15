@@ -72,7 +72,7 @@ The dataset contains transactional data from multiple retail stores in Ecuador:
 ```
 Proyecto 2/
 ├── README.md                        # This file
-├── requirements                     # Python dependencies
+├── requirements.txt                 # Python dependencies
 ├── dashboard/
 │   └── app.py                       # Streamlit interactive dashboard
 ├── notebooks/
@@ -81,7 +81,7 @@ Proyecto 2/
 │   └── 02_modelado_ventas.ipynb    # Model training and evaluation
 └── src/
     ├── feature_engineering.py       # Feature creation functions
-    └── predict                      # Prediction utilities
+    └── predict.py                   # Prediction utilities
 ```
 
 ## 🚀 Getting Started

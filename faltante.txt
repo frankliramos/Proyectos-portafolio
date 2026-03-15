@@ -1,318 +1,426 @@
 ================================================================================
 EVALUACIÓN PROFESIONAL DEL PORTAFOLIO - FRANKLIN RAMOS
 Revisión: Estándar de Científico de Datos Senior
-Fecha: Febrero 2026
+Fecha: Marzo 2026 (Actualización de auditoría completa)
+Auditoría anterior: Febrero 2026
 ================================================================================
 
-Este archivo documenta la evaluación completa del repositorio frente al estándar
-profesional de un Científico de Datos Senior para solicitar empleo y ganar
-proyectos. Se listan los problemas encontrados, las correcciones aplicadas
-automáticamente y las mejoras pendientes.
+Este archivo documenta la evaluación actualizada del repositorio frente al
+estándar profesional de un Científico de Datos Senior para solicitar empleo
+y ganar proyectos freelance. Se incluyen los problemas encontrados, las
+correcciones aplicadas automáticamente en este PR y las mejoras pendientes
+que requieren acción manual del propietario.
 
 ================================================================================
-SECCIÓN 1: CAMBIOS REALIZADOS AUTOMÁTICAMENTE EN ESTE PR
+SECCIÓN 1: LO QUE ESTÁ BIEN (FORTALEZAS DEL PORTAFOLIO)
 ================================================================================
 
-Los siguientes problemas fueron detectados y corregidos:
+Las siguientes características están bien implementadas y deben mantenerse:
 
-[CORREGIDO] 1. ARCHIVO LICENSE FALTANTE EN RAÍZ
-   - Problema: El README.md menciona "ver LICENSE" pero no existía archivo LICENSE
-     en la raíz del repositorio. Esto es un requisito básico para cualquier
-     repositorio profesional open-source.
-   - Solución: Creado LICENSE con licencia MIT en la raíz del repositorio.
+[BIEN] 1. DIVERSIDAD TÉCNICA
+   - 4 proyectos en dominios distintos: mantenimiento predictivo (IoT/industria),
+     pronóstico de demanda (retail), predicción de abandono (finanzas/banca), y
+     sistema de recomendaciones (e-commerce).
+   - Demuestra versatilidad como DS Senior. Un reclutador ve que no eres un
+     especialista de un solo dominio.
 
-[CORREGIDO] 2. ARCHIVOS RESIDUALES NO PROFESIONALES EN PROYECTO 1
-   - Problema: Existían dos archivos de desarrollo/debug que no debían estar:
-     * src/data_loadingoriginal.py  → copia de backup del módulo de carga de datos
-     * notebooks/python2.py         → script de depuración de imports, no un notebook
-   - Solución: Eliminados ambos archivos del repositorio con git rm.
+[BIEN] 2. PROYECTO 1 COMPLETAMENTE MADURO
+   - Tiene datos reales (NASA CMAPSS), modelos entrenados (Random Forest + LSTM),
+     notebooks completos (EDA + baseline + LSTM), tests unitarios, Docker,
+     docker-compose, MODEL_CARD.md, CHANGELOG.md, DEPLOYMENT.md, QUICKSTART.md,
+     DATA_PREPARATION_GUIDE.md y documentación bilingüe.
+   - Es el benchmark de calidad para los demás proyectos.
 
-[CORREGIDO] 3. ARCHIVO REQUIREMENTS DUPLICADO EN PROYECTO 2
-   - Problema: Existían dos archivos de dependencias: 'requirements' (sin extensión,
-     sin versiones fijas) y 'requirements.txt' (con versiones). Además, el README
-     indicaba 'pip install -r requirements' en lugar de 'requirements.txt'.
-     Causaba confusión a quien clonara el repositorio.
-   - Solución: Eliminado el archivo 'requirements' sin extensión. requirements.txt
-     es el estándar correcto con versiones fijas.
+[BIEN] 3. DOCUMENTACIÓN BILINGÜE (EN/ES)
+   - Todos los proyectos tienen README.md en inglés y README_ES.md en español.
+   - README principal en inglés (README.md) y en español (README_ES.md) en la raíz.
+   - Diferenciador importante para mercados hispanohablantes y empresas globales.
 
-[CORREGIDO] 4. ENLACE LINKEDIN PLACEHOLDER EN README DE PROYECTO 3
-   - Problema: La sección de autor en Proyecto 3/README.md tenía:
-     "LinkedIn: [linkedin.com/in/frankliramos](#)" con enlace '#' que no funciona.
-     Un reclutador que haga clic recibiría un enlace roto, generando mala impresión.
-   - Solución: Eliminada la línea de LinkedIn con enlace roto. Si deseas agregar
-     LinkedIn, usa el formato: [Franklin Ramos](https://linkedin.com/in/TU-PERFIL)
+[BIEN] 4. IMPACTO DE NEGOCIO CUANTIFICADO
+   - Cada proyecto documenta ROI, ahorro económico y métricas de negocio.
+   - Ejemplo: Proyecto 1 estima $2.3M en ahorro de mantenimiento no planificado.
+   - Esto es lo que distingue a un DS Senior: pensar en impacto de negocio,
+     no solo en métricas técnicas como accuracy o F1.
 
-[CORREGIDO] 5. ARCHIVO PLACEHOLDER EN ASSETS
-   - Problema: assets/proyecto4-dashboard-placeholder.md era un archivo temporal/
-     placeholder que no tiene valor en un portafolio profesional.
+[BIEN] 5. DASHBOARDS INTERACTIVOS FUNCIONALES (STREAMLIT)
+   - Los 4 proyectos tienen dashboard Streamlit con datos demo incluidos
+     (Proyectos 3 y 4 funcionan completamente sin datos externos).
+   - Demuestra habilidades full-stack: desde datos crudos hasta producto final.
+
+[BIEN] 6. STACK TECNOLÓGICO MODERNO Y RELEVANTE
+   - PyTorch (LSTM), XGBoost GPU, SHAP, Streamlit, Docker, imbalanced-learn,
+     Plotly, scikit-learn, FinBERT.
+   - Herramientas vigentes en la industria en 2026.
+
+[BIEN] 7. TESTS UNITARIOS EN PROYECTO 1
+   - Demuestra disciplina de ingeniería de software (test_data_preparation.py,
+     test_eda_simple.py, test_load_fd001.py).
+   - Expandir tests al resto de proyectos elevaría significativamente el nivel.
+
+[BIEN] 8. PIPELINE CI/CD CON GITHUB ACTIONS
+   - .github/workflows/ci.yml implementado desde auditoría de Febrero 2026.
+   - Valida formato de código (black), linting (flake8) y tests de Proyecto 1.
+   - Demuestra conocimiento de prácticas DevOps/MLOps.
+
+[BIEN] 9. ESTRUCTURA PROFESIONAL DE REPOSITORIO
+   - LICENSE (MIT) en raíz y en Proyecto 1.
+   - .gitignore y .gitattributes configurados.
+   - README completo (10KB EN, 11KB ES) con métricas, arquitectura y ejemplos.
+
+[BIEN] 10. PROYECTO 2 CON NOTEBOOKS COMPLETOS
+   - 01_eda_ventas.ipynb con EDA completo + exportación HTML para visualización
+     sin necesidad de ejecutar Jupyter.
+   - 02_modelado_ventas.ipynb con entrenamiento XGBoost y métricas reales.
+
+[BIEN] 11. PROYECTO 3 CON NOTEBOOKS COMPLETOS
+   - 5 notebooks cubriendo todo el pipeline: EDA, baseline, FinBERT fine-tuning,
+     interpretabilidad y evaluación final.
+   - 06_fastapi_inference.ipynb demuestra conocimiento de despliegue con FastAPI.
+
+[BIEN] 12. MÓDULOS SRC BIEN ESTRUCTURADOS
+   - Todos los proyectos tienen módulos Python en src/ con __init__.py.
+   - Proyecto 4 tiene 8 módulos especializados: collaborative_filter.py,
+     content_filter.py, hybrid_model.py, evaluation.py, etc.
+
+================================================================================
+SECCIÓN 2: CAMBIOS REALIZADOS EN ESTE PR (MARZO 2026)
+================================================================================
+
+Los siguientes problemas fueron detectados y corregidos automáticamente:
+
+[CORREGIDO] 1. CARPETA ARCHIVE/ RESIDUAL EN PROYECTO 1
+   - Problema: Existía una carpeta archive/CMaps/ con archivos que no deberían
+     estar en un portafolio profesional:
+     * archive/CMaps/x.txt        → Archivo de datos sin nombre (RUL data)
+     * archive/CMaps/readme.txt   → Readme de la carpeta archive
+     * archive/CMaps/Damage Propagation Modeling.pdf → PDF del dataset NASA
+   - Por qué es un problema: Una carpeta llamada "archive" en un portafolio
+     indica código/archivos sin limpiar. Los reclutadores técnicos notan esto.
+   - Solución: Eliminada toda la carpeta archive/ con git rm -r.
+
+[CORREGIDO] 2. ARCHIVO predict SIN EXTENSIÓN .py EN PROYECTO 2
+   - Problema: Proyecto 2/src/predict era un script Python válido pero sin
+     extensión .py. Esto es un error de principiante que llama negativamente
+     la atención en un portafolio que pretende ser de nivel Senior.
+   - Impacto: El archivo no es reconocido como Python por editores, GitHub,
+     y herramientas de análisis estático.
+   - Solución: Renombrado a predict.py con git mv.
+
+[CORREGIDO] 3. ARCHIVO PORTFOLIO_TRANSFORMATION.MD EN RAÍZ
+   - Problema: PORTFOLIO_TRANSFORMATION.md era un documento interno que
+     describía "cómo se transformó el repositorio". Un portafolio profesional
+     no debe mostrar sus procesos internos al reclutador/cliente.
+   - Por qué es un problema: Hace el repositorio verse "en construcción".
+     Un senior muestra el resultado final, no el proceso de limpieza.
    - Solución: Eliminado con git rm.
 
-[CORREGIDO] 6. SECCIÓN DE ESTRUCTURA EN README RAÍZ DESACTUALIZADA
-   - Problema: El README principal mostraba Proyectos 2, 3 y 4 como "Coming Soon"
-     cuando en realidad ya están implementados.
-   - Problema adicional: La tabla de métricas decía "4 (3 completos, 1 planificado)"
-     cuando los 4 proyectos están completos.
-   - Solución: Actualizada la sección de estructura del repositorio en README.md y
-     README_ES.md para reflejar la realidad actual. Corregida la tabla de métricas.
+[CORREGIDO] 4. ARCHIVO RUL_FD002.txt INCONSISTENTE EN PROYECTO 1
+   - Problema: El archivo data/raw/RUL_FD002.txt contenía datos del motor
+     FD002 del dataset NASA CMAPSS. El proyecto usa principalmente FD001
+     y los archivos procesados (data/processed/) solo contienen datos FD001.
+     RUL_FD002.txt era un residuo que no se usa en el pipeline actual.
+   - Solución: Eliminado con git rm. Se mantienen FD001, FD003, FD004 que
+     son parte legítima del dataset completo CMAPSS.
 
-[CORREGIDO] 7. MÓDULOS SRC FALTANTES EN PROYECTO 4
-   - Problema: El README de Proyecto 4 documenta y referencia los siguientes módulos
-     de código fuente pero no existían:
-     * src/preprocessing.py       → Preparación de datos, matriz usuario-producto
-     * src/collaborative_filter.py → Filtrado colaborativo con ALS
-     * src/content_filter.py      → Filtrado basado en contenido con TF-IDF
-     * src/hybrid_model.py        → Motor de recomendación híbrido
-     * src/evaluation.py          → Métricas: Precision@K, Recall@K, NDCG, MAP
-   - Solución: Creados los 5 módulos con implementación completa y documentada,
-     siguiendo los patrones del README y del código existente en src/.
+[CORREGIDO] 5. DASHBOARD_ACCESS.md CON TEXTO INCORRECTO
+   - Problema A: La línea 174 decía "All three dashboards are production-ready
+     prototypes" cuando el portafolio tiene CUATRO proyectos con dashboard.
+   - Problema B: La sección "Dashboard Features" en inglés solo listaba
+     Proyectos 1, 2 y 3 pero omitía el Proyecto 4 por completo.
+   - Problema C: La sección "Features del dashboard" en español solo listaba
+     Proyectos 1 y 2, omitiendo Proyectos 3 y 4.
+   - Solución: Corregido "three" por "four", agregado Proyecto 4 en sección
+     English features, y agregados Proyectos 3 y 4 en sección Español features.
 
-[CORREGIDO] 8. PIPELINE CI/CD FALTANTE
-   - Problema: Un portafolio de Científico de Datos Senior debe demostrar
-     conocimiento de prácticas de ingeniería de software como CI/CD.
-     No existía ningún workflow de GitHub Actions.
-   - Solución: Creado .github/workflows/ci.yml con:
-     * Validación de formato de código (black)
-     * Linting (flake8)
-     * Pruebas unitarias del Proyecto 1
-     * Verificación de sintaxis de dashboards
+[CORREGIDO] 6. README DE PROYECTO 2 CON ESTRUCTURA INCORRECTA
+   - Problema: La sección "Project Structure" mostraba:
+     * requirements  (sin extensión .txt)
+     * src/predict   (sin extensión .py)
+     Ambos nombres eran incorrectos respecto a los archivos reales actuales.
+   - Solución: Corregido a requirements.txt y predict.py respectivamente.
+
+[CORREGIDO] 7. FALTA DE CONTRIBUTING.md A NIVEL RAÍZ
+   - Problema: No existía ningún archivo de guías de contribución. Para un
+     portafolio Senior, tener CONTRIBUTING.md demuestra madurez profesional
+     y familiaridad con estándares de proyectos open-source.
+   - Solución: Creado CONTRIBUTING.md con secciones de: cómo reportar issues,
+     cómo hacer PRs, guías de estilo Python/notebooks/documentación, checklist
+     antes de PR, y estructura de proyectos.
 
 ================================================================================
-SECCIÓN 2: PROBLEMAS DETECTADOS QUE REQUIEREN ACCIÓN MANUAL
+SECCIÓN 3: MEJORAS PENDIENTES (REQUIEREN ACCIÓN MANUAL)
 ================================================================================
 
-Los siguientes problemas NO pudieron corregirse automáticamente porque requieren
-datos reales, modelos entrenados, o decisiones del propietario del portafolio:
+Los siguientes problemas NO se corrigieron automáticamente porque requieren
+datos reales, modelos entrenados, acceso a servicios externos o decisiones
+del propietario del portafolio:
 
-[PENDIENTE - CRÍTICO] A. FALTA DE NOTEBOOKS EN PROYECTOS 3 Y 4
-   - Estado: Los directorios notebooks/ de Proyecto 3 y Proyecto 4 contienen
-     solo archivos .gitkeep vacíos.
-   - Por qué importa: Para un DS Senior, los notebooks demuestran el proceso
-     analítico completo (EDA → Feature Engineering → Modeling → Evaluación).
-     Los reclutadores técnicos SIEMPRE revisan los notebooks.
-   - Acción requerida: Crear notebooks siguiendo el esquema documentado:
-     * Proyecto 3: 01_eda_churn.ipynb, 02_feature_engineering.ipynb,
-       03_model_baseline.ipynb, 04_model_ensemble.ipynb
-     * Proyecto 4: 01_eda_ecommerce.ipynb, 02_collaborative_filtering.ipynb,
-       03_content_based.ipynb, 04_hybrid_system.ipynb
-   - Referencia: Proyecto 1 y Proyecto 2 tienen notebooks excelentes como ejemplo.
+[PENDIENTE - CRÍTICO] A. CONFIGURAR DESCRIPCIÓN Y TOPICS EN GITHUB
+   - Estado: El repositorio tiene description: null y topics: [].
+   - Por qué importa: La descripción y los topics son lo primero que ve
+     cualquier persona que visite el repositorio en GitHub. Sin ellos,
+     no aparece en búsquedas y parece un repo abandonado.
+   - Acción requerida: Ir a Settings del repositorio en GitHub y configurar:
+     * Description: "Data Science portfolio: 4 end-to-end ML projects covering
+       predictive maintenance, sales forecasting, NLP sentiment analysis, and
+       product recommendations."
+     * Topics: data-science, machine-learning, python, streamlit, xgboost,
+       pytorch, nlp, deep-learning, portfolio, jupyter-notebook, plotly,
+       scikit-learn, docker
+   - Tiempo estimado: 2 minutos.
 
-[PENDIENTE - CRÍTICO] B. MODELOS ENTRENADOS FALTANTES EN PROYECTOS 3 Y 4
-   - Estado: Los directorios models/ contienen solo .gitkeep. Los dashboards
-     de Proyecto 3 y Proyecto 4 funcionan con datos sintéticos generados
-     en tiempo real, NO con modelos ML reales.
-   - Por qué importa: Sin modelos entrenados, no se puede demostrar el proceso
-     end-to-end real. Las métricas reportadas en README no son verificables.
+[PENDIENTE - CRÍTICO] B. SCREENSHOTS DE DASHBOARDS EN ASSETS/
+   - Estado: La carpeta assets/ solo contiene un README.md con texto
+     "Screenshot pending" para los 4 proyectos.
+   - Por qué importa: Los reclutadores NO van a ejecutar el código localmente.
+     Las imágenes en el README son el único vistazo que tendrán al trabajo.
+     Un portafolio sin screenshots pierde el 80% de su impacto visual.
    - Acción requerida:
-     * Proyecto 3: Entrenar ensemble (XGBoost + Random Forest) con el dataset
-       bank_churn.csv. Guardar: xgboost_model.pkl, random_forest_model.pkl,
-       ensemble_model.pkl, scaler.pkl, feature_names.pkl
-     * Proyecto 4: Entrenar modelos ALS y TF-IDF. Guardar: collaborative_als.pkl,
-       content_tfidf.pkl, hybrid_recommender.pkl
-     NOTA: Para archivos >100MB usar Git LFS o enlace de descarga externo
-           (ej: Google Drive, Hugging Face Hub).
+     1. Ejecutar cada dashboard: cd "Proyecto N" && streamlit run app.py
+     2. Capturar pantallas en la sección más impactante de cada dashboard
+     3. Guardar en assets/ como:
+        * assets/proyecto1-dashboard.png
+        * assets/proyecto2-dashboard.png
+        * assets/proyecto3-dashboard.png
+        * assets/proyecto4-dashboard.png
+     4. Reemplazar la referencia rota en README de cada proyecto
+   - Formato: 1920x1080px, PNG, seleccionar la vista más impresionante.
+   - Tiempo estimado: 30-60 minutos.
 
-[PENDIENTE - CRÍTICO] C. DATOS REALES FALTANTES EN PROYECTOS 3 Y 4
-   - Estado: Los directorios data/raw/ y data/processed/ contienen solo .gitkeep.
-   - Por qué importa: Sin datos no se pueden reproducir los resultados ni
-     validar las métricas. Los datos son el punto de partida del análisis.
-   - Acción requerida:
-     * Proyecto 3: Agregar bank_churn.csv en data/raw/ (dataset público de Kaggle:
-       "Bank Customer Churn Dataset"). Agregar churn_prepared.parquet en
-       data/processed/ con datos preprocesados.
-     * Proyecto 4: Considerar dataset público (ej: Amazon Reviews, MovieLens).
-       Documentar claramente la fuente del dataset en README.
-     NOTA: Si los datos son demasiado grandes (>50MB), agregar script de
-           descarga automática (download_data.py) o instrucciones claras.
+[PENDIENTE - CRÍTICO] C. NOTEBOOKS REALES EN PROYECTOS 3 Y 4
+   - Estado: Proyecto 3 tiene notebooks completos. Proyecto 4 solo tiene
+     notebooks/01_eda_initial.ipynb (1 notebook de 4 necesarios).
+   - Por qué importa: Los reclutadores técnicos SIEMPRE revisan los notebooks
+     para ver el proceso analítico real. Sin notebooks completos, Proyecto 4
+     parece incompleto comparado con los demás.
+   - Acción requerida (Proyecto 4):
+     * 02_collaborative_filtering.ipynb: Implementación de ALS con implicit
+     * 03_content_based_filtering.ipynb: TF-IDF sobre metadatos de producto
+     * 04_hybrid_system_evaluation.ipynb: Comparativa y métricas finales
+   - Referencia: Proyectos 1, 2 y 3 tienen excelentes notebooks como ejemplo.
 
-[PENDIENTE - IMPORTANTE] D. RESULTADOS/MÉTRICAS FALTANTES EN PROYECTOS 3 Y 4
-   - Estado: Los directorios results/ contienen solo .gitkeep.
-   - Por qué importa: Las métricas hardcodeadas en README (86.5% accuracy,
-     ROC-AUC 0.91, etc.) no tienen respaldo en archivos de resultados reales.
-     Esto puede percibirse como inventado.
+[PENDIENTE - CRÍTICO] D. MODELOS ENTRENADOS EN PROYECTOS 3 Y 4
+   - Estado: Los directorios models/ de Proyecto 3 y Proyecto 4 contienen
+     solo archivos .gitkeep. Los dashboards funcionan con datos sintéticos.
+   - Por qué importa: Sin modelos entrenados reales, las métricas del README
+     (86.5% accuracy, ROC-AUC 0.91, Precision@10 42.3%) no son verificables.
+     Esto puede ser percibido como métricas inventadas.
    - Acción requerida:
-     * Proyecto 3: Generar results/metrics_comparison.csv, 
+     * Proyecto 3: Entrenar FinBERT fine-tuned con Financial PhraseBank.
+       Guardar: finbert_model.pkl o carpeta HuggingFace transformers.
+     * Proyecto 4: Entrenar ALS y TF-IDF. Guardar: collaborative_als.pkl,
+       content_tfidf.pkl, hybrid_recommender.pkl.
+   - NOTA: Si los modelos son >100MB, usar Git LFS o enlace de descarga
+     externa (HuggingFace Hub, Google Drive con descarga automática).
+   - Tiempo estimado: 4-8 horas de entrenamiento + 1 hora de documentación.
+
+[PENDIENTE - IMPORTANTE] E. DATOS REALES EN PROYECTOS 3 Y 4
+   - Estado: data/raw/ y data/processed/ de Proyecto 4 contienen solo
+     .gitkeep. Proyecto 3 tiene los datos de Financial PhraseBank en raw/.
+   - Por qué importa: Sin datos no se puede reproducir el análisis ni
+     validar resultados.
+   - Acción requerida:
+     * Proyecto 4: Agregar dataset de e-commerce. Opciones recomendadas:
+       - Amazon Product Reviews (disponible en Kaggle)
+       - MovieLens 1M (100% libre, ligero, ideal para demo)
+       - Instacart Market Basket (Kaggle)
+     * Documentar la fuente del dataset en README.
+   - NOTA: Si los datos superan 50MB, agregar download_data.py con
+     descarga automática desde la fuente oficial.
+
+[PENDIENTE - IMPORTANTE] F. RESULTADOS/MÉTRICAS EN ARCHIVOS REALES
+   - Estado: results/ de Proyectos 3 y 4 contienen solo .gitkeep.
+   - Por qué importa: Las métricas del README sin archivos de resultados
+     que las respalden reducen la credibilidad del portafolio.
+   - Acción requerida:
+     * Proyecto 3: Generar results/metrics_comparison.csv (accuracy, F1 por clase),
        results/feature_importance.csv, results/confusion_matrix.png
-     * Proyecto 4: Generar results/metrics_comparison.csv,
-       results/recommendation_samples.csv, results/ab_test_results.csv
+     * Proyecto 4: Generar results/metrics_comparison.csv (Precision@K, NDCG),
+       results/recommendation_samples.csv (ejemplos de recomendaciones reales)
 
-[PENDIENTE - IMPORTANTE] E. SCREENSHOTS DE DASHBOARDS FALTANTES
-   - Estado: Los README de Proyecto 2, 3 y 4 referencian imágenes de dashboard
-     que no existen en assets/:
-     * assets/proyecto2-dashboard.png (referenciado en Proyecto 2/README.md)
-     * assets/proyecto3-dashboard.png (referenciado en Proyecto 3/README.md)
-     * assets/proyecto4-dashboard.png (referenciado en Proyecto 4/README.md)
-   - Por qué importa: Las imágenes muestran el valor visual del trabajo a
-     reclutadores que no ejecutarán el código localmente.
-   - Acción requerida:
-     1. Ejecutar cada dashboard localmente: `streamlit run app.py`
-     2. Tomar capturas de pantalla mostrando las secciones más impactantes
-     3. Guardar como PNG en assets/ con los nombres indicados arriba
-   - Formato recomendado: 1920×1080px, PNG, sección más impresionante visible
+[PENDIENTE - IMPORTANTE] G. INFORMACIÓN DE CONTACTO REAL
+   - Estado: En todos los README, el email dice "Available upon request" y
+     algunos tienen LinkedIn sin URL real.
+   - Por qué importa: Los reclutadores deben poder contactarte en 1 clic.
+     Un portafolio es una herramienta de venta personal.
+   - Acción requerida: Actualizar en README.md, README_ES.md y todos los
+     README de proyectos:
+     * Email profesional: franklin.ramos@tu-dominio.com
+     * LinkedIn real: https://linkedin.com/in/franklin-ramos-ds (o tu URL real)
+   - Tiempo estimado: 15-20 minutos.
 
-[PENDIENTE - IMPORTANTE] F. INFORMACIÓN DE CONTACTO INCOMPLETA
-   - Estado: En todos los README, el email dice "Available upon request" /
-     "Disponible bajo petición". En algunos README falta LinkedIn completamente.
-   - Por qué importa: Un portafolio es una herramienta de venta personal.
-     Los reclutadores deben poder contactarte en 1 clic.
-   - Acción requerida:
-     * Agregar un email de contacto profesional (ej: Gmail, dominio propio)
-     * Agregar URL de LinkedIn real (ej: linkedin.com/in/franklin-ramos-ds)
-     * Actualizar en: README.md, README_ES.md, todos los README de proyectos,
-       DASHBOARD_ACCESS.md
-   - Formato recomendado en README:
-     - 📧 Email: franklin.ramos@email.com
-     - 💼 LinkedIn: [linkedin.com/in/franklin-ramos](https://linkedin.com/in/TU-PERFIL)
-
-[PENDIENTE - IMPORTANTE] G. MODELO CARDS FALTANTES EN PROYECTOS 2 Y 3
-   - Estado: Proyecto 1 tiene un excelente MODEL_CARD.md con especificaciones
-     detalladas del modelo. Proyectos 2 y 3 no tienen MODEL_CARD.md.
-   - Por qué importa: Los Model Cards son la práctica estándar de la industria
-     para documentar modelos ML (promovido por Google, Hugging Face, etc.).
-     Demuestra madurez profesional y conciencia de governance de modelos.
-   - Acción requerida: Crear MODEL_CARD.md para Proyecto 2 y Proyecto 3,
+[PENDIENTE - IMPORTANTE] H. MODELO CARD PARA PROYECTOS 2 Y 3
+   - Estado: Proyecto 1 tiene un excelente MODEL_CARD.md. Proyectos 2 y 3
+     no tienen MODEL_CARD.md. (Proyecto 4 tampoco, pero es menos crítico
+     ya que no tiene modelo entrenado aún).
+   - Por qué importa: Los Model Cards son el estándar de la industria (Google,
+     Hugging Face). Demuestran madurez y conciencia de AI governance.
+   - Acción requerida: Crear MODEL_CARD.md para Proyecto 2 y Proyecto 3
      siguiendo el formato del MODEL_CARD.md de Proyecto 1.
 
-[PENDIENTE - MODERADO] H. PROYECTO 2 REQUIERE ARCHIVO DATA_FORECAST.CSV
-   - Estado: El dashboard de Proyecto 2 requiere data_forecast.csv para funcionar.
-     La documentación menciona esto pero no hay instrucciones de cómo generarlo.
-   - Impacto: Un reclutador que intente ejecutar el dashboard de Proyecto 2
-     recibirá un error o pantalla en blanco.
-   - Acción requerida: 
-     * Opción A: Incluir data_forecast.csv con predicciones de muestra (datos
-       sintéticos que simulen el output del modelo, no datos reales del cliente).
-     * Opción B: Modificar dashboard/app.py para generar datos sintéticos de
-       demostración cuando el archivo no está disponible (como hacen P3 y P4).
-     * Agregar instrucciones más claras en DASHBOARD_ACCESS.md
+[PENDIENTE - MODERADO] I. DATOS DE DEMO PARA PROYECTO 2 DASHBOARD
+   - Estado: El dashboard de Proyecto 2 requiere data_forecast.csv que no
+     está incluido en el repositorio. Los Proyectos 3 y 4 generan datos
+     sintéticos automáticamente.
+   - Por qué importa: Un reclutador que clone el repo y ejecute Proyecto 2
+     verá un error o pantalla en blanco.
+   - Acción requerida:
+     * Opción A (recomendada): Modificar dashboard/app.py para generar datos
+       sintéticos de demostración cuando data_forecast.csv no está disponible,
+       similar a como funcionan los dashboards de Proyectos 3 y 4.
+     * Opción B: Incluir data_forecast.csv con predicciones de muestra
+       (datos sintéticos que simulen el output del modelo, no datos reales).
 
-[PENDIENTE - MODERADO] I. DOCUMENT PORTFOLIO_TRANSFORMATION.MD ES INTERNO
-   - Estado: PORTFOLIO_TRANSFORMATION.md es un documento de notas internas
-     sobre los cambios realizados al repositorio. No aporta valor a reclutadores
-     ni clientes potenciales.
-   - Por qué importa: Hace el repositorio verse "en construcción" o inconsistente.
-     Un portafolio profesional no debería mostrar sus procesos internos.
-   - Acción requerida: Considera eliminar o mover este archivo a un branch
-     separado de desarrollo. Si quieres mantenerlo para referencia, renombrarlo
-     a CHANGELOG.md con formato estándar de changelog de versiones.
+[PENDIENTE - MODERADO] J. GITHUB PROFILE PROFESIONAL
+   - Estado: 0 stars, 0 watchers, 0 forks en el repositorio.
+     No hay GitHub Pages habilitado. No hay Discussions habilitadas.
+   - Por qué importa: El perfil de GitHub es tu CV técnico. Un perfil sin
+     actividad parece inactivo.
+   - Acciones requeridas:
+     * Habilitar GitHub Pages para crear un sitio de portafolio web
+     * Crear README de perfil (repositorio especial: github.com/frankliramos/frankliramos)
+       con presentación profesional, tecnologías dominadas, y links a proyectos.
+     * Compartir el repositorio en LinkedIn y comunidades de Data Science.
+     * Star tu propio repositorio y pedir a colegas que también lo hagan.
 
-[PENDIENTE - MODERADO] J. PROYECTO 4 SRC FALTABA __INIT__.PY ACTUALIZADO
-   - Estado: El __init__.py no exporta los nuevos módulos (collaborative_filter,
-     content_filter, hybrid_model, evaluation, preprocessing).
-   - Acción requerida: Actualizar __init__.py para exportar los módulos clave.
-
-[PENDIENTE - MENOR] K. QUICKSTART.MD FALTANTE EN PROYECTOS 2, 3 Y 4
-   - Estado: Proyecto 1 tiene un QUICKSTART.md detallado. Los otros proyectos no.
-   - Acción requerida (opcional pero recomendado): Crear QUICKSTART.md para
-     Proyectos 2, 3 y 4 con instrucciones de configuración en 5 minutos.
-
-[PENDIENTE - MENOR] L. DEMO EN VIVO (STREAMLIT CLOUD)
-   - Estado: No existe ningún enlace a demo en vivo en el repositorio.
-   - Por qué importa: Una demo en vivo tiene GRAN impacto: permite que reclutadores
-     vean el trabajo sin configurar nada localmente.
+[PENDIENTE - MODERADO] K. DEMO EN VIVO (STREAMLIT CLOUD)
+   - Estado: No existe ningún enlace a demo en vivo.
+   - Por qué importa: Una demo en vivo tiene GRAN impacto: permite que
+     reclutadores vean el trabajo sin configurar nada localmente.
    - Acción requerida:
      1. Crear cuenta gratuita en share.streamlit.io
-     2. Desplegar dashboards de Proyecto 3 y Proyecto 4 (no requieren datos externos)
-     3. Agregar badge y enlace en README principal:
-        [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://TU-APP.streamlit.app)
+     2. Conectar el repositorio y desplegar Proyecto 3 y Proyecto 4
+        (ambos funcionan sin datos externos)
+     3. Agregar badge en README principal:
+        [![Streamlit App](badge_url)](https://tu-app.streamlit.app)
+   - Tiempo estimado: 30-60 minutos.
 
-[PENDIENTE - MENOR] M. BADGES DE CI/CD Y COBERTURA FALTANTES
-   - Estado: Los README no tienen badges que indiquen el estado del pipeline CI/CD.
-   - Acción requerida: Agregar badge de GitHub Actions en README.md:
+[PENDIENTE - MENOR] L. BADGES DE CI/CD EN README
+   - Estado: Los README no tienen badges de estado del CI/CD pipeline.
+   - Acción requerida: Agregar al inicio de README.md y README_ES.md:
      ![CI](https://github.com/frankliramos/Proyectos-portafolio/actions/workflows/ci.yml/badge.svg)
+   - Tiempo estimado: 5 minutos.
 
-[PENDIENTE - MENOR] N. PROYECTO 2 README INCONSISTENCIA: pip install -r requirements
-   - Estado: El README de Proyecto 2 en la sección "Install dependencies" dice:
-     'pip install -r requirements' (sin .txt). Debería ser 'requirements.txt'.
-   - Acción requerida: Ya corregido el archivo duplicado. Actualizar también la
-     línea en README de Proyecto 2 a: 'pip install -r requirements.txt'
+[PENDIENTE - MENOR] M. QUICKSTART.MD PARA PROYECTOS 2, 3 Y 4
+   - Estado: Proyecto 1 tiene un QUICKSTART.md excelente. Los otros no.
+   - Acción requerida (opcional pero recomendado): Crear QUICKSTART.md para
+     Proyectos 2, 3 y 4 con instrucciones de configuración en 5 minutos,
+     siguiendo el formato de QUICKSTART.md de Proyecto 1.
 
-================================================================================
-SECCIÓN 3: FORTALEZAS DEL PORTAFOLIO
-================================================================================
+[PENDIENTE - MENOR] N. TESTS UNITARIOS EN PROYECTOS 2, 3 Y 4
+   - Estado: Solo Proyecto 1 tiene tests (test_data_preparation.py, etc.).
+   - Acción requerida: Agregar tests básicos a Proyectos 2, 3 y 4:
+     * Test de carga de datos (assert que el DataFrame no está vacío)
+     * Test de feature engineering (assert shapes, sin NaN en columnas clave)
+     * Test de inferencia del dashboard (assert que devuelve resultados válidos)
 
-Lo que el portafolio hace MUY BIEN (mantener y destacar):
-
-✅ DIVERSIDAD TÉCNICA: 4 proyectos en dominios distintos (mantenimiento predictivo,
-   pronóstico de demanda, clasificación bancaria, sistemas de recomendación).
-   Demuestra versatilidad como DS Senior.
-
-✅ PROYECTO 1 COMPLETAMENTE MADURO: Tiene datos reales (NASA CMAPSS), modelos
-   entrenados, notebooks, tests unitarios, Docker, MODEL_CARD.md, CHANGELOG.md,
-   documentación bilingüe, y deploy instructions. Es un ejemplo excelente.
-
-✅ DOCUMENTACIÓN BILINGÜE (EN/ES): Diferenciador importante para mercados
-   hispanohablantes (Latinoamérica, España) y empresas globales.
-
-✅ IMPACTO DE NEGOCIO CUANTIFICADO: Cada proyecto documenta ROI, ahorro económico,
-   y métricas de negocio. Esto es lo que distingue a un DS Senior: pensar en
-   negocio, no solo en métricas técnicas.
-
-✅ DASHBOARDS INTERACTIVOS: Los 4 proyectos tienen dashboard Streamlit funcional.
-   Muestra habilidades full-stack de DS (desde datos hasta producto final).
-
-✅ STACK TECNOLÓGICO MODERNO: PyTorch, XGBoost GPU, SHAP, Streamlit, Docker,
-   imbalanced-learn, Plotly. Herramientas actuales en la industria.
-
-✅ TESTS UNITARIOS EN PROYECTO 1: Demuestra disciplina de ingeniería de software.
-   Expandir al resto de proyectos subiría significativamente el nivel.
-
-✅ README PROFESIONAL: Estructura clara con métricas de performance, business
-   impact, architecture, examples, y future improvements.
+[PENDIENTE - MENOR] O. ACTUALIZAR DATOS LAST UPDATED EN DASHBOARD_ACCESS.MD
+   - Estado: Al final del documento dice "Last Updated: February 2026" y
+     "Última actualización: February 2026".
+   - Acción requerida: Actualizar a "March 2026" o agregar mecanismo automático.
 
 ================================================================================
-SECCIÓN 4: RECOMENDACIONES ADICIONALES PARA NIVEL SENIOR
+SECCIÓN 4: ACCIONES YA APLICADAS (AUDITORÍA FEBRERO 2026)
 ================================================================================
 
-Para elevar el portafolio al nivel más alto posible:
+Las siguientes correcciones se aplicaron en el PR de Febrero 2026 y
+PERMANECEN correctas. No requieren acción:
 
-1. AGREGA UN PROYECTO DE MLOps/PRODUCCIÓN
-   Un DS Senior debe demostrar que sabe llevar modelos a producción.
-   Sugerencia: Agregar un Proyecto 5 con:
-   - FastAPI o Flask para servir el modelo
-   - Docker + Docker Compose completo
-   - Monitoreo de drift de datos (evidently-ai)
-   - Pipeline de reentrenamiento automático
-
-2. DEMUESTRA TRABAJO CON DATOS REALES GRANDES
-   Los proyectos actuales usan datasets de Kaggle pequeños/medianos.
-   Un DS Senior debería mostrar manejo de Big Data:
-   - Procesamiento con PySpark o Dask
-   - Query SQL compleja o dbt pipeline
-   - Cloud (AWS S3, GCP BigQuery, etc.)
-
-3. EXPERIMENTA CON LLMs O NLP AVANZADO
-   En 2026, los DS Seniors son evaluados por su conocimiento de LLMs.
-   Sugerencia: Agregar un proyecto de RAG, fine-tuning, o LLM chains
-   (LangChain, LlamaIndex) aplicado a un caso de negocio real.
-
-4. AÑADE ANÁLISIS DE CAUSALIDAD
-   Ir más allá de la correlación hacia inferencia causal demuestra
-   sofisticación estadística avanzada:
-   - Difference-in-Differences para A/B tests
-   - Propensity Score Matching para estudios observacionales
-   - Instrumental Variables
-
-5. INCLUYE SECCIÓN DE PUBLICACIONES O PRESENTACIONES
-   Si has dado charlas, escrito artículos en Medium/Towards Data Science,
-   o participado en competencias de Kaggle con buenos resultados,
-   agrégalos al README principal.
+[COMPLETADO] 1. Creado archivo LICENSE (MIT) en raíz del repositorio.
+[COMPLETADO] 2. Eliminados archivos residuales en Proyecto 1:
+              src/data_loadingoriginal.py y notebooks/python2.py.
+[COMPLETADO] 3. Eliminado archivo requirements duplicado (sin extensión) en
+              Proyecto 2. Solo existe requirements.txt correcto.
+[COMPLETADO] 4. Eliminado enlace LinkedIn roto en Proyecto 3/README.md.
+[COMPLETADO] 5. Eliminado archivo placeholder en assets/.
+[COMPLETADO] 6. Actualizados README.md y README_ES.md raíz para reflejar
+              los 4 proyectos completos (se corrigió "Coming Soon").
+[COMPLETADO] 7. Creados 5 módulos src/ completos en Proyecto 4:
+              preprocessing.py, collaborative_filter.py, content_filter.py,
+              hybrid_model.py, evaluation.py.
+[COMPLETADO] 8. Creado pipeline CI/CD en .github/workflows/ci.yml.
 
 ================================================================================
-RESUMEN EJECUTIVO
+SECCIÓN 5: RECOMENDACIONES ESTRATÉGICAS PARA NIVEL SENIOR
 ================================================================================
 
-ESTADO ACTUAL: BUENO → Proyecto listo para aplicar a posiciones de DS Mid-Level
-               o DS Senior con experiencia limitada.
+Para elevar el portafolio al nivel más competitivo posible:
 
-CON CORRECCIONES DE SECCIÓN 2 (A-D críticos): EXCELENTE → Portafolio competitivo
-para posiciones de DS Senior, Lead DS, o proyectos freelance bien remunerados.
+1. AGREGA UN PROYECTO DE MLOPS/PRODUCCIÓN COMPLETO
+   Un DS Senior en 2026 debe demostrar que sabe llevar modelos a producción.
+   Sugerencia para Proyecto 5:
+   - FastAPI o Flask para servir el modelo como REST API
+   - Docker + Docker Compose completo con health checks
+   - Monitoreo de data drift con evidently-ai o WhyLabs
+   - Pipeline de reentrenamiento automático con Airflow o Prefect
+   - Tests de integración y carga (locust)
 
-PRIORIDAD DE ACCIONES:
-1. [CRÍTICO]   Crear notebooks reales para Proyectos 3 y 4
-2. [CRÍTICO]   Entrenar y subir modelos reales para Proyectos 3 y 4
-3. [CRÍTICO]   Agregar datasets reales o scripts de descarga
-4. [IMPORTANTE] Tomar screenshots de dashboards
-5. [IMPORTANTE] Agregar email y LinkedIn reales
-6. [MODERADO]  Resolver el archivo de datos para Proyecto 2 dashboard
-7. [MENOR]     Deploy en Streamlit Cloud para demo en vivo
+2. DEMUESTRA TRABAJO CON LLMs (ALTA DEMANDA EN 2026)
+   Los DS Seniors son evaluados por conocimiento de LLMs.
+   Proyecto 3 ya usa FinBERT, que es un buen inicio. Considera ampliar:
+   - Sistema RAG (Retrieval-Augmented Generation) aplicado a documentos
+     financieros o técnicos.
+   - Fine-tuning de un modelo más reciente (LLaMA 3, Mistral)
+   - Agente con LangChain/LlamaIndex para análisis de datos automático
 
+3. AÑADE TRABAJO CON BIG DATA O CLOUD
+   Los proyectos actuales usan datasets medianos (Kaggle).
+   Un DS Senior debería mostrar manejo de escala:
+   - Procesamiento con PySpark o Dask para datasets de millones de filas
+   - Query SQL compleja o pipeline dbt
+   - Uso de cloud: AWS S3, GCP BigQuery, o Azure ML
+
+4. INCLUYE SECCIÓN DE PUBLICACIONES Y LOGROS
+   En README principal, agregar sección:
+   - Artículos en Medium/Towards Data Science (si existen)
+   - Participaciones en Kaggle con posición o medalla
+   - Charlas técnicas o presentaciones en meetups
+   - Certificaciones relevantes (Google ML, AWS, Deep Learning Specialization)
+
+5. CONSIDERA GITHUB PAGES COMO VITRINA
+   Crear un sitio web de portafolio usando GitHub Pages (gratis) con:
+   - Descripción profesional y foto
+   - Cards de cada proyecto con link a repo y demo
+   - Sección de habilidades y stack tecnológico
+   - Formulario de contacto
+
+================================================================================
+SECCIÓN 6: CALIFICACIÓN GENERAL
+================================================================================
+
+CALIFICACIÓN: 7.5 / 10
+
+JUSTIFICACIÓN:
+- Puntos positivos que elevan la nota:
+  * 4 proyectos con dominio de negocio distinto (+1.5)
+  * Proyecto 1 de calidad excelente con Docker, CI/CD, tests (+1.5)
+  * Stack tecnológico moderno y relevante (+0.5)
+  * Documentación bilingüe profesional (+0.5)
+  * Dashboards funcionales para todos los proyectos (+0.5)
+  * Impacto de negocio cuantificado en cada proyecto (+0.5)
+
+- Puntos que bajan la nota:
+  * Proyecto 4 incompleto (sin notebooks completos ni modelos entrenados) (-0.5)
+  * Sin screenshots reales en assets/ (impacto visual casi nulo) (-0.5)
+  * Sin description ni topics en GitHub (-0.3)
+  * Proyecto 2 dashboard requiere archivo externo para funcionar (-0.2)
+  * Sin demo en vivo en Streamlit Cloud (-0.5)
+
+INTERPRETACIÓN:
+  7.5/10 → Portafolio competitivo para posiciones DS Mid-Level y DS Senior
+           con 2-4 años de experiencia. Con las correcciones críticas (A-E
+           de Sección 3), puede alcanzar 9.0/10 y competir para posiciones
+           Senior/Lead Data Scientist o proyectos freelance bien remunerados.
+
+PRIORIDAD DE ACCIONES (orden recomendado):
+1. [CRÍTICO - 2 min]    Configurar description y topics en GitHub (Sección 3-A)
+2. [CRÍTICO - 1h]       Tomar screenshots de los 4 dashboards (Sección 3-B)
+3. [IMPORTANTE - 15min] Agregar email y LinkedIn reales en todos los README (3-G)
+4. [IMPORTANTE - 1h]    Completar notebooks de Proyecto 4 (Sección 3-C)
+5. [MODERADO - 2h]      Arreglar Proyecto 2 dashboard con datos sintéticos (3-I)
+6. [MODERADO - 30min]   Desplegar en Streamlit Cloud (Sección 3-K)
+7. [MENOR - 5min]       Agregar badge CI/CD en README (Sección 3-L)
+
+================================================================================
+Fin de evaluación - Marzo 2026
 ================================================================================
