@@ -2,82 +2,54 @@
 
 ## English
 
-This directory contains screenshots of the interactive dashboards for portfolio projects.
+This directory contains preview images for all four portfolio projects.
 
-### Current Status
+### Projects
 
 #### Proyecto 1: Predictive Maintenance Dashboard
-- **Status**: Screenshot pending
-- **To view live**: Run `streamlit run app.py` from `Proyecto 1/turbofan-predictive-maintenance/`
-- **Features shown**: 
-  - Engine RUL predictions
-  - Sensor monitoring
-  - Fleet health analytics
+- **File**: `proyecto1-dashboard.png`
+- **Model**: LSTM neural network (PyTorch)
+- **Shows**: Engine RUL predictions, sensor monitoring, fleet health analytics
 
 #### Proyecto 2: Sales Forecasting Dashboard
-- **Status**: Screenshot pending
-- **To view live**: Run `streamlit run app.py` from `Proyecto 2/dashboard/`
-- **Features shown**:
-  - Sales predictions by store/category
-  - Forecast accuracy metrics
-  - Inventory recommendations
+- **File**: `proyecto2-dashboard.png`
+- **Model**: XGBoost GPU
+- **Shows**: 15-day sales forecasts, feature importance, prediction vs. actual comparison
 
-### How to Take Screenshots
+#### Proyecto 3: Financial Sentiment Analysis Dashboard
+- **File**: `proyecto3-dashboard.png`
+- **Model**: FinBERT fine-tuned
+- **Shows**: Sentiment classification, churn risk distribution, SHAP feature importance
 
-To capture dashboard screenshots for the portfolio:
-
-1. Run the dashboard locally
-2. Navigate to interesting views (select specific engines/stores/users)
-3. Take full-page screenshots (F12 > Ctrl+Shift+P > "Capture full size screenshot" in Chrome)
-4. Save as:
-   - `proyecto1-dashboard.png`
-   - `proyecto2-dashboard.png`
-   - `proyecto3-dashboard.png`
-   - `proyecto4-dashboard.png`
-5. Place files in this directory
-
-### Recommended Resolution
-
-- Width: 1920px (full HD)
-- Format: PNG
-- Show: Representative data with clear metrics and visualizations
+#### Proyecto 4: Product Recommendation System Dashboard
+- **File**: `proyecto4-dashboard.png`
+- **Model**: Hybrid (ALS + TF-IDF)
+- **Shows**: A/B test results, algorithm comparison, recommendation metrics
 
 ---
 
-## Espanol
+## Español
 
-Este directorio contiene capturas de pantalla de los dashboards interactivos del portafolio.
+Este directorio contiene imágenes de vista previa para los cuatro proyectos del portafolio.
 
-### Estado actual
+### Proyectos
 
-#### Proyecto 1: Dashboard de mantenimiento predictivo
-- **Estado**: Captura pendiente
-- **Para ver en vivo**: Ejecutar `streamlit run app.py` desde `Proyecto 1/turbofan-predictive-maintenance/`
-- **Features mostradas**:
-  - Predicciones de RUL
-  - Monitoreo de sensores
-  - Analitica de flota
+#### Proyecto 1: Dashboard de Mantenimiento Predictivo
+- **Archivo**: `proyecto1-dashboard.png`
+- **Modelo**: Red neuronal LSTM (PyTorch)
+- **Muestra**: Predicciones RUL, monitoreo de sensores, analítica de flota
 
-#### Proyecto 2: Dashboard de pronostico de ventas
-- **Estado**: Captura pendiente
-- **Para ver en vivo**: Ejecutar `streamlit run app.py` desde `Proyecto 2/dashboard/`
-- **Features mostradas**:
-  - Pronosticos por tienda/categoria
-  - Metricas de precision
-  - Recomendaciones de inventario
+#### Proyecto 2: Dashboard de Pronóstico de Ventas
+- **Archivo**: `proyecto2-dashboard.png`
+- **Modelo**: XGBoost GPU
+- **Muestra**: Pronóstico a 15 días, importancia de características, predicción vs. realidad
 
-### Como tomar capturas
+#### Proyecto 3: Dashboard de Análisis de Sentimiento Financiero
+- **Archivo**: `proyecto3-dashboard.png`
+- **Modelo**: FinBERT fine-tuned
+- **Muestra**: Clasificación de sentimiento, distribución de riesgo, importancia SHAP
 
-1. Ejecutar el dashboard localmente.
-2. Navegar a vistas interesantes (motores/tiendas).
-3. Capturar pantalla completa (F12 > Ctrl+Shift+P > "Capture full size screenshot" en Chrome).
-4. Guardar como:
-   - `proyecto1-dashboard.png`
-   - `proyecto2-dashboard.png`
-5. Colocar los archivos en este directorio.
-
-### Resolucion recomendada
-
-- Ancho: 1920px (Full HD)
-- Formato: PNG
-- Mostrar datos representativos con metricas claras
+#### Proyecto 4: Dashboard de Sistema de Recomendación
+- **Archivo**: `proyecto4-dashboard.png`
+- **Modelo**: Híbrido (ALS + TF-IDF)
+- **Muestra**: Resultados A/B test, comparación de algoritmos, métricas de recomendación

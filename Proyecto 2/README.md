@@ -72,9 +72,11 @@ The dataset contains transactional data from multiple retail stores in Ecuador:
 ```
 Proyecto 2/
 ├── README.md                        # This file
+├── MODEL_CARD.md                    # Model specifications and evaluation
 ├── requirements.txt                 # Python dependencies
 ├── dashboard/
-│   └── app.py                       # Streamlit interactive dashboard
+│   ├── app.py                       # Streamlit interactive dashboard
+│   └── data_forecast.csv            # Sample forecast data (demo)
 ├── notebooks/
 │   ├── 01_eda_ventas.ipynb         # Exploratory Data Analysis
 │   ├── 01_eda_ventas.html          # EDA report (static HTML)
@@ -83,6 +85,8 @@ Proyecto 2/
     ├── feature_engineering.py       # Feature creation functions
     └── predict.py                   # Prediction utilities
 ```
+
+📋 **[Model Card →](./MODEL_CARD.md)** — Full model specifications, performance breakdown, and deployment guide
 
 ## 🚀 Getting Started
 
@@ -122,7 +126,7 @@ streamlit run app.py
 
 The dashboard will open in your browser at `http://localhost:8501`.
 
-**Note**: You'll need the `data_forecast.csv` file with predictions in the dashboard directory to run the app.
+**Note**: The dashboard includes `data_forecast.csv` with sample predictions for immediate use. It also auto-generates synthetic demo data if the file is missing.
 
 ## 📱 Interactive Dashboard
 
@@ -141,7 +145,7 @@ The dashboard will open automatically in your browser at `http://localhost:8501`
 
 **Requirements**:
 - Install dependencies: `pip install -r ../requirements.txt`
-- Ensure `data_forecast.csv` is in the dashboard directory (contains model predictions)
+- Sample `data_forecast.csv` is included in the dashboard directory (auto-generated if missing)
 
 ### Dashboard Features
 
