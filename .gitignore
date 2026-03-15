@@ -16,9 +16,20 @@ venv/
 *.pkl
 *.h5
 
-# Models
+# Models - archivos de pesos (demasiado grandes para GitHub)
 *.json
 *.joblib
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.onnx
+# Checkpoints de entrenamiento
+**/models/finbert_finetuned/
+**/models/finbert_final/
+**/models/baseline/
+**/models/lstm_*/
+**/models/xgboost_*/
 
 # IDEs
 .vscode/
