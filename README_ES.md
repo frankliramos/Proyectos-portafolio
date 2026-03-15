@@ -2,6 +2,10 @@
 
 **Franklin Ramos**
 
+[![CI](https://github.com/frankliramos/Proyectos-portafolio/actions/workflows/ci.yml/badge.svg)](https://github.com/frankliramos/Proyectos-portafolio/actions/workflows/ci.yml)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow.svg)](./LICENSE)
+
 [🇬🇧 English Version](./README.md)
 
 ---
@@ -251,4 +255,4 @@ Este proyecto está disponible para propósitos educativos y revisión de portaf
 
 ---
 
-**Última Actualización**: Febrero 2026
+**Última Actualización**: Marzo 2026

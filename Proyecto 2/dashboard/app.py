@@ -83,10 +83,53 @@ st.markdown(
 )
 
 
+def _generate_demo_data():
+    """Generate synthetic forecast data for demonstration purposes."""
+    import numpy as np
+
+    np.random.seed(42)
+    stores = list(range(1, 6))
+    families = ["GROCERY I", "BEVERAGES", "PRODUCE", "CLEANING", "DAIRY"]
+    dates = pd.date_range("2017-08-16", periods=15, freq="D")
+    rows = []
+    for store in stores:
+        for family in families:
+            base = np.random.uniform(50, 500)
+            trend = np.random.uniform(-0.5, 1.0)
+            for i, d in enumerate(dates):
+                weekend_mult = 1.25 if d.dayofweek in [5, 6] else 1.0
+                real_sales = max(
+                    0,
+                    base
+                    + trend * i
+                    + weekend_mult * 20
+                    + np.random.normal(0, base * 0.1),
+                )
+                pred_sales = real_sales * np.random.uniform(0.88, 1.12)
+                rows.append(
+                    {
+                        "date": d,
+                        "store_nbr": store,
+                        "family": family,
+                        "sales": round(real_sales, 2),
+                        "prediction": round(pred_sales, 2),
+                    }
+                )
+    return pd.DataFrame(rows)
+
+
 @st.cache_data
 def load_data():
     base_path = Path(__file__).parent
-    df = pd.read_csv(base_path / "data_forecast.csv")
+    csv_path = base_path / "data_forecast.csv"
+    if csv_path.exists():
+        df = pd.read_csv(csv_path)
+    else:
+        df = _generate_demo_data()
+        st.info(
+            "📊 Mostrando datos de demostración. "
+            "Para ver predicciones reales, carga data_forecast.csv en este directorio."
+        )
     df["date"] = pd.to_datetime(df["date"])
     return df
 
@@ -294,4 +337,4 @@ with c2:
         use_container_width=True,
         height=260,
     )
-    st.markdown("<​/div>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)

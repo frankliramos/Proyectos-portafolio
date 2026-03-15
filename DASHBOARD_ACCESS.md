@@ -59,9 +59,9 @@ streamlit run app.py
 
 **Dashboard opens at**: `http://localhost:8501`
 
-**Note**: Proyecto 2 requires `data_forecast.csv` in the dashboard directory. If this file is missing, please contact me for the dataset.
+**Note**: Proyecto 2 includes sample forecast data (`data_forecast.csv`) for immediate demonstration. The dashboard also generates synthetic data automatically if the file is missing.
 
-#### Option C: Proyecto 3 - Customer Churn Prediction Dashboard
+#### Proyecto 3: Customer Churn Prediction Dashboard
 
 ```bash
 cd "Proyecto 3"
@@ -153,9 +153,9 @@ streamlit run app.py --server.port 8502
 - 🎯 Health status indicators (Healthy/Warning/Critical)
 
 #### Proyecto 2: Sales Forecasting
-- ✅ **Functional** (with data file)
-- 🏬 Select store (1-54)
-- 📦 Choose product category (33 families)
+- ✅ **100% Functional** - Demo data included (auto-generated if missing)
+- 🏬 Select store (1-5 in demo, up to 54 with full dataset)
+- 📦 Choose product category
 - 📈 15-day sales forecast
 - 💰 Inventory optimization suggestions
 
@@ -213,7 +213,7 @@ If you encounter any issues accessing the dashboards:
 
 ---
 
-**Last Updated**: February 2026
+**Last Updated**: March 2026
 
 ---
 
@@ -276,7 +276,43 @@ streamlit run app.py
 
 **Dashboard en**: `http://localhost:8501`
 
-**Nota**: Proyecto 2 requiere `data_forecast.csv` en el directorio del dashboard.
+**Nota**: Proyecto 2 incluye datos de pronóstico de muestra (`data_forecast.csv`) para demostración inmediata. El dashboard también genera datos sintéticos automáticamente si el archivo no está disponible.
+
+##### Opcion C: Proyecto 3 - Dashboard de prediccion de abandono de clientes
+
+```bash
+cd "Proyecto 3"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+**Que veras**:
+- Evaluacion de riesgo individual de cliente
+- Segmentacion de clientes por nivel de riesgo
+- Visualizacion de importancia de caracteristicas
+- Recomendaciones de estrategias de retencion
+
+**Dashboard en**: `http://localhost:8501`
+
+**Nota**: Proyecto 3 incluye datos de muestra. El dashboard es completamente funcional sin archivos adicionales.
+
+##### Opcion D: Proyecto 4 - Dashboard de recomendacion de productos
+
+```bash
+cd "Proyecto 4"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+**Que veras**:
+- Recomendaciones personalizadas de productos
+- Descubrimiento de productos similares
+- Analitica de comportamiento de usuario
+- Resultados de A/B testing
+
+**Dashboard en**: `http://localhost:8501`
+
+**Nota**: Proyecto 4 incluye datos de muestra. El dashboard es completamente funcional sin archivos adicionales.
 
 ---
 
@@ -381,4 +417,4 @@ Si hay problemas al abrir los dashboards:
 
 ---
 
-**Ultima actualizacion**: February 2026
+**Ultima actualizacion**: March 2026
