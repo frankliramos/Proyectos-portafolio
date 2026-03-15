@@ -153,3 +153,21 @@ def add_true_rul_to_test(test_df: pd.DataFrame) -> pd.DataFrame:
     df = df.drop(columns=["last_cycle"])
 
     return df
+
+
+def load_fd001_prepared(save_processed=False):
+    """
+    Load and prepare both FD001 train and test datasets.
+
+    Returns the training DataFrame with computed RUL and the test DataFrame
+    with the true RUL values from the NASA-provided RUL file.
+
+    Args:
+        save_processed (bool): Reserved for future use. Defaults to False.
+
+    Returns:
+        tuple[pd.DataFrame, pd.DataFrame]: (train_df, test_df) with RUL columns.
+    """
+    train_df = add_rul_to_train(load_fd001_train())
+    test_df = add_true_rul_to_test(load_fd001_test())
+    return train_df, test_df
