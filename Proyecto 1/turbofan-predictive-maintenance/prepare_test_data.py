@@ -2,17 +2,16 @@
 """
 Prepare Test Data for Dashboard
 
-Este script prepara los datos de prueba (test_FD001.txt) para ser usados
-en el dashboard. Los datos de prueba representan motores en diferentes
-estados de salud (no todos fallidos), lo cual es más realista para un
-dashboard de monitoreo de producción.
+This script prepares test data (test_FD001.txt) for use in the dashboard.
+Test data represents engines in different health states (not all failed),
+which is more realistic for a production monitoring dashboard.
 
-Proceso:
-1. Cargar datos de test (test_FD001.txt)
-2. Cargar RUL reales (RUL_FD001.txt)
-3. Agregar RUL a los datos de test
-4. Renombrar columnas s_N a sensor_N para consistencia
-5. Guardar como fd001_test_prepared.parquet
+Process:
+1. Load test data (test_FD001.txt)
+2. Load true RUL values (RUL_FD001.txt)
+3. Add RUL to test data
+4. Rename s_N columns to sensor_N for consistency
+5. Save as fd001_test_prepared.parquet
 
 Author: Franklin Ramos
 Date: 2026-02-04
@@ -31,72 +30,80 @@ from src.config import PROCESSED_DATA_DIR
 
 
 def prepare_test_data():
-    """Prepara los datos de prueba para el dashboard."""
-    
-    print("="*70)
-    print("PREPARACIÓN DE DATOS DE PRUEBA PARA DASHBOARD")
-    print("="*70)
-    
+    """Prepare test data for the dashboard."""
+
+    print("=" * 70)
+    print("TEST DATA PREPARATION FOR DASHBOARD")
+    print("=" * 70)
+
     # 1. Cargar datos de test
-    print("\n1. Cargando datos de test (test_FD001.txt)...")
+    print("\n1. Loading test data (test_FD001.txt)...")
     df_test = load_fd001_test()
-    print(f"   ✓ Cargados {len(df_test)} registros de {df_test['unit_id'].nunique()} motores")
-    
+    print(
+        f"   ✓ Loaded {len(df_test)} records from {df_test['unit_id'].nunique()} engines"
+    )
+
     # 2. Agregar RUL real a los datos de test
-    print("\n2. Agregando RUL real (RUL_FD001.txt)...")
+    print("\n2. Adding true RUL (RUL_FD001.txt)...")
     df_test = add_true_rul_to_test(df_test)
-    print(f"   ✓ RUL agregado")
-    
+    print(f"   ✓ RUL added")
+
     # 3. Renombrar columnas s_N a sensor_N para consistencia con datos de entrenamiento
-    print("\n3. Renombrando columnas de sensores...")
-    sensor_rename = {f's_{i}': f'sensor_{i}' for i in range(1, 27)}
+    print("\n3. Renaming sensor columns...")
+    sensor_rename = {f"s_{i}": f"sensor_{i}" for i in range(1, 27)}
     df_test = df_test.rename(columns=sensor_rename)
-    
-    # También renombrar op_N a op_setting_N para consistencia
-    op_rename = {f'op_{i}': f'op_setting_{i}' for i in range(1, 4)}
+
+    # Also rename op_N to op_setting_N for consistency
+    op_rename = {f"op_{i}": f"op_setting_{i}" for i in range(1, 4)}
     df_test = df_test.rename(columns=op_rename)
-    print(f"   ✓ Columnas renombradas")
-    
+    print(f"   ✓ Columns renamed")
+
     # 4. Verificar estadísticas de RUL
-    print("\n4. Estadísticas de RUL en datos de test:")
-    print(f"   - Motores totales: {df_test['unit_id'].nunique()}")
-    print(f"   - RUL mínimo: {df_test['RUL'].min():.1f} ciclos")
-    print(f"   - RUL máximo: {df_test['RUL'].max():.1f} ciclos")
-    print(f"   - RUL promedio: {df_test['RUL'].mean():.1f} ciclos")
-    print(f"   - RUL mediana: {df_test['RUL'].median():.1f} ciclos")
-    
-    # Calcular distribución por categorías (últimos valores por motor)
-    last_rul_per_engine = df_test.groupby('unit_id')['RUL'].last()
+    print("\n4. RUL statistics for test data:")
+    print(f"   - Total engines: {df_test['unit_id'].nunique()}")
+    print(f"   - RUL min: {df_test['RUL'].min():.1f} cycles")
+    print(f"   - RUL max: {df_test['RUL'].max():.1f} cycles")
+    print(f"   - RUL mean: {df_test['RUL'].mean():.1f} cycles")
+    print(f"   - RUL median: {df_test['RUL'].median():.1f} cycles")
+
+    # Compute distribution by category (last values per engine)
+    last_rul_per_engine = df_test.groupby("unit_id")["RUL"].last()
     critical = (last_rul_per_engine < 30).sum()
     warning = ((last_rul_per_engine >= 30) & (last_rul_per_engine < 70)).sum()
     healthy = (last_rul_per_engine >= 70).sum()
-    
-    print(f"\n   Distribución de motores (último RUL conocido):")
-    print(f"   - 🔴 Críticos (RUL < 30):    {critical:3d} motores ({critical/len(last_rul_per_engine)*100:5.1f}%)")
-    print(f"   - 🟡 Precaución (30-70):     {warning:3d} motores ({warning/len(last_rul_per_engine)*100:5.1f}%)")
-    print(f"   - 🟢 Saludables (RUL >= 70): {healthy:3d} motores ({healthy/len(last_rul_per_engine)*100:5.1f}%)")
-    
+
+    print(f"\n   Engine distribution (last known RUL):")
+    print(
+        f"   - 🔴 Critical (RUL < 30):    {critical:3d} engines ({critical/len(last_rul_per_engine)*100:5.1f}%)"
+    )
+    print(
+        f"   - 🟡 Warning (30-70):        {warning:3d} engines ({warning/len(last_rul_per_engine)*100:5.1f}%)"
+    )
+    print(
+        f"   - 🟢 Healthy (RUL >= 70):    {healthy:3d} engines ({healthy/len(last_rul_per_engine)*100:5.1f}%)"
+    )
+
     # 5. Guardar datos procesados
     output_path = PROCESSED_DATA_DIR / "fd001_test_prepared.parquet"
-    print(f"\n5. Guardando datos procesados...")
-    print(f"   Ruta: {output_path}")
-    
-    df_test.to_parquet(output_path, index=False, compression='snappy')
-    print(f"   ✓ Archivo guardado: {output_path.name}")
-    print(f"   Tamaño: {len(df_test)} filas × {len(df_test.columns)} columnas")
-    
+    print(f"\n5. Saving processed data...")
+    print(f"   Path: {output_path}")
+
+    df_test.to_parquet(output_path, index=False, compression="snappy")
+    print(f"   ✓ File saved: {output_path.name}")
+    print(f"   Size: {len(df_test)} rows × {len(df_test.columns)} columns")
+
     # 6. Verificar columnas
-    print(f"\n6. Columnas en archivo procesado:")
+    print(f"\n6. Columns in processed file:")
     print(f"   {df_test.columns.tolist()}")
-    
-    print("\n" + "="*70)
-    print("✅ DATOS DE PRUEBA PREPARADOS EXITOSAMENTE")
-    print("="*70)
-    print("\nPróximo paso:")
-    print("  → Actualizar app.py para usar 'fd001_test_prepared.parquet'")
-    print("  → en lugar de 'fd001_prepared.parquet'")
-    print("="*70)
-    
+
+    print("\n" + "=" * 70)
+    print("✅ TEST DATA PREPARED SUCCESSFULLY")
+    print("=" * 70)
+    print("\nNext step:")
+    print("  → Update app.py to use 'fd001_test_prepared.parquet'")
+    print("  → instead of 'fd001_prepared.parquet'")
+    print("=" * 70)
+
     return df_test
 
 
@@ -106,5 +113,6 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n❌ Error: {e}")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)

@@ -301,6 +301,40 @@ print(f"Predicted RUL: {predicted_rul:.1f} cycles")
 
 ## Changelog
 
+---
+
+## Espanol (Resumen)
+
+### Detalles del modelo
+- **Nombre**: LSTM RUL Predictor v1
+- **Tipo**: Red LSTM para regresion de RUL
+- **Framework**: PyTorch
+- **Entrada**: Secuencias de 30 ciclos con 21 sensores + 3 op settings
+- **Salida**: RUL en ciclos
+
+### Uso previsto
+- Mantenimiento predictivo y monitoreo de salud de motores turbofan.
+- No apto para decisiones de seguridad de vuelo ni uso regulatorio.
+
+### Datos de entrenamiento
+- NASA CMAPSS FD001 (100 motores, ~20,631 ciclos)
+- RUL calculado como `max_cycle - current_cycle`
+- RUL clippeado a 125 ciclos para estabilidad
+
+### Metricas clave (referencia)
+- MAE ~14.2 ciclos
+- RMSE ~19.7 ciclos
+- R2 ~0.78
+
+### Limitaciones
+- Requiere minimo 30 ciclos de historial.
+- Entrenado solo con condiciones FD001 (nivel del mar).
+- No maneja sensores faltantes ni deriva.
+
+### Recomendaciones
+- Validar con datos reales antes de produccion.
+- Monitorear drift y recalibrar umbrales.
+
 ### Version 1.0 (January 2026)
 - Initial release
 - LSTM architecture with 2 layers, 64 hidden units

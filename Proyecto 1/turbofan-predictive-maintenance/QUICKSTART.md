@@ -198,3 +198,62 @@ streamlit run app.py --server.port 8502
 **Ready to go!** 🎉 The dashboard should now be running and you can start exploring predictive maintenance insights.
 
 Need more details? See the [full README](README.md) for comprehensive documentation.
+
+---
+
+## Espanol
+
+Guia rapida para levantar el dashboard de prediccion de RUL en minutos.
+
+### Requisitos
+- Python 3.12+
+- Git
+- 2GB de espacio libre
+
+### Opcion 1: Instalacion local (recomendada para desarrollo)
+
+1. Clonar repositorio:
+```bash
+git clone https://github.com/frankliramos/Proyectos-portafolio.git
+cd Proyectos-portafolio/turbofan-predictive-maintenance
+```
+
+2. Crear entorno virtual:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Instalar dependencias:
+```bash
+pip install -r requirements.txt
+```
+
+4. Ejecutar dashboard:
+```bash
+streamlit run app.py
+```
+
+### Opcion 2: Docker (recomendada para produccion)
+
+```bash
+docker-compose up -d
+docker-compose logs -f
+```
+
+### Verificacion rapida
+- Titulo: "Turbofan Engine Health Monitor"
+- 4 KPI cards visibles
+- Grafico de distribucion RUL
+- Graficos de sensores
+- Tabla de datos
+
+### Solucion de problemas
+- Error de modulos: `pip install --upgrade -r requirements.txt`
+- Archivos de modelo faltantes: revisar carpeta `models/`
+- Puerto ocupado: `streamlit run app.py --server.port 8502`
+
+### Siguientes pasos
+1. Leer [README.md](README.md)
+2. Revisar [MODEL_CARD.md](MODEL_CARD.md)
+3. Abrir notebooks en `notebooks/`

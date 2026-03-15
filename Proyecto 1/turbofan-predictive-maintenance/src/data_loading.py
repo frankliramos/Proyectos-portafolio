@@ -1,9 +1,8 @@
 """
 Data Loading Utilities for NASA CMAPSS FD001
 
-Este módulo contiene funciones para cargar y preparar los datos
-del dataset NASA CMAPSS (conjunto FD001) para tareas de
-mantenimiento predictivo (predicción de RUL).
+This module contains functions to load and prepare the NASA CMAPSS
+dataset (FD001 subset) for predictive maintenance tasks (RUL prediction).
 
 Author: Franklin Ramos
 Date: 2026-02-03
@@ -23,15 +22,15 @@ from src.config import (
 
 def _load_fd001_raw(path: Path) -> pd.DataFrame:
     """
-    Carga un archivo FD001 (train o test) en formato txt.
+    Load an FD001 file (train or test) from a txt file.
 
     Args:
-        path (Path): Ruta al archivo .txt de FD001.
+        path (Path): Path to the FD001 .txt file.
 
     Returns:
-        pd.DataFrame: DataFrame con columnas nombradas.
+        pd.DataFrame: DataFrame with named columns.
     """
-    # Definición de columnas según especificación NASA CMAPSS
+    # Column definitions based on NASA CMAPSS specification
     col_names = [
         "unit_id",
         "time_cycles",
@@ -39,7 +38,7 @@ def _load_fd001_raw(path: Path) -> pd.DataFrame:
         "op_2",
         "op_3",
     ]
-    # 21 sensores
+    # 21 sensors
     sensor_cols = [f"s_{i}" for i in range(1, 22)]
     col_names.extend(sensor_cols)
 
@@ -56,30 +55,30 @@ def _load_fd001_raw(path: Path) -> pd.DataFrame:
 
 def load_fd001_train() -> pd.DataFrame:
     """
-    Carga el conjunto de entrenamiento FD001 desde RAW_DATA_DIR.
+    Load the FD001 training set from RAW_DATA_DIR.
 
     Returns:
-        pd.DataFrame: Datos de entrenamiento sin columna de RUL aún.
+        pd.DataFrame: Training data without the RUL column.
     """
     return _load_fd001_raw(FD001_TRAIN_FILE)
 
 
 def load_fd001_test() -> pd.DataFrame:
     """
-    Carga el conjunto de test FD001 desde RAW_DATA_DIR.
+    Load the FD001 test set from RAW_DATA_DIR.
 
     Returns:
-        pd.DataFrame: Datos de test sin RUL (RUL viene en archivo separado).
+        pd.DataFrame: Test data without RUL (RUL comes in a separate file).
     """
     return _load_fd001_raw(FD001_TEST_FILE)
 
 
 def load_fd001_rul() -> pd.DataFrame:
     """
-    Carga el archivo de RUL (Remaining Useful Life) para FD001 (test).
+    Load the RUL (Remaining Useful Life) file for FD001 (test).
 
     Returns:
-        pd.DataFrame: DataFrame con una sola columna 'RUL'.
+        pd.DataFrame: DataFrame with a single 'RUL' column.
     """
     df_rul = pd.read_csv(
         FD001_RUL_FILE,
@@ -93,20 +92,20 @@ def load_fd001_rul() -> pd.DataFrame:
 
 def add_rul_to_train(train_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Calcula y agrega la columna RUL al DataFrame de entrenamiento.
+    Compute and add the RUL column to the training DataFrame.
 
-    Para cada motor (unit_id), el RUL se define como:
+    For each engine (unit_id), RUL is defined as:
         RUL = max(time_cycles) - time_cycles
 
     Args:
-        train_df (pd.DataFrame): DataFrame de entrenamiento FD001.
+        train_df (pd.DataFrame): FD001 training DataFrame.
 
     Returns:
-        pd.DataFrame: DataFrame con columna adicional 'RUL'.
+        pd.DataFrame: DataFrame with an added 'RUL' column.
     """
     df = train_df.copy()
 
-    # Tiempo máximo de cada motor
+    # Max cycle per engine
     max_cycles = df.groupby("unit_id")["time_cycles"].max().reset_index()
     max_cycles.columns = ["unit_id", "max_cycle"]
 
@@ -120,37 +119,36 @@ def add_rul_to_train(train_df: pd.DataFrame) -> pd.DataFrame:
 
 def add_true_rul_to_test(test_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Agrega la columna RUL real al conjunto de test usando el archivo RUL_FD001.
+    Add the true RUL column to the test set using RUL_FD001.
 
-    La NASA entrega para test el RUL restante para cada motor
-    en el último ciclo registrado. Se propaga este valor para
-    cada fila de ese motor hacia atrás en el tiempo.
+    NASA provides the remaining RUL for each engine at the last recorded
+    cycle. This value is propagated backward for each row of that engine.
 
     Args:
-        test_df (pd.DataFrame): DataFrame de test FD001 (sin RUL).
+        test_df (pd.DataFrame): FD001 test DataFrame (without RUL).
 
     Returns:
-        pd.DataFrame: DataFrame de test con columna 'RUL' agregada.
+        pd.DataFrame: Test DataFrame with the 'RUL' column added.
     """
     df = test_df.copy()
     df_rul = load_fd001_rul().reset_index()
     df_rul.rename(columns={"index": "unit_id"}, inplace=True)
-    df_rul["unit_id"] = df_rul["unit_id"] + 1  # unit_id inicia en 1
+    df_rul["unit_id"] = df_rul["unit_id"] + 1  # unit_id starts at 1
 
-    # Obtiene el último ciclo de cada motor en test
+    # Get the last cycle for each engine in test
     last_cycles = df.groupby("unit_id")["time_cycles"].max().reset_index()
     last_cycles.columns = ["unit_id", "last_cycle"]
 
-    # Merge con RUL proporcionado
+    # Merge with provided RUL
     last_cycles = last_cycles.merge(df_rul, on="unit_id", how="left")
 
-    # Mapeo de RUL en el último ciclo
+    # Map RUL at the last cycle
     df = df.merge(
         last_cycles[["unit_id", "last_cycle", "RUL"]], on="unit_id", how="left"
     )
 
-    # Ajustar RUL por ciclo (contando hacia atrás desde el último ciclo)
-    # RUL aumenta a medida que vamos hacia atrás en el tiempo
+    # Adjust RUL per cycle (counting backward from the last cycle)
+    # RUL increases as we go backward in time
     df["RUL"] = df["RUL"] + (df["last_cycle"] - df["time_cycles"])
     df = df.drop(columns=["last_cycle"])
 

@@ -1,57 +1,28 @@
-"""
-Configuration and path management for the project
-"""
-
+import os
 from pathlib import Path
+import torch
 
-# Project paths
-PROJECT_ROOT = Path(__file__).parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
-RAW_DATA_DIR = DATA_DIR / "raw"
-PROCESSED_DATA_DIR = DATA_DIR / "processed"
-MODELS_DIR = PROJECT_ROOT / "models"
-RESULTS_DIR = PROJECT_ROOT / "results"
-NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
+# Rutas Base
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+MODELS_DIR = BASE_DIR / "models"
+REPORTS_DIR = BASE_DIR / "reports"
 
-# Model configurations
-MODEL_CONFIG = {
-    'xgboost': {
-        'max_depth': 5,
-        'learning_rate': 0.1,
-        'n_estimators': 200,
-        'scale_pos_weight': 4.0,
-        'random_state': 42
-    },
-    'random_forest': {
-        'n_estimators': 200,
-        'max_depth': 15,
-        'min_samples_split': 10,
-        'class_weight': 'balanced',
-        'random_state': 42
-    },
-    'logistic_regression': {
-        'C': 0.1,
-        'penalty': 'l2',
-        'class_weight': 'balanced',
-        'random_state': 42,
-        'max_iter': 1000
-    }
-}
+# Dataset Config
+DATASET_NAME = "financial_phrasebank"
+DATASET_CONFIG = (
+    "sentences_allagree"  # Opciones: sentences_allagree, sentences_75agree, etc.
+)
 
-# Feature configurations
-NUMERIC_FEATURES = [
-    'credit_score', 'age', 'tenure', 'balance',
-    'num_of_products', 'estimated_salary'
-]
+# Model Config
+MODEL_NAME = "ProsusAI/finbert"
+MAX_LEN = 128
+BATCH_SIZE = 16
+EPOCHS = 5
+LEARNING_RATE = 2e-5
 
-CATEGORICAL_FEATURES = ['geography', 'gender']
+# Device Config
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-BINARY_FEATURES = ['has_cr_card', 'is_active_member']
-
-TARGET = 'exited'
-
-# Risk thresholds
-RISK_THRESHOLDS = {
-    'high': 0.6,
-    'medium': 0.3
-}
+# Labels
+LABEL_MAP = {0: "negative", 1: "neutral", 2: "positive"}

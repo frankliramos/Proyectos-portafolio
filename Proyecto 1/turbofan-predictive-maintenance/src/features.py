@@ -1,13 +1,13 @@
 """
-Feature Engineering para NASA CMAPSS FD001
+Feature Engineering for NASA CMAPSS FD001
 
-Este módulo contiene funciones para crear features derivados
-a partir de los datos de sensores para mejorar la predicción de RUL.
+This module contains functions to create derived features from sensor data
+to improve RUL prediction.
 
-Incluye:
-- Lag features: Valores pasados de sensores (t-1, t-3, t-5)
-- Rolling features: Estadísticas móviles (media, desviación estándar)
-- Trend features: Diferencias respecto a medias móviles
+Includes:
+- Lag features: past sensor values (t-1, t-3, t-5)
+- Rolling features: moving statistics (mean, standard deviation)
+- Trend features: differences against rolling means
 
 Author: Franklin Ramos
 Date: 2026-02-03
@@ -22,15 +22,15 @@ def create_lag_features(
     df: pd.DataFrame, sensor_cols: List[str], lags: List[int] = [1, 3, 5]
 ) -> pd.DataFrame:
     """
-    Crea lag features para los sensores especificados.
+    Create lag features for the specified sensors.
 
     Args:
-        df: DataFrame con datos de sensores
-        sensor_cols: Lista de columnas de sensores
-        lags: Lista de lags a crear
+        df: DataFrame with sensor data
+        sensor_cols: List of sensor columns
+        lags: List of lags to create
 
     Returns:
-        DataFrame con lag features agregados
+        DataFrame with lag features added
     """
     df_result = df.copy()
 
@@ -48,15 +48,15 @@ def create_rolling_features(
     df: pd.DataFrame, sensor_cols: List[str], windows: List[int] = [5, 10, 20]
 ) -> pd.DataFrame:
     """
-    Crea rolling statistics (mean, std) para los sensores especificados.
+    Create rolling statistics (mean, std) for the specified sensors.
 
     Args:
-        df: DataFrame con datos de sensores
-        sensor_cols: Lista de columnas de sensores
-        windows: Lista de ventanas para rolling statistics
+        df: DataFrame with sensor data
+        sensor_cols: List of sensor columns
+        windows: List of windows for rolling statistics
 
     Returns:
-        DataFrame con rolling features agregados
+        DataFrame with rolling features added
     """
     df_result = df.copy()
 
@@ -80,15 +80,15 @@ def create_trend_features(
     df: pd.DataFrame, sensor_cols: List[str], windows: List[int] = [5, 10]
 ) -> pd.DataFrame:
     """
-    Crea trend features (diferencia entre valor actual y rolling mean).
+    Create trend features (difference between current value and rolling mean).
 
     Args:
-        df: DataFrame con datos de sensores
-        sensor_cols: Lista de columnas de sensores
-        windows: Lista de ventanas para calcular trends
+        df: DataFrame with sensor data
+        sensor_cols: List of sensor columns
+        windows: List of windows for trend calculation
 
     Returns:
-        DataFrame con trend features agregados
+        DataFrame with trend features added
     """
     df_result = df.copy()
 
@@ -110,23 +110,23 @@ def prepare_features(
     trend_windows: List[int] = [5, 10],
 ) -> pd.DataFrame:
     """
-    Aplica todas las transformaciones de feature engineering.
+    Apply all feature engineering transformations.
 
     Args:
-        df: DataFrame con datos crudos
-        lag_features: Lista de lags a crear
-        rolling_windows: Lista de ventanas para rolling statistics
-        trend_windows: Lista de ventanas para trends
+        df: DataFrame with raw data
+        lag_features: List of lags to create
+        rolling_windows: List of windows for rolling statistics
+        trend_windows: List of windows for trends
 
     Returns:
-        DataFrame con todos los features creados
+        DataFrame with all features created
     """
-    # Identificar columnas de sensores
+    # Identify sensor columns
     sensor_cols = [col for col in df.columns if col.startswith("s_")]
 
     print(f"   - Sensores detectados: {len(sensor_cols)}")
 
-    # Aplicar transformaciones
+    # Apply transformations
     df_features = df.copy()
 
     # Lag features

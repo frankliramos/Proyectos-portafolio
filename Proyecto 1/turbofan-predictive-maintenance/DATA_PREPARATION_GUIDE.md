@@ -1,4 +1,70 @@
-# Guía de Preparación de Datos
+# Data Preparation Guide
+
+## English
+
+### Overview
+This project includes scripts to prepare the NASA CMAPSS FD001 dataset for
+both model training and dashboard visualization.
+
+### Raw Data Files (data/raw/)
+- `train_FD001.txt`: Training data (100 engines, ~20,631 cycles)
+- `test_FD001.txt`: Test data (100 engines, ~13,096 cycles)
+- `RUL_FD001.txt`: True RUL values for the test set
+
+### Processed Data (data/processed/)
+- `fd001_prepared.parquet`: Prepared training data (ALL cycles)
+- `fd001_test_prepared.parquet`: Prepared test data (ALL cycles)
+
+### Preparation Scripts
+
+1. `prepare_train_data.py`
+```bash
+python prepare_train_data.py
+```
+Steps:
+1. Load `train_FD001.txt`
+2. Compute RUL per cycle
+3. Rename columns (`s_N` -> `sensor_N`, `op_N` -> `op_setting_N`)
+4. Save to `fd001_prepared.parquet` with ALL cycles
+
+2. `prepare_test_data.py`
+```bash
+python prepare_test_data.py
+```
+Steps:
+1. Load `test_FD001.txt` and `RUL_FD001.txt`
+2. Attach true RUL per engine and propagate backward
+3. Rename columns for consistency
+4. Save to `fd001_test_prepared.parquet` with ALL cycles
+
+3. `prepare_all_data.py`
+```bash
+python prepare_all_data.py
+```
+Runs both scripts in sequence.
+
+### Important: Dashboard vs Model Evaluation
+
+Dashboard data includes ALL cycles for full time-series visualization.
+For evaluation, always filter to the last cycle:
+```python
+test_last_cycles = test_data.groupby('unit_id').tail(1)
+```
+
+### Expected Stats (FD001)
+- Training: ~20,631 rows, 100 engines
+- Test: ~13,096 rows, 100 engines
+
+### Troubleshooting
+- If the dashboard shows all engines as critical, the data likely contains
+  only last cycles. Re-run:
+```bash
+python prepare_all_data.py
+```
+
+---
+
+# Guia de Preparacion de Datos
 
 ## Descripción General
 

@@ -1,6 +1,23 @@
 # Changelog
 
+## English
+
 All notable changes to the Turbofan RUL Prediction project are documented in this file.
+
+---
+
+## Espanol
+
+Este registro de cambios documenta las principales mejoras del proyecto
+de prediccion de RUL para motores turbofan. Sigue el formato de
+Keep a Changelog y versionado semantico.
+
+### Resumen por version
+
+- **[1.0.1]**: Correcciones criticas en el dashboard, nuevo set de test,
+  actualizacion de rutas y mejoras de documentacion.
+- **[1.0.0]**: Documentacion completa, mejoras de codigo, dashboard,
+  despliegue con Docker y herramientas de desarrollo.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).

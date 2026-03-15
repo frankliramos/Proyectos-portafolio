@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def clean_oil_data(oil_df):
-    """Limpia e imputa los datos del precio del petróleo."""
+    """Clean and impute oil price data."""
     oil_df["date"] = pd.to_datetime(oil_df["date"])
     all_days = pd.date_range(
         start=oil_df["date"].min(), end=oil_df["date"].max(), freq="D"
@@ -16,7 +16,7 @@ def clean_oil_data(oil_df):
 
 
 def create_date_features(df):
-    """Crea características basadas en la fecha."""
+    """Create date-based features."""
     df["date"] = pd.to_datetime(df["date"])
     df["month"] = df["date"].dt.month
     df["day_of_week"] = df["date"].dt.dayofweek
@@ -26,17 +26,17 @@ def create_date_features(df):
 
 
 def create_holiday_features(holidays_df):
-    """Crea un dataframe con una columna binaria de feriados por fecha."""
+    """Create a dataframe with a binary holiday flag per date."""
     holidays_df = holidays_df.copy()
     holidays_df["date"] = pd.to_datetime(holidays_df["date"])
 
-    # Filtramos solo feriados relevantes
+    # Filter only relevant holidays
     mask = (holidays_df["transferred"] == False) & (
         ~holidays_df["type"].isin(["Work Day", "Bridge"])
     )
     holidays_df = holidays_df[mask]
 
-    # Marcamos 1 si es feriado
+    # Mark as 1 if it is a holiday
     holidays_daily = holidays_df.groupby("date", as_index=False).agg(
         is_holiday=("type", lambda x: 1)
     )
@@ -45,24 +45,24 @@ def create_holiday_features(holidays_df):
 
 
 def create_transaction_features(transactions_df):
-    """Crea features de transacciones con lags y rolling windows."""
+    """Create transaction features with lags and rolling windows."""
     transactions_df = transactions_df.copy()
     transactions_df["date"] = pd.to_datetime(transactions_df["date"])
     transactions_df = transactions_df.sort_values(["store_nbr", "date"])
 
-    # Lags de transacciones (mínimo 16 para poder predecir 15 días adelante)
+    # Transaction lags (minimum 16 to predict 15 days ahead)
     for lag in [16, 21]:
         transactions_df[f"trans_lag_{lag}"] = transactions_df.groupby("store_nbr")[
             "transactions"
         ].shift(lag)
 
-    # Rolling means de transacciones
+    # Rolling means for transactions
     for window in [7, 14, 28]:
         transactions_df[f"trans_roll_mean_{window}"] = transactions_df.groupby(
             "store_nbr"
         )["transactions"].transform(lambda x: x.shift(16).rolling(window=window).mean())
 
-    # Seleccionamos solo las columnas necesarias
+    # Select only required columns
     trans_features = transactions_df[
         [
             "date",
@@ -79,33 +79,33 @@ def create_transaction_features(transactions_df):
 
 
 def generate_features():
-    # Configuración de rutas
+    # Path configuration
     base_path = Path(__file__).parent.parent
     raw_path = base_path / "data" / "raw"
     processed_path = base_path / "data" / "processed"
     processed_path.mkdir(parents=True, exist_ok=True)
 
-    print("Cargando datos...")
+    print("Loading data...")
     train = pd.read_csv(raw_path / "train.csv", parse_dates=["date"])
     oil = pd.read_csv(raw_path / "oil.csv")
     stores = pd.read_csv(raw_path / "stores.csv")
     holidays = pd.read_csv(raw_path / "holidays_events.csv")
     transactions = pd.read_csv(raw_path / "transactions.csv", parse_dates=["date"])
 
-    # 1. Limpieza de Petróleo
-    print("Procesando datos de petróleo...")
+    # 1. Oil data cleaning
+    print("Processing oil data...")
     oil = clean_oil_data(oil)
 
-    # 2. Feriados
-    print("Procesando datos de feriados...")
+    # 2. Holidays
+    print("Processing holiday data...")
     holidays_daily = create_holiday_features(holidays)
 
-    # 3. Transacciones (NUEVO)
-    print("Procesando datos de transacciones...")
+    # 3. Transactions (new)
+    print("Processing transaction data...")
     trans_features = create_transaction_features(transactions)
 
-    # 4. Merge de datos básicos
-    print("Uniendo datasets...")
+    # 4. Merge base datasets
+    print("Merging datasets...")
     df = train.merge(stores, on="store_nbr", how="left")
     df = df.merge(oil, on="date", how="left")
     df = df.merge(holidays_daily, on="date", how="left")
@@ -113,11 +113,11 @@ def generate_features():
 
     df["is_holiday"] = df["is_holiday"].fillna(0).astype(int)
 
-    # 5. Características de Fecha
+    # 5. Date features
     df = create_date_features(df)
 
-    # 6. Ingeniería de Lags de Ventas
-    print("Creando variables de rezago (lags) y medias móviles de ventas...")
+    # 6. Sales lag features
+    print("Creating sales lag and rolling mean features...")
     df = df.sort_values(["store_nbr", "family", "date"])
 
     for lag in [16, 21, 30]:
@@ -128,8 +128,8 @@ def generate_features():
             "sales"
         ].transform(lambda x: x.shift(16).rolling(window=window).mean())
 
-    # 7. Imputación de valores faltantes en transacciones
-    print("Imputando valores faltantes en transacciones...")
+    # 7. Impute missing values in transactions
+    print("Imputing missing transaction values...")
     for col in [
         "trans_lag_16",
         "trans_lag_21",
@@ -139,12 +139,12 @@ def generate_features():
     ]:
         df[col] = df.groupby("store_nbr")[col].transform(lambda x: x.fillna(x.mean()))
 
-    print(f"Guardando datos procesados en {processed_path}...")
+    print(f"Saving processed data to {processed_path}...")
     df.dropna(subset=["sales_lag_30"], inplace=True)
     df.to_parquet(processed_path / "train_features.parquet", index=False)
-    print("¡Proceso completado con éxito!")
-    print(f"Forma final del dataset: {df.shape}")
-    print(f"Columnas: {df.columns.tolist()}")
+    print("Process completed successfully!")
+    print(f"Final dataset shape: {df.shape}")
+    print(f"Columns: {df.columns.tolist()}")
 
 
 if __name__ == "__main__":

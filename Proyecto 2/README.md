@@ -6,6 +6,18 @@
 
 [🇪🇸 Versión en Español](./README_ES.md)
 
+## 🇪🇸 Resumen en Español
+
+Este proyecto implementa un **sistema de pronóstico de ventas minoristas** para tiendas ecuatorianas.
+Predice ventas diarias a 15 días para optimizar inventario y planificación.
+
+**Puntos clave:**
+- Modelo: XGBoost con aceleración GPU.
+- Dataset: 2.9M+ registros y 27 features.
+- Métricas: RMSLE ~0.40 y WAPE ~16.9%.
+
+Para más detalle en español, revisa el documento completo en [README_ES.md](./README_ES.md).
+
 ## 📋 Project Overview
 
 This project implements a **retail sales forecasting solution** for Ecuadorian stores using machine learning. The system predicts **daily unit sales** for the next 15 days across different product families and store locations, enabling optimized inventory management and demand planning.

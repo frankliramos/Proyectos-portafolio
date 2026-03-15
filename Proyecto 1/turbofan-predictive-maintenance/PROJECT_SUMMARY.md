@@ -1,8 +1,38 @@
 # 📊 Project Improvements Summary
 
-## Overview
+## English
+
+### Overview
 
 This document summarizes the comprehensive improvements made to transform the NASA CMAPSS Turbofan RUL Prediction project into a professional, portfolio-ready data science project.
+
+---
+
+## Espanol
+
+### Resumen
+
+Este documento resume las mejoras aplicadas para convertir el proyecto de
+prediccion de RUL de motores turbofan (NASA CMAPSS) en una pieza de portafolio
+profesional. Incluye mejoras de documentacion, calidad de codigo, dashboard,
+despliegue y mejores practicas de MLOps.
+
+### Objetivos logrados (resumen)
+
+- Excelencia tecnica con validaciones y manejo de errores.
+- Documentacion profesional y model cards.
+- Despliegue listo para produccion con Docker.
+- Buenas practicas: logging, testing y calidad.
+- Dashboard profesional y enfocado en UX.
+
+### Mejoras clave (resumen)
+
+- Documentacion completa (README, MODEL_CARD, QUICKSTART, CHANGELOG).
+- Dashboard con mejor UX, KPIs y manejo de errores.
+- Codigo con configuracion centralizada y logging.
+- Soporte de despliegue con Docker y compose.
+
+---
 
 **Date**: February 3, 2026  
 **Author**: Franklin Ramos  

@@ -1,2 +1,2 @@
 # src/__init__.py
-# Archivo vacío para tratar 'src' como un paquete Python.
+# Empty file so 'src' is treated as a Python package.

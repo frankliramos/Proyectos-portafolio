@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from pathlib import Path
 
 # =========================
-# CONFIGURACIÓN GENERAL
+# GENERAL CONFIGURATION
 # =========================
 st.set_page_config(
     page_title="Sales Forecasting System",
@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide",
 )
 
-# Tema y estilos personalizados
+# Theme and custom styles
 st.markdown(
     """
     <style>
@@ -113,7 +113,7 @@ st.sidebar.markdown("- Métrica global RMSLE: **0.40**")
 st.sidebar.markdown("- Métrica global WAPE: **16.9%**")
 
 # =========================
-# FILTRO PRINCIPAL
+# MAIN FILTER
 # =========================
 df_sel = df[(df["store_nbr"] == store_sel) & (df["family"] == family_sel)].sort_values(
     "date"
@@ -130,12 +130,12 @@ wape_local = (
 ) * 100
 bias_local = ((total_pred - total_real) / (total_real + 1e-9)) * 100
 
-# Rango temporal
+# Date range
 start_date = df_sel["date"].min().date()
 end_date = df_sel["date"].max().date()
 
 # =========================
-# CABECERA
+# HEADER
 # =========================
 st.markdown("## 🚀 Sales Forecasting System")
 st.markdown(
@@ -145,7 +145,7 @@ st.markdown(
 )
 
 # =========================
-# MÉTRICAS (TARJETAS)
+# METRICS (CARDS)
 # =========================
 m1, m2, m3, m4 = st.columns(4)
 
@@ -200,7 +200,7 @@ with m4:
 st.markdown("")
 
 # =========================
-# GRÁFICO PRINCIPAL
+# MAIN CHART
 # =========================
 st.markdown("### 📈 Pronóstico vs. Realidad")
 
@@ -257,7 +257,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 # =========================
-# BLOQUE INFERIOR
+# LOWER SECTION
 # =========================
 st.markdown("")
 c1, c2 = st.columns([1.2, 1.0])
