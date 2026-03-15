@@ -198,6 +198,8 @@ All four dashboards are **production-ready prototypes** demonstrating:
 If you encounter any issues accessing the dashboards:
 
 **Franklin Ramos**
+- 📧 Email: franklin.ram.riv@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
 - GitHub: [@frankliramos](https://github.com/frankliramos)
 - Repository: [Proyectos-portafolio](https://github.com/frankliramos/Proyectos-portafolio)
 
@@ -367,6 +369,8 @@ Los dashboards son prototipos listos para produccion que demuestran:
 Si hay problemas al abrir los dashboards:
 
 **Franklin Ramos**
+- 📧 Email: franklin.ram.riv@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
 - GitHub: [@frankliramos](https://github.com/frankliramos)
 - Repositorio: [Proyectos-portafolio](https://github.com/frankliramos/Proyectos-portafolio)
 

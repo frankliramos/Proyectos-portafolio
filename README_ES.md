@@ -239,7 +239,8 @@ El dashboard se abre en `http://localhost:8501`
 
 **Franklin Ramos**
 
-- 📧 Email: Disponible bajo petición
+- 📧 Email: franklin.ram.riv@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
 - 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
 - 🌐 Portafolio: Este repositorio
 

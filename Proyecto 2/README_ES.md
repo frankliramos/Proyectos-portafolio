@@ -400,6 +400,9 @@ forecast_df.to_csv('inventory_plan.csv', index=False)
 ## 👤 Autor
 
 **Franklin Ramos**
+- 📧 Email: franklin.ram.riv@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
+- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
 - Portafolio: [GitHub Portfolio](https://github.com/frankliramos/Proyectos-portafolio)
 
 ## 📄 Licencia

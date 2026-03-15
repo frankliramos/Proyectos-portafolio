@@ -329,6 +329,9 @@ predictions_df.to_csv('fleet_predictions.csv')
 ## 👤 Author
 
 **Franklin Ramos**
+- 📧 Email: franklin.ram.riv@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
+- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
 - Portfolio: [GitHub Portfolio](https://github.com/frankliramos/Proyectos-portafolio)
 
 ## 📄 License

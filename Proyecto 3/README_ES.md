@@ -431,8 +431,10 @@ print(f"Clientes de alto riesgo: {len(high_risk)}")
 ## 👤 Autor
 
 **Franklin Ramos**
+- 📧 Email: franklin.ram.riv@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
+- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
 - Portafolio: [GitHub Portfolio](https://github.com/frankliramos/Proyectos-portafolio)
-- LinkedIn: [linkedin.com/in/frankliramos](#)
 
 ## 📄 Licencia
 
