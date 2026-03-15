@@ -1,5 +1,7 @@
 # Data Science & Machine Learning Portfolio
 
+<img src="https://github.com/frankliramos/Proyectos-portafolio/actions/workflows/ci.yml/badge.svg">
+
 **Franklin Ramos**
 
 [🇪🇸 Versión en Español](./README_ES.md)

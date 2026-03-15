@@ -109,7 +109,7 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 
 3. **Instalar dependencias**:
 ```bash
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ### Ejecutar el Dashboard
