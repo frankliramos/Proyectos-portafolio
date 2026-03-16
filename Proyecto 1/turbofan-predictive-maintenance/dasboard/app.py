@@ -14,9 +14,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import logging
+import sys
 from pathlib import Path
 from typing import Dict, Any, Optional
 from datetime import datetime
+
+
+def _find_project_root(start_path: Path) -> Path:
+    """Resolve project root by searching upward for required folders."""
+    current = start_path.resolve()
+    for candidate in [current, *current.parents]:
+        if (candidate / "src").exists() and (candidate / "models").exists():
+            return candidate
+    raise FileNotFoundError(
+        "No se pudo determinar la raíz del proyecto (faltan carpetas 'src' y 'models')."
+    )
+
+
+PROJECT_ROOT = _find_project_root(Path(__file__).parent)
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.inference import RULInference
 
@@ -42,7 +59,6 @@ sns.set_style("darkgrid")
 # ---------------------------
 # Load inference engine
 # ---------------------------
-PROJECT_ROOT = Path(__file__).parent
 
 
 @st.cache_resource

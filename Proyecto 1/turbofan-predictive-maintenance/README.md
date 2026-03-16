@@ -137,6 +137,20 @@ The dashboard opens automatically at `http://localhost:8501` and provides:
 - Sensor data visualization
 - Interactive filtering and exploration
 
+### ☁️ Deploy on Streamlit Community Cloud
+
+You can publish this dashboard at [share.streamlit.io/deploy](https://share.streamlit.io/deploy).
+
+Use these settings:
+
+- **Repository**: `frankliramos/Proyectos-portafolio`
+- **Branch**: `main`
+- **Main file path**: `Proyecto 1/turbofan-predictive-maintenance/dasboard/app.py`
+
+Notes:
+- The app reads model/data files from the project root (`models/` and `data/`).
+- Dependencies are installed from `Proyecto 1/turbofan-predictive-maintenance/requirements.txt`.
+
 ![Predictive Maintenance Dashboard](../../assets/proyecto1-dashboard.png)
 
 ### Dashboard Features
