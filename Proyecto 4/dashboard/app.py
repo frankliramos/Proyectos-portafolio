@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import sys
 from pathlib import Path
 
@@ -20,24 +19,18 @@ st.set_page_config(
 )
 
 
-# Cache for data and model
+# Cache for data and model — combined so the model is always consistent with the data
 @st.cache_data
-def load_data():
+def load_data_and_model():
     df_raw = load_raw_data()
     df_ml = preprocess_data(df_raw)
-    return df_raw, df_ml
-
-
-@st.cache_resource
-def load_model(df_ml):
     X_train, X_test, y_train, y_test = get_train_test_splits(df_ml)
     model = train_xgboost(X_train, y_train, X_test, y_test)
-    return model, X_test, y_test
+    return df_raw, df_ml, model, X_train, X_test, y_train, y_test
 
 
 # Load data and model
-df_raw, df_ml = load_data()
-model, X_test, y_test = load_model(df_ml)
+df_raw, df_ml, model, X_train, X_test, y_train, y_test = load_data_and_model()
 
 # Compute predictions
 probs = model.predict_proba(X_test)[:, 1]
@@ -146,10 +139,42 @@ with tab2:
         dependents = st.selectbox("¿Tiene Dependientes?", ["No", "Yes"])
 
     if st.button("🔮 Predecir Riesgo"):
-        # This simulates prediction (requires proper value mapping)
-        # For the demo, use a sample from the dataset
-        sample_idx = np.random.randint(0, len(X_test))
-        sample_prob = probs[sample_idx]
+        # Build a feature vector from user inputs.
+        # Features not exposed in the form use the training-set median as a neutral
+        # default (using X_train avoids any test-set leakage).
+        input_features = X_train.median().copy()
+
+        # Categorical encodings mirror LabelEncoder's alphabetical ordering used during
+        # preprocessing (sklearn LabelEncoder sorts unique values alphabetically).
+        contract_enc = {"Month-to-month": 0, "One year": 1, "Two year": 2}
+        internet_enc = {"DSL": 0, "Fiber optic": 1, "No": 2}
+        # Tech Support unique values sorted: No(0), No internet service(1), Yes(2).
+        # The form only exposes "No" and "Yes"; "No internet service" cannot be selected
+        # and will fall back to the training-set median when internet_service == "No".
+        tech_support_enc = {"No": 0, "Yes": 2}
+        dependents_enc = {"No": 0, "Yes": 1}
+
+        # Override with user-supplied values
+        for col, val in [
+            ("Tenure Months", tenure),
+            ("Monthly Charges", monthly_charges),
+            # Approximate Total Charges from tenure × monthly rate
+            ("Total Charges", tenure * monthly_charges),
+        ]:
+            if col in input_features.index:
+                input_features[col] = val
+
+        for col, mapping, user_val in [
+            ("Contract", contract_enc, contract),
+            ("Internet Service", internet_enc, internet_service),
+            ("Tech Support", tech_support_enc, tech_support),
+            ("Dependents", dependents_enc, dependents),
+        ]:
+            if col in input_features.index:
+                input_features[col] = mapping.get(user_val, input_features[col])
+
+        input_df = pd.DataFrame([input_features])
+        sample_prob = model.predict_proba(input_df)[0, 1]
 
         st.markdown("---")
 
