@@ -2,7 +2,22 @@
 
 ## English
 
-### How to View Project Dashboards
+### 🌐 Live Demos — No Installation Required
+
+All four dashboards are deployed online. Click to open instantly:
+
+| # | Project | Live Demo |
+|---|---------|-----------|
+| 1 | 🔧 Turbofan Engine Health Monitor | [🚀 Open Dashboard](https://proyectos-portafolio-fvuxxicflgewt7jxjtdzd.streamlit.app/) |
+| 2 | 📈 Sales Forecasting System | [🚀 Open Dashboard](https://proyectos-portafolio-amcgczthtr4a7s3epewp2q.streamlit.app/) |
+| 3 | 💬 Financial Sentiment Analysis | [🚀 Open Dashboard](https://proyectos-portafolio-erzcz3etb9efmhgmw8qxep.streamlit.app/) |
+| 4 | 📡 Churn Prediction - Telecom | [🚀 Open Dashboard](https://proyectos-portafolio-batbljpwqey6pemu5s2dr7.streamlit.app/) |
+
+> **For clients and recruiters**: The dashboards above are ready to use — no setup needed.
+
+---
+
+### How to View Project Dashboards Locally
 
 This portfolio includes interactive **Streamlit dashboards** for all four projects. Follow these simple steps to view them on your local machine.
 
@@ -61,7 +76,7 @@ streamlit run app.py
 
 **Note**: Proyecto 2 includes sample forecast data (`data_forecast.csv`) for immediate demonstration. The dashboard also generates synthetic data automatically if the file is missing.
 
-#### Proyecto 3: Customer Churn Prediction Dashboard
+#### Proyecto 3: Financial Sentiment Analysis Dashboard
 
 ```bash
 cd "financial-sentiment-analysis"
@@ -70,17 +85,17 @@ streamlit run app.py
 ```
 
 **What you'll see**:
-- Individual customer churn risk assessment
-- Customer segmentation by risk level
-- Feature importance visualization
-- Retention strategy recommendations
-- Real-time predictions with demo data
+- Real-time financial text sentiment classification (Positive / Neutral / Negative)
+- FinBERT model predictions with confidence scores
+- Keyword and phrase analysis
+- Batch analysis for multiple news items
+- Interactive charts and model interpretability
 
 **Dashboard opens at**: `http://localhost:8501`
 
 **Note**: Proyecto 3 includes sample data for demonstration. The dashboard is fully functional without additional data files.
 
-#### Option D: Proyecto 4 - Product Recommendation Dashboard
+#### Option D: Proyecto 4 - Churn Prediction Dashboard
 
 ```bash
 cd "customer-churn-prediction"
@@ -89,15 +104,15 @@ streamlit run app.py
 ```
 
 **What you'll see**:
-- Personalized product recommendations
-- Similar product discovery
-- User behavior analytics
-- A/B testing results visualization
-- Real-time recommendation engine with demo data
+- Individual customer churn risk scoring
+- SHAP-based explanation of top churn drivers
+- Customer segmentation by risk level
+- Financial impact estimation and retention recommendations
+- Fleet-level analytics
 
 **Dashboard opens at**: `http://localhost:8501`
 
-**Note**: Proyecto 4 includes sample data for demonstration. The dashboard generates interactive recommendations without requiring external datasets.
+**Note**: Proyecto 4 includes sample data for demonstration. The dashboard is fully functional without additional data files.
 
 ---
 
@@ -159,37 +174,33 @@ streamlit run app.py --server.port 8502
 - 📈 15-day sales forecast
 - 💰 Inventory optimization suggestions
 
-### Proyecto 3: Customer Churn Prediction
+### Proyecto 3: Financial Sentiment Analysis
 - ✅ **100% Functional** - Demo data included
-- 👤 Individual customer risk assessment
-- 📊 Customer segmentation dashboard
-- 🎯 Risk classification (Low/Medium/High)
-- 💡 Personalized retention strategies
-- 📈 Feature importance and analytics
+- 💬 Classify financial text (Positive / Neutral / Negative)
+- 📊 FinBERT confidence scores
+- 🔍 Keyword and phrase analysis
+- 📈 Batch news analysis
 
-#### Proyecto 4: Product Recommendation System
+#### Proyecto 4: Churn Prediction - Telecom
 - ✅ **100% Functional** - Demo data included
-- 🛍️ Personalized product recommendations
-- 🔗 Similar product discovery
-- 📊 User behavior analytics
-- 🧪 A/B testing results visualization
-- ⚡ Real-time recommendation engine
+- 👤 Individual customer churn risk scoring
+- 📊 SHAP-based churn driver explanation
+- 🎯 Risk classification (Low/Medium/High)
+- 💡 Retention prioritization and financial impact
+- ⚡ Real-time predictions
 
 ---
 
 ### 💼 For Clients & Recruiters
 
-All four dashboards are **production-ready prototypes** demonstrating:
+All four dashboards are **deployed online and production-ready**. Access them instantly via the live demo links at the top of this guide — no installation needed.
+
+They demonstrate:
 
 1. **Real-time Analytics**: Interactive data exploration
 2. **Business Insights**: Actionable predictions and recommendations
 3. **User Experience**: Clean, professional interfaces
 4. **Technical Skills**: Python, ML models, data visualization, web apps
-
-**Want to see the dashboards without local setup?** Contact Franklin for:
-- Hosted demo links
-- Video walkthroughs
-- Live demonstration sessions
 
 ---
 
@@ -218,6 +229,21 @@ If you encounter any issues accessing the dashboards:
 ---
 
 ## Espanol
+
+### 🌐 Demos en Vivo — Sin Instalación
+
+Los cuatro dashboards están desplegados online. Haz clic para abrirlos al instante:
+
+| # | Proyecto | Demo en Vivo |
+|---|---------|--------------|
+| 1 | 🔧 Monitor de Salud de Motores Turbofán | [🚀 Abrir Dashboard](https://proyectos-portafolio-fvuxxicflgewt7jxjtdzd.streamlit.app/) |
+| 2 | 📈 Sistema de Pronóstico de Ventas | [🚀 Abrir Dashboard](https://proyectos-portafolio-amcgczthtr4a7s3epewp2q.streamlit.app/) |
+| 3 | 💬 Análisis de Sentimiento Financiero | [🚀 Abrir Dashboard](https://proyectos-portafolio-erzcz3etb9efmhgmw8qxep.streamlit.app/) |
+| 4 | 📡 Predicción de Churn - Telecomunicaciones | [🚀 Abrir Dashboard](https://proyectos-portafolio-batbljpwqey6pemu5s2dr7.streamlit.app/) |
+
+> **Para clientes y reclutadores**: Los dashboards de arriba están listos para usar — sin configuración necesaria.
+
+---
 
 ### Como ver los dashboards de los proyectos
 
@@ -278,7 +304,7 @@ streamlit run app.py
 
 **Nota**: Proyecto 2 incluye datos de pronóstico de muestra (`data_forecast.csv`) para demostración inmediata. El dashboard también genera datos sintéticos automáticamente si el archivo no está disponible.
 
-##### Opcion C: Proyecto 3 - Dashboard de prediccion de abandono de clientes
+##### Opcion C: Proyecto 3 - Dashboard de Analisis de Sentimiento Financiero
 
 ```bash
 cd "financial-sentiment-analysis"
@@ -287,16 +313,16 @@ streamlit run app.py
 ```
 
 **Que veras**:
-- Evaluacion de riesgo individual de cliente
-- Segmentacion de clientes por nivel de riesgo
-- Visualizacion de importancia de caracteristicas
-- Recomendaciones de estrategias de retencion
+- Clasificacion de sentimiento financiero en tiempo real (Positivo / Neutro / Negativo)
+- Predicciones de FinBERT con puntuaciones de confianza
+- Analisis de palabras clave y frases
+- Analisis en lote de multiples noticias
 
 **Dashboard en**: `http://localhost:8501`
 
 **Nota**: Proyecto 3 incluye datos de muestra. El dashboard es completamente funcional sin archivos adicionales.
 
-##### Opcion D: Proyecto 4 - Dashboard de recomendacion de productos
+##### Opcion D: Proyecto 4 - Dashboard de Prediccion de Churn Telecom
 
 ```bash
 cd "customer-churn-prediction"
@@ -305,10 +331,10 @@ streamlit run app.py
 ```
 
 **Que veras**:
-- Recomendaciones personalizadas de productos
-- Descubrimiento de productos similares
-- Analitica de comportamiento de usuario
-- Resultados de A/B testing
+- Puntuacion de riesgo de abandono por cliente
+- Explicacion de factores de churn basada en SHAP
+- Segmentacion de clientes por nivel de riesgo
+- Estimacion de impacto financiero y recomendaciones de retencion
 
 **Dashboard en**: `http://localhost:8501`
 
@@ -370,27 +396,28 @@ streamlit run app.py --server.port 8502
 - Pronostico a 15 dias
 - Recomendaciones de inventario
 
-#### Proyecto 3: Prediccion de abandono de clientes
+#### Proyecto 3: Analisis de Sentimiento Financiero
 - 100% funcional - Datos de demo incluidos
-- Evaluacion de riesgo individual de cliente
-- Dashboard de segmentacion de clientes
-- Clasificacion de riesgo (Bajo/Medio/Alto)
-- Estrategias de retencion personalizadas
-- Importancia de caracteristicas y analitica
+- Clasificacion de texto financiero (Positivo / Neutro / Negativo)
+- Puntuaciones de confianza de FinBERT
+- Analisis de palabras clave y frases
+- Analisis en lote de noticias
 
-#### Proyecto 4: Sistema de recomendacion de productos
+#### Proyecto 4: Prediccion de Churn - Telecomunicaciones
 - 100% funcional - Datos de demo incluidos
-- Recomendaciones personalizadas de productos
-- Descubrimiento de productos similares
-- Analitica de comportamiento de usuario
-- Visualizacion de resultados A/B testing
-- Motor de recomendacion en tiempo real
+- Puntuacion de riesgo de abandono por cliente
+- Explicacion de factores de churn con SHAP
+- Clasificacion de riesgo (Bajo/Medio/Alto)
+- Estimacion de impacto financiero y retencion
+- Predicciones en tiempo real
 
 ---
 
 ### 💼 Para clientes y reclutadores
 
-Los dashboards son prototipos listos para produccion que demuestran:
+Los cuatro dashboards están **desplegados online y listos para producción**. Accede a ellos instantáneamente mediante los enlaces de demo en vivo al inicio de esta guía — sin instalación necesaria.
+
+Demuestran:
 1. Analitica en tiempo real
 2. Insights accionables
 3. Buena experiencia de usuario
