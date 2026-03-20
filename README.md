@@ -47,7 +47,7 @@ Production-ready predictive maintenance system for aircraft turbofan engines usi
 - **Dataset**: NASA CMAPSS (200 engines, 33K+ cycles)
 - **Performance**: MAE ~14.2 cycles, RMSE ~19.7, R² 0.78
 
-[📂 View Project →](./Proyecto%201/turbofan-predictive-maintenance)
+[📂 View Project →](./turbofan-predictive-maintenance)
 
 **Key Features**:
 - Real-time RUL (Remaining Useful Life) predictions
@@ -67,7 +67,7 @@ Advanced retail sales forecasting system for Ecuadorian stores using XGBoost wit
 - **Dataset**: 2.9M+ transactions, 54 stores, 33 product categories
 - **Performance**: RMSLE 0.40, WAPE 16.9%
 
-[📂 View Project →](./Proyecto%202)
+[📂 View Project →](./sales-forecasting)
 
 **Key Features**:
 - 15-day sales forecasting by store and product family
@@ -78,8 +78,8 @@ Advanced retail sales forecasting system for Ecuadorian stores using XGBoost wit
 
 ---
 
-### Proyecto 3: Customer Churn Prediction System
-**Status**: ✅ Complete | **Type**: Classification, Customer Analytics, Banking
+### Proyecto 3: Financial Sentiment Analysis
+**Status**: ✅ Complete | **Type**: NLP, FinBERT, Financial Analytics
 
 Advanced customer churn prediction system for banking institutions using ensemble machine learning.
 
@@ -88,7 +88,7 @@ Advanced customer churn prediction system for banking institutions using ensembl
 - **Dataset**: 10,000 customers with demographics and banking behavior
 - **Performance**: 86.5% accuracy, F1-Score 82.7%, ROC-AUC 0.91
 
-[📂 View Project →](./Proyecto%203)
+[📂 View Project →](./financial-sentiment-analysis)
 
 **Key Features**:
 - Real-time churn risk assessment (individual and batch)
@@ -99,8 +99,8 @@ Advanced customer churn prediction system for banking institutions using ensembl
 
 ---
 
-### Proyecto 4: Product Recommendation System
-**Status**: ✅ Complete | **Type**: Recommendation Systems, E-commerce, Personalization
+### Proyecto 4: Customer Churn Prediction
+**Status**: ✅ Complete | **Type**: Classification, Customer Analytics, Telecom
 
 Advanced hybrid recommendation engine combining collaborative and content-based filtering for e-commerce personalization.
 
@@ -109,7 +109,7 @@ Advanced hybrid recommendation engine combining collaborative and content-based 
 - **Dataset**: 50,000+ users, 10,000+ products, 500,000+ interactions
 - **Performance**: Precision@10: 0.341, NDCG@10: 0.412, ROI: 1,567%-2,433%
 
-[📂 View Project →](./Proyecto%204)
+[📂 View Project →](./customer-churn-prediction)
 
 **Key Features**:
 - Personalized product recommendations with confidence scores
@@ -185,52 +185,77 @@ Proyectos-portafolio/
 ├── .gitignore                               # Global gitignore
 ├── .github/workflows/ci.yml                 # CI/CD pipeline
 │
-├── Proyecto 1/                              # Turbofan Predictive Maintenance
-│   └── turbofan-predictive-maintenance/
-│       ├── app.py                           # Interactive dashboard
-│       ├── README.md                        # Project documentation
-│       ├── MODEL_CARD.md                    # Model specifications
-│       ├── data/                            # NASA CMAPSS dataset (raw + processed)
-│       ├── models/                          # Trained LSTM models
-│       ├── notebooks/                       # Jupyter EDA & modeling notebooks
-│       ├── src/                             # Source code modules
-│       ├── results/                         # Model evaluation results
-│       └── Dockerfile                       # Container definition
+├── turbofan-predictive-maintenance/         # Turbofan Predictive Maintenance
+│   ├── app.py                           # Interactive dashboard (Streamlit entry point)
+│   ├── README.md                        # Project documentation
+│   ├── MODEL_CARD.md                    # Model specifications
+│   ├── data/                            # NASA CMAPSS dataset (raw + processed)
+│   ├── models/                          # Trained LSTM models
+│   ├── notebooks/                       # Jupyter EDA & modeling notebooks
+│   ├── src/                             # Source code modules
+│   ├── results/                         # Model evaluation results
+│   ├── dashboard/                       # Dashboard source (mirrored by root app.py)
+│   └── Dockerfile                       # Container definition
 │
-├── Proyecto 2/                              # Sales Forecasting
-│   ├── dashboard/app.py                     # Streamlit app
-│   ├── notebooks/                           # EDA and modeling notebooks
-│   ├── src/                                 # Feature engineering & prediction
-│   └── requirements.txt                     # Dependencies
+├── sales-forecasting/                       # Sales Forecasting
+│   ├── app.py                           # Streamlit entry point
+│   ├── dashboard/app.py                 # Dashboard source
+│   ├── notebooks/                       # EDA and modeling notebooks
+│   ├── src/                             # Feature engineering & prediction
+│   └── requirements.txt                 # Dependencies
 │
-├── Proyecto 3/                              # Customer Churn Prediction
-│   ├── app.py                               # Interactive dashboard
-│   ├── README.md                            # Project documentation
-│   ├── data/                                # Customer dataset
-│   ├── models/                              # Trained ensemble models
-│   ├── notebooks/                           # Analysis notebooks
-│   ├── src/                                 # Source code modules
-│   └── results/                             # Evaluation results
+├── financial-sentiment-analysis/            # Financial Sentiment Analysis (FinBERT)
+│   ├── app.py                           # Interactive dashboard (Streamlit entry point)
+│   ├── README.md                        # Project documentation
+│   ├── data/                            # Financial PhraseBank dataset
+│   ├── models/                          # Trained FinBERT models
+│   ├── notebooks/                       # Analysis notebooks
+│   ├── src/                             # Source code modules
+│   └── results/                         # Evaluation results
 │
-└── Proyecto 4/                              # Product Recommendation System
-    ├── app.py                               # Interactive dashboard
-    ├── README.md                            # Project documentation
-    ├── data/                                # E-commerce interaction data
-    ├── models/                              # Trained recommendation models
-    ├── notebooks/                           # Analysis notebooks
-    ├── src/                                 # Source code modules
-    └── results/                             # Evaluation results
+└── customer-churn-prediction/               # Customer Churn Prediction (Telecom)
+    ├── app.py                           # Interactive dashboard (Streamlit entry point)
+    ├── README.md                        # Project documentation
+    ├── data/                            # Telecom customer dataset
+    ├── models/                          # Trained XGBoost models
+    ├── notebooks/                       # Analysis notebooks
+    ├── src/                             # Source code modules
+    └── results/                         # Evaluation results
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### Running Proyecto 1 Dashboard
+### Running Turbofan Predictive Maintenance Dashboard
 
 ```bash
 git clone https://github.com/frankliramos/Proyectos-portafolio.git
-cd "Proyectos-portafolio/Proyecto 1/turbofan-predictive-maintenance"
+cd "Proyectos-portafolio/turbofan-predictive-maintenance"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Running Sales Forecasting Dashboard
+
+```bash
+cd "Proyectos-portafolio/sales-forecasting"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Running Financial Sentiment Analysis Dashboard
+
+```bash
+cd "Proyectos-portafolio/financial-sentiment-analysis"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Running Customer Churn Prediction Dashboard
+
+```bash
+cd "Proyectos-portafolio/customer-churn-prediction"
 pip install -r requirements.txt
 streamlit run app.py
 ```

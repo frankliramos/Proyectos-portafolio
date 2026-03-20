@@ -47,7 +47,7 @@ Sistema de mantenimiento predictivo listo para producción para motores turbofá
 - **Dataset**: NASA CMAPSS (200 motores, 33K+ ciclos)
 - **Rendimiento**: MAE ~14.2 ciclos, RMSE ~19.7, R² 0.78
 
-[📂 Ver Proyecto →](./Proyecto%201/turbofan-predictive-maintenance)
+[📂 Ver Proyecto →](./turbofan-predictive-maintenance)
 
 **Características Clave**:
 - Predicciones de RUL (Vida Útil Restante) en tiempo real
@@ -67,7 +67,7 @@ Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas u
 - **Dataset**: 2.9M+ transacciones, 54 tiendas, 33 categorías de productos
 - **Rendimiento**: RMSLE 0.40, WAPE 16.9%
 
-[📂 Ver Proyecto →](./Proyecto%202)
+[📂 Ver Proyecto →](./sales-forecasting)
 
 **Características Principales**:
 - Pronóstico de ventas a 15 días por tienda y familia de producto
@@ -78,8 +78,8 @@ Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas u
 
 ---
 
-### Proyecto 3: Sistema de Predicción de Abandono de Clientes
-**Estado**: ✅ Completo | **Tipo**: Clasificación, Analítica de Clientes, Banca
+### Proyecto 3: Análisis de Sentimiento Financiero
+**Estado**: ✅ Completo | **Tipo**: PLN, FinBERT, Analítica Financiera
 
 Sistema avanzado de predicción de abandono de clientes para instituciones bancarias usando ensemble de machine learning.
 
@@ -88,7 +88,7 @@ Sistema avanzado de predicción de abandono de clientes para instituciones banca
 - **Dataset**: 10,000 clientes con demografía y comportamiento bancario
 - **Rendimiento**: 86.5% precisión, F1-Score 82.7%, ROC-AUC 0.91
 
-[📂 Ver Proyecto →](./Proyecto%203)
+[📂 Ver Proyecto →](./financial-sentiment-analysis)
 
 **Características Clave**:
 - Evaluación de riesgo de abandono en tiempo real (individual y lotes)
@@ -99,8 +99,8 @@ Sistema avanzado de predicción de abandono de clientes para instituciones banca
 
 ---
 
-### Proyecto 4: Sistema de Recomendación de Productos
-**Estado**: ✅ Completo | **Tipo**: Sistemas de Recomendación, E-commerce, Personalización
+### Proyecto 4: Predicción de Abandono de Clientes Telecom
+**Estado**: ✅ Completo | **Tipo**: Clasificación, Analítica de Clientes, Telecomunicaciones
 
 Motor de recomendación híbrido avanzado que combina filtrado colaborativo y basado en contenido para personalización de comercio electrónico.
 
@@ -109,7 +109,7 @@ Motor de recomendación híbrido avanzado que combina filtrado colaborativo y ba
 - **Dataset**: 50,000+ usuarios, 10,000+ productos, 500,000+ interacciones
 - **Rendimiento**: Precision@10: 0.341, NDCG@10: 0.412, ROI: 1,567%-2,433%
 
-[📂 Ver Proyecto →](./Proyecto%204)
+[📂 Ver Proyecto →](./customer-churn-prediction)
 
 **Características Clave**:
 - Recomendaciones personalizadas de productos con puntajes de confianza
@@ -185,52 +185,77 @@ Proyectos-portafolio/
 ├── .gitignore                               # Gitignore global
 ├── .github/workflows/ci.yml                 # Pipeline CI/CD
 │
-├── Proyecto 1/                              # Mantenimiento Predictivo Turbofán
-│   └── turbofan-predictive-maintenance/
-│       ├── app.py                           # Dashboard interactivo
-│       ├── README.md                        # Documentación del proyecto
-│       ├── MODEL_CARD.md                    # Especificaciones del modelo
-│       ├── data/                            # Dataset NASA CMAPSS (raw + procesado)
-│       ├── models/                          # Modelos LSTM entrenados
-│       ├── notebooks/                       # Notebooks Jupyter EDA y modelado
-│       ├── src/                             # Módulos de código fuente
-│       ├── results/                         # Resultados de evaluación
-│       └── Dockerfile                       # Definición del contenedor
+├── turbofan-predictive-maintenance/         # Mantenimiento Predictivo Turbofán
+│   ├── app.py                           # Dashboard interactivo (entrada Streamlit)
+│   ├── README.md                        # Documentación del proyecto
+│   ├── MODEL_CARD.md                    # Especificaciones del modelo
+│   ├── data/                            # Dataset NASA CMAPSS (raw + procesado)
+│   ├── models/                          # Modelos LSTM entrenados
+│   ├── notebooks/                       # Notebooks Jupyter EDA y modelado
+│   ├── src/                             # Módulos de código fuente
+│   ├── results/                         # Resultados de evaluación
+│   ├── dashboard/                       # Fuente del dashboard
+│   └── Dockerfile                       # Definición del contenedor
 │
-├── Proyecto 2/                              # Pronóstico de Ventas
-│   ├── dashboard/app.py                     # Aplicación Streamlit
-│   ├── notebooks/                           # Notebooks EDA y modelado
-│   ├── src/                                 # Ingeniería de características y predicción
-│   └── requirements.txt                     # Dependencias
+├── sales-forecasting/                       # Pronóstico de Ventas
+│   ├── app.py                           # Entrada Streamlit
+│   ├── dashboard/app.py                 # Fuente del dashboard
+│   ├── notebooks/                       # Notebooks EDA y modelado
+│   ├── src/                             # Ingeniería de características y predicción
+│   └── requirements.txt                 # Dependencias
 │
-├── Proyecto 3/                              # Predicción de Abandono de Clientes
-│   ├── app.py                               # Dashboard interactivo
-│   ├── README.md                            # Documentación del proyecto
-│   ├── data/                                # Dataset de clientes
-│   ├── models/                              # Modelos ensemble entrenados
-│   ├── notebooks/                           # Notebooks de análisis
-│   ├── src/                                 # Módulos de código fuente
-│   └── results/                             # Resultados de evaluación
+├── financial-sentiment-analysis/            # Análisis de Sentimiento Financiero (FinBERT)
+│   ├── app.py                           # Dashboard interactivo (entrada Streamlit)
+│   ├── README.md                        # Documentación del proyecto
+│   ├── data/                            # Dataset Financial PhraseBank
+│   ├── models/                          # Modelos FinBERT entrenados
+│   ├── notebooks/                       # Notebooks de análisis
+│   ├── src/                             # Módulos de código fuente
+│   └── results/                         # Resultados de evaluación
 │
-└── Proyecto 4/                              # Sistema de Recomendación de Productos
-    ├── app.py                               # Dashboard interactivo
-    ├── README.md                            # Documentación del proyecto
-    ├── data/                                # Datos de interacciones e-commerce
-    ├── models/                              # Modelos de recomendación entrenados
-    ├── notebooks/                           # Notebooks de análisis
-    ├── src/                                 # Módulos de código fuente
-    └── results/                             # Resultados de evaluación
+└── customer-churn-prediction/               # Predicción de Abandono de Clientes Telecom
+    ├── app.py                           # Dashboard interactivo (entrada Streamlit)
+    ├── README.md                        # Documentación del proyecto
+    ├── data/                            # Dataset de clientes telecom
+    ├── models/                          # Modelos XGBoost entrenados
+    ├── notebooks/                       # Notebooks de análisis
+    ├── src/                             # Módulos de código fuente
+    └── results/                         # Resultados de evaluación
 ```
 
 ---
 
 ## 🚀 Inicio Rápido
 
-### Ejecutar Dashboard del Proyecto 1
+### Ejecutar Dashboard de Mantenimiento Predictivo Turbofán
 
 ```bash
 git clone https://github.com/frankliramos/Proyectos-portafolio.git
-cd "Proyectos-portafolio/Proyecto 1/turbofan-predictive-maintenance"
+cd "Proyectos-portafolio/turbofan-predictive-maintenance"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Ejecutar Dashboard de Pronóstico de Ventas
+
+```bash
+cd "Proyectos-portafolio/sales-forecasting"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Ejecutar Dashboard de Análisis de Sentimiento Financiero
+
+```bash
+cd "Proyectos-portafolio/financial-sentiment-analysis"
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Ejecutar Dashboard de Predicción de Abandono de Clientes
+
+```bash
+cd "Proyectos-portafolio/customer-churn-prediction"
 pip install -r requirements.txt
 streamlit run app.py
 ```
