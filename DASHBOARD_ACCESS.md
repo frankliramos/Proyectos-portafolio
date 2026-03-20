@@ -30,7 +30,7 @@ cd Proyectos-portafolio
 ##### Option A: Proyecto 1 - Predictive Maintenance Dashboard
 
 ```bash
-cd "Proyecto 1/turbofan-predictive-maintenance"
+cd "turbofan-predictive-maintenance"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -46,8 +46,8 @@ streamlit run app.py
 ##### Option B: Proyecto 2 - Sales Forecasting Dashboard
 
 ```bash
-cd "Proyecto 2/dashboard"
-pip install -r ../requirements.txt
+cd "sales-forecasting"
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
@@ -64,7 +64,7 @@ streamlit run app.py
 #### Proyecto 3: Customer Churn Prediction Dashboard
 
 ```bash
-cd "Proyecto 3"
+cd "financial-sentiment-analysis"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -83,7 +83,7 @@ streamlit run app.py
 #### Option D: Proyecto 4 - Product Recommendation Dashboard
 
 ```bash
-cd "Proyecto 4"
+cd "customer-churn-prediction"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -115,15 +115,15 @@ pip install -r requirements.txt
 **Solution**: Install project dependencies:
 ```bash
 # For Proyecto 1
-cd "Proyecto 1/turbofan-predictive-maintenance"
+cd "turbofan-predictive-maintenance"
 pip install -r requirements.txt
 
 # For Proyecto 2
-cd "Proyecto 2"
+cd "sales-forecasting"
 pip install -r requirements.txt
 
 # For Proyecto 3
-cd "Proyecto 3"
+cd "financial-sentiment-analysis"
 pip install -r requirements.txt
 ```
 
@@ -247,7 +247,7 @@ cd Proyectos-portafolio
 ##### Opcion A: Proyecto 1 - Dashboard de mantenimiento predictivo
 
 ```bash
-cd "Proyecto 1/turbofan-predictive-maintenance"
+cd "turbofan-predictive-maintenance"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -263,8 +263,8 @@ streamlit run app.py
 ##### Opcion B: Proyecto 2 - Dashboard de pronostico de ventas
 
 ```bash
-cd "Proyecto 2/dashboard"
-pip install -r ../requirements.txt
+cd "sales-forecasting"
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
@@ -281,7 +281,7 @@ streamlit run app.py
 ##### Opcion C: Proyecto 3 - Dashboard de prediccion de abandono de clientes
 
 ```bash
-cd "Proyecto 3"
+cd "financial-sentiment-analysis"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -299,7 +299,7 @@ streamlit run app.py
 ##### Opcion D: Proyecto 4 - Dashboard de recomendacion de productos
 
 ```bash
-cd "Proyecto 4"
+cd "customer-churn-prediction"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -330,11 +330,11 @@ pip install -r requirements.txt
 **Solucion**:
 ```bash
 # Proyecto 1
-cd "Proyecto 1/turbofan-predictive-maintenance"
+cd "turbofan-predictive-maintenance"
 pip install -r requirements.txt
 
 # Proyecto 2
-cd "Proyecto 2"
+cd "sales-forecasting"
 pip install -r requirements.txt
 ```
 
