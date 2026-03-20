@@ -14,19 +14,21 @@
 
 Welcome to my Data Science and Machine Learning portfolio. This repository showcases professional end-to-end projects demonstrating expertise in predictive modeling, deep learning, time series forecasting, and production-ready ML systems.
 
-### 🖥️ Interactive Dashboards
+### 🖥️ Live Interactive Dashboards
 
-All projects include **interactive Streamlit dashboards** for real-time visualization and exploration:
+All projects are **deployed and accessible online** — no installation required:
 
-- **Proyecto 1**: Engine health monitoring with RUL predictions
-- **Proyecto 2**: Sales forecasting with inventory recommendations
-- **Proyecto 3**: Customer churn risk assessment and retention strategies
-- **Proyecto 4**: Product recommendations and e-commerce analytics
+| # | Project | Live Demo |
+|---|---------|-----------|
+| 1 | 🔧 Turbofan Engine Health Monitor | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-fvuxxicflgewt7jxjtdzd.streamlit.app/) |
+| 2 | 📈 Sales Forecasting System | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-amcgczthtr4a7s3epewp2q.streamlit.app/) |
+| 3 | 💬 Financial Sentiment Analysis | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-erzcz3etb9efmhgmw8qxep.streamlit.app/) |
+| 4 | 📡 Churn Prediction - Telecom | [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-batbljpwqey6pemu5s2dr7.streamlit.app/) |
 
-**Quick Start**:
+**Or run locally**:
 ```bash
 # For any project with a dashboard
-cd "Proyecto X/[project-directory]"
+cd "[project-directory]"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -39,6 +41,8 @@ streamlit run app.py
 
 ### Proyecto 1: Turbofan Predictive Maintenance
 **Status**: ✅ Complete | **Type**: Deep Learning, Time Series, Predictive Maintenance
+
+[![Live Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-fvuxxicflgewt7jxjtdzd.streamlit.app/)
 
 Production-ready predictive maintenance system for aircraft turbofan engines using LSTM neural networks.
 
@@ -59,6 +63,8 @@ Production-ready predictive maintenance system for aircraft turbofan engines usi
 
 ### Proyecto 2: Sales Forecasting System
 **Status**: ✅ Complete | **Type**: Time Series, XGBoost, Demand Forecasting
+
+[![Live Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-amcgczthtr4a7s3epewp2q.streamlit.app/)
 
 Advanced retail sales forecasting system for Ecuadorian stores using XGBoost with GPU acceleration.
 
@@ -81,42 +87,45 @@ Advanced retail sales forecasting system for Ecuadorian stores using XGBoost wit
 ### Proyecto 3: Financial Sentiment Analysis
 **Status**: ✅ Complete | **Type**: NLP, FinBERT, Financial Analytics
 
-Advanced customer churn prediction system for banking institutions using ensemble machine learning.
+[![Live Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-erzcz3etb9efmhgmw8qxep.streamlit.app/)
 
-- **Business Impact**: 25-35% churn reduction, $11M+ annual savings, 650% ROI
-- **Tech Stack**: XGBoost, Random Forest, SMOTE, Streamlit Dashboard
-- **Dataset**: 10,000 customers with demographics and banking behavior
-- **Performance**: 86.5% accuracy, F1-Score 82.7%, ROC-AUC 0.91
+Advanced financial sentiment analysis system using a fine-tuned FinBERT model that classifies financial news and earnings text into negative, neutral, and positive sentiment.
+
+- **Business Impact**: Automates analysis of 1,000+ news items per day; 25-35% improvement in analyst productivity
+- **Tech Stack**: FinBERT (HuggingFace), scikit-learn, Streamlit Dashboard, FastAPI
+- **Dataset**: Financial PhraseBank — 4,840 annotated financial sentences
+- **Performance**: Accuracy 87.3%, F1-Score (Macro) 86.1%, ROC-AUC 0.94
 
 [📂 View Project →](./financial-sentiment-analysis)
 
 **Key Features**:
-- Real-time churn risk assessment (individual and batch)
-- Interactive customer segmentation dashboard
-- Personalized retention strategy recommendations
-- SHAP-based model interpretability
+- Real-time sentiment classification (Positive / Neutral / Negative)
+- FinBERT fine-tuned on financial corpus for domain-specific accuracy
+- Interactive dashboard with keyword analysis and confidence scores
+- Use cases: earnings call analysis, news monitoring, trading signals
 - Comprehensive documentation (English & Spanish)
 
 ---
 
-### Proyecto 4: Customer Churn Prediction
+### Proyecto 4: Customer Churn Prediction - Telecom
 **Status**: ✅ Complete | **Type**: Classification, Customer Analytics, Telecom
 
-Advanced hybrid recommendation engine combining collaborative and content-based filtering for e-commerce personalization.
+[![Live Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-batbljpwqey6pemu5s2dr7.streamlit.app/)
 
-- **Business Impact**: 20-30% conversion lift, 85% revenue increase per user, 2x CTR
-- **Tech Stack**: Collaborative Filtering (ALS), Content-Based (TF-IDF), Hybrid Model, Streamlit
-- **Dataset**: 50,000+ users, 10,000+ products, 500,000+ interactions
-- **Performance**: Precision@10: 0.341, NDCG@10: 0.412, ROI: 1,567%-2,433%
+Churn prediction system for a telecom provider using XGBoost. Identifies customers at risk, explains key churn drivers via SHAP, and estimates financial impact from retention actions.
+
+- **Business Impact**: Proactive retention targeting; quantifies revenue at risk per customer
+- **Tech Stack**: XGBoost, SHAP, Streamlit Dashboard
+- **Dataset**: Telco Customer Churn dataset (contract, tenure, charges, services, demographics)
+- **Performance**: Accuracy 0.93, Recall (Churn) 0.86, ROC-AUC 0.98
 
 [📂 View Project →](./customer-churn-prediction)
 
 **Key Features**:
-- Personalized product recommendations with confidence scores
-- Similar product discovery engine
-- Multi-algorithm support (Collaborative, Content-Based, Hybrid, Neural CF)
-- Interactive dashboard with real-time recommendations
-- A/B testing framework and analytics
+- Customer churn risk scoring and ranking
+- SHAP-based model interpretability (top churn drivers per customer)
+- Financial impact estimation and retention prioritization
+- Interactive dashboard with individual and cohort analysis
 - Comprehensive documentation (English & Spanish)
 
 ---

@@ -14,19 +14,21 @@
 
 Bienvenido a mi portafolio de Data Science y Machine Learning. Este repositorio presenta proyectos profesionales end-to-end que demuestran experiencia en modelado predictivo, deep learning, pronóstico de series temporales y sistemas ML listos para producción.
 
-### 🖥️ Dashboards Interactivos
+### 🖥️ Dashboards Interactivos — Acceso Directo
 
-Todos los proyectos incluyen **dashboards interactivos de Streamlit** para visualización y exploración en tiempo real:
+Todos los proyectos están **desplegados y accesibles online** — sin instalación necesaria:
 
-- **Proyecto 1**: Monitoreo de salud de motores con predicciones de RUL
-- **Proyecto 2**: Pronóstico de ventas con recomendaciones de inventario
-- **Proyecto 3**: Evaluación de riesgo de abandono de clientes y estrategias de retención
-- **Proyecto 4**: Recomendaciones de productos y analíticas de e-commerce
+| # | Proyecto | Demo en Vivo |
+|---|---------|--------------|
+| 1 | 🔧 Monitor de Salud de Motores Turbofán | [![Abrir en Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-fvuxxicflgewt7jxjtdzd.streamlit.app/) |
+| 2 | 📈 Sistema de Pronóstico de Ventas | [![Abrir en Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-amcgczthtr4a7s3epewp2q.streamlit.app/) |
+| 3 | 💬 Análisis de Sentimiento Financiero | [![Abrir en Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-erzcz3etb9efmhgmw8qxep.streamlit.app/) |
+| 4 | 📡 Predicción de Churn - Telecomunicaciones | [![Abrir en Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-batbljpwqey6pemu5s2dr7.streamlit.app/) |
 
-**Inicio Rápido**:
+**O ejecutar localmente**:
 ```bash
 # Para cualquier proyecto con dashboard
-cd "Proyecto X/[directorio-del-proyecto]"
+cd "[directorio-del-proyecto]"
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -39,6 +41,8 @@ streamlit run app.py
 
 ### Proyecto 1: Mantenimiento Predictivo de Turbofán
 **Estado**: ✅ Completo | **Tipo**: Deep Learning, Series Temporales, Mantenimiento Predictivo
+
+[![Demo en Vivo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-fvuxxicflgewt7jxjtdzd.streamlit.app/)
 
 Sistema de mantenimiento predictivo listo para producción para motores turbofán de aeronaves usando redes neuronales LSTM.
 
@@ -59,6 +63,8 @@ Sistema de mantenimiento predictivo listo para producción para motores turbofá
 
 ### Proyecto 2: Sistema de Pronóstico de Ventas
 **Estado**: ✅ Completo | **Tipo**: Series Temporales, XGBoost, Pronóstico de Demanda
+
+[![Demo en Vivo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-amcgczthtr4a7s3epewp2q.streamlit.app/)
 
 Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas usando XGBoost con aceleración GPU.
 
@@ -81,42 +87,45 @@ Sistema avanzado de pronóstico de ventas minoristas para tiendas ecuatorianas u
 ### Proyecto 3: Análisis de Sentimiento Financiero
 **Estado**: ✅ Completo | **Tipo**: PLN, FinBERT, Analítica Financiera
 
-Sistema avanzado de predicción de abandono de clientes para instituciones bancarias usando ensemble de machine learning.
+[![Demo en Vivo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-erzcz3etb9efmhgmw8qxep.streamlit.app/)
 
-- **Impacto de Negocio**: 25-35% reducción de abandono, $11M+ ahorro anual, 650% ROI
-- **Stack Tecnológico**: XGBoost, Random Forest, SMOTE, Dashboard Streamlit
-- **Dataset**: 10,000 clientes con demografía y comportamiento bancario
-- **Rendimiento**: 86.5% precisión, F1-Score 82.7%, ROC-AUC 0.91
+Sistema avanzado de análisis de sentimiento financiero usando un modelo FinBERT fine-tuneado que clasifica noticias financieras y textos de resultados en sentimiento negativo, neutro y positivo.
+
+- **Impacto de Negocio**: Automatiza el análisis de 1,000+ noticias por día; 25-35% de mejora en productividad de analistas
+- **Stack Tecnológico**: FinBERT (HuggingFace), scikit-learn, Dashboard Streamlit, FastAPI
+- **Dataset**: Financial PhraseBank — 4,840 oraciones financieras anotadas
+- **Rendimiento**: Accuracy 87.3%, F1-Score (Macro) 86.1%, ROC-AUC 0.94
 
 [📂 Ver Proyecto →](./financial-sentiment-analysis)
 
 **Características Clave**:
-- Evaluación de riesgo de abandono en tiempo real (individual y lotes)
-- Dashboard de segmentación de clientes interactivo
-- Recomendaciones de estrategia de retención personalizadas
-- Interpretabilidad del modelo basada en SHAP
+- Clasificación de sentimiento en tiempo real (Positivo / Neutro / Negativo)
+- FinBERT fine-tuneado en corpus financiero para precisión específica del dominio
+- Dashboard interactivo con análisis de palabras clave y puntuaciones de confianza
+- Casos de uso: análisis de earnings calls, monitoreo de noticias, señales de trading
 - Documentación completa (Inglés y Español)
 
 ---
 
-### Proyecto 4: Predicción de Abandono de Clientes Telecom
+### Proyecto 4: Predicción de Abandono de Clientes - Telecom
 **Estado**: ✅ Completo | **Tipo**: Clasificación, Analítica de Clientes, Telecomunicaciones
 
-Motor de recomendación híbrido avanzado que combina filtrado colaborativo y basado en contenido para personalización de comercio electrónico.
+[![Demo en Vivo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://proyectos-portafolio-batbljpwqey6pemu5s2dr7.streamlit.app/)
 
-- **Impacto de Negocio**: 20-30% aumento en conversión, 85% aumento de ingresos por usuario, 2x CTR
-- **Stack Tecnológico**: Filtrado Colaborativo (ALS), Basado en Contenido (TF-IDF), Modelo Híbrido, Streamlit
-- **Dataset**: 50,000+ usuarios, 10,000+ productos, 500,000+ interacciones
-- **Rendimiento**: Precision@10: 0.341, NDCG@10: 0.412, ROI: 1,567%-2,433%
+Sistema de predicción de abandono (churn) para un proveedor de telecomunicaciones usando XGBoost. Identifica clientes en riesgo, explica los principales factores de abandono mediante SHAP y estima el impacto financiero de las acciones de retención.
+
+- **Impacto de Negocio**: Segmentación proactiva para retención; cuantifica los ingresos en riesgo por cliente
+- **Stack Tecnológico**: XGBoost, SHAP, Dashboard Streamlit
+- **Dataset**: Dataset de Churn de Clientes Telecom (contrato, antigüedad, cargos, servicios, demografía)
+- **Rendimiento**: Accuracy 0.93, Recall (Churn) 0.86, ROC-AUC 0.98
 
 [📂 Ver Proyecto →](./customer-churn-prediction)
 
 **Características Clave**:
-- Recomendaciones personalizadas de productos con puntajes de confianza
-- Motor de descubrimiento de productos similares
-- Soporte multi-algoritmo (Colaborativo, Basado en Contenido, Híbrido, Neural CF)
-- Dashboard interactivo con recomendaciones en tiempo real
-- Framework de pruebas A/B y analíticas
+- Puntuación y ranking de riesgo de abandono por cliente
+- Interpretabilidad del modelo basada en SHAP (principales factores de churn por cliente)
+- Estimación del impacto financiero y priorización de retención
+- Dashboard interactivo con análisis individual y de cohortes
 - Documentación completa (Inglés y Español)
 
 ---
