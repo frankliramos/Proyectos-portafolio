@@ -177,7 +177,7 @@ Sistema de predicción de abandono (churn) para un proveedor de telecomunicacion
 Este portafolio demuestra:
 
 1. **Valor de Negocio** - Resolviendo problemas del mundo real con impacto medible
-2. **Excelencia Técnica** - Código listo para producción con mejores pr��cticas
+2. **Excelencia Técnica** - Código listo para producción con mejores prácticas
 3. **Comunicación** - Documentación clara para audiencias técnicas y no técnicas
 4. **Ejecución End-to-End** - Desde definición del problema hasta despliegue
 5. **Escalabilidad** - Estructura organizada para múltiples proyectos
@@ -223,13 +223,13 @@ Proyectos-portafolio/
 │   └── results/                         # Resultados de evaluación
 │
 └── customer-churn-prediction/               # Predicción de Abandono de Clientes Telecom
-    ├── app.py                           # Dashboard interactivo (entrada Streamlit)
-    ├── README.md                        # Documentación del proyecto
-    ├── data/                            # Dataset de clientes telecom
-    ├── models/                          # Modelos XGBoost entrenados
-    ├── notebooks/                       # Notebooks de análisis
-    ├── src/                             # Módulos de código fuente
-    └── results/                         # Resultados de evaluación
+│   ├── app.py                           # Dashboard interactivo (entrada Streamlit)
+│   ├── README.md                        # Documentación del proyecto
+│   ├── data/                            # Dataset de clientes telecom
+│   ├── models/                          # Modelos XGBoost entrenados
+│   ├── notebooks/                       # Notebooks de análisis
+│   ├── src/                             # Módulos de código fuente
+│   └── results/                         # Resultados de evaluación
 ```
 
 ---
@@ -278,9 +278,8 @@ El dashboard se abre en `http://localhost:8501`
 **Franklin Ramos**
 
 - 📧 Email: Franklin.ram.riv@gmail.com
-- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
+- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos/Proyectos-portafolio)
 - 🔗 LinkedIn (ES): [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
-- 🔗 LinkedIn (EN): [linkedin.com/in/franklin-ramos-riveros-62b70083/?locale=en_US](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/?locale=en_US)
 - 🌐 Portafolio: Este repositorio
 
 *Data Scientist orientado a impacto: diseño y despliego soluciones end-to-end (ETL, modelado, evaluación, despliegue y monitoreo), con foco en métricas de negocio, interpretabilidad (SHAP) y MLOps.*
