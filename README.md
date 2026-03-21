@@ -277,9 +277,12 @@ Dashboard launches at `http://localhost:8501`
 
 **Franklin Ramos**
 
-- 📧 Email: Available upon request
+- 📧 Email: Franklin.ram.riv@gmail.com
 - 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
+- 🔗 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/?locale=en_US)
 - 🌐 Portfolio: This repository
+
+*Open to Data Scientist / Machine Learning Engineer opportunities — focused on delivering measurable business impact with production-ready ML systems.*
 
 ---
 
