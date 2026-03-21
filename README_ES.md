@@ -1,11 +1,12 @@
-# README_ES.md
+# Proyecto Portafolio
 
-... (other content of the file) ...  
+## 📬 Contacto
 
-## 📬 Contacto  
-Email Franklin.ram.riv@gmail.com  
-LinkedIn Spanish https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/  
+**Franklin Ramos**
+
+- 📧 Email: Franklin.ram.riv@gmail.com
+- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
+- 🔗 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/)
+- 🌐 Portafolio: Este repositorio
 
 *Abierto a oportunidades como Data Scientist o ML Engineer — desarrollo soluciones de ML end-to-end (modelado, despliegue y monitoreo) con impacto medible en el negocio.*
-
-... (rest of the content) ...
