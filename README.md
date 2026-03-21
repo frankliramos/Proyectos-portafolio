@@ -223,13 +223,13 @@ Proyectos-portafolio/
 │   └── results/                         # Evaluation results
 │
 └── customer-churn-prediction/               # Customer Churn Prediction (Telecom)
-    ├── app.py                           # Interactive dashboard (Streamlit entry point)
-    ├── README.md                        # Project documentation
-    ├── data/                            # Telecom customer dataset
-    ├── models/                          # Trained XGBoost models
-    ├── notebooks/                       # Analysis notebooks
-    ├── src/                             # Source code modules
-    └── results/                         # Evaluation results
+│   ├── app.py                           # Interactive dashboard (Streamlit entry point)
+│   ├── README.md                        # Project documentation
+│   ├── data/                            # Telecom customer dataset
+│   ├── models/                          # Trained XGBoost models
+│   ├── notebooks/                       # Analysis notebooks
+│   ├── src/                             # Source code modules
+│   └── results/                         # Evaluation results
 ```
 
 ---
@@ -278,7 +278,7 @@ Dashboard launches at `http://localhost:8501`
 **Franklin Ramos**
 
 - 📧 Email: Franklin.ram.riv@gmail.com
-- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos)
+- 💼 GitHub: [github.com/frankliramos](https://github.com/frankliramos/Proyectos-portafolio)
 - 🔗 LinkedIn: [linkedin.com/in/franklin-ramos-riveros-62b70083](https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/?locale=en_US)
 - 🌐 Portfolio: This repository
 
