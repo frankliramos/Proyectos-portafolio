@@ -1,3 +1,4 @@
+
 # 🔧 Predictive Maintenance: Turbofan Engine RUL Prediction
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
@@ -308,8 +309,8 @@ predictions_df.to_csv('fleet_predictions.csv')
 
 **Franklin Ramos**
 - Portfolio: [GitHub Portfolio](https://github.com/frankliramos/Proyectos-portafolio)
-- LinkedIn: [Connect with me](#) <!-- Add your LinkedIn -->
-- Email: [Your email](#) <!-- Add your email -->
+- LinkedIn: [Connect with me](#) <!-- https://www.linkedin.com/in/franklin-ramos-riveros-62b70083/?locale=en_US -->
+- Email: [Your email](#) <!-- franklin.ram.riv@gmail.com -->
 
 ## 📄 License
 
