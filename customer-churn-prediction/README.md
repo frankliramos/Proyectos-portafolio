@@ -21,10 +21,10 @@ proactive retention by ranking customers and quantifying revenue at risk.
 - Metrics: Accuracy, Recall, ROC-AUC
 - Interpretability: SHAP plots and top drivers
 
-### Results (from notebook)
-- Accuracy: 0.93
-- Recall (Churn): 0.86
-- ROC-AUC: 0.9819
+### Results (hold-out test 20%, leakage-free)
+- Accuracy: 0.80
+- Recall (Churn): 0.55
+- ROC-AUC: 0.8448
 
 ### Project Structure
 ```
@@ -68,10 +68,10 @@ Identifica clientes en riesgo, explica drivers y estima impacto financiero.
 - Target: `Churn Value`
 - Features: contrato, antiguedad, cargos, servicios y demografia
 
-### Resultados (segun notebook)
-- Accuracy: 0.93
-- Recall (Churn): 0.86
-- ROC-AUC: 0.9819
+### Resultados (test hold-out 20%, sin fuga de datos)
+- Accuracy: 0.80
+- Recall (Churn): 0.55
+- ROC-AUC: 0.8448
 
 ### Ejecucion
 ```bash

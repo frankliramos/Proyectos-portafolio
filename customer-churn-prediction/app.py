@@ -44,13 +44,13 @@ st.markdown("---")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric(label="📈 ROC-AUC", value="0.9817", delta="Excelente")
+    st.metric(label="📈 ROC-AUC", value="0.8448", delta="Sin fuga de datos")
 
 with col2:
-    st.metric(label="🎯 Recall Churn", value="86%", delta="Alto")
+    st.metric(label="🎯 Recall Churn", value="55%", delta="Moderado")
 
 with col3:
-    st.metric(label="💰 Ahorro Anual", value="$114,108", delta="+40% vs baseline")
+    st.metric(label="💰 Ahorro Anual", value="$74,076", delta="+40% vs baseline")
 
 with col4:
     churn_rate = (y_test.sum() / len(y_test)) * 100
