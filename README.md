@@ -117,7 +117,7 @@ Churn prediction system for a telecom provider using XGBoost. Identifies custome
 - **Business Impact**: Proactive retention targeting; quantifies revenue at risk per customer
 - **Tech Stack**: XGBoost, SHAP, Streamlit Dashboard
 - **Dataset**: Telco Customer Churn dataset (contract, tenure, charges, services, demographics)
-- **Performance**: Accuracy 0.93, Recall (Churn) 0.86, ROC-AUC 0.98
+- **Performance**: Accuracy 0.80, Recall (Churn) 0.55, ROC-AUC 0.84
 
 [📂 View Project →](./customer-churn-prediction)
 

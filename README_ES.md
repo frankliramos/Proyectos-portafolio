@@ -117,7 +117,7 @@ Sistema de predicción de abandono (churn) para un proveedor de telecomunicacion
 - **Impacto de Negocio**: Segmentación proactiva para retención; cuantifica los ingresos en riesgo por cliente
 - **Stack Tecnológico**: XGBoost, SHAP, Dashboard Streamlit
 - **Dataset**: Dataset de Churn de Clientes Telecom (contrato, antigüedad, cargos, servicios, demografía)
-- **Rendimiento**: Accuracy 0.93, Recall (Churn) 0.86, ROC-AUC 0.98
+- **Rendimiento**: Accuracy 0.80, Recall (Churn) 0.55, ROC-AUC 0.84
 
 [📂 Ver Proyecto →](./customer-churn-prediction)
 

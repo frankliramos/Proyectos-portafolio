@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
+from src.config import LEAKAGE_COLS
+
 
 def preprocess_data(df):
     """
@@ -19,10 +21,8 @@ def preprocess_data(df):
         "Lat Long",
         "Latitude",
         "Longitude",
-        "Churn Label",
-        "Churn Reason",  # post-mortem info or duplicate of target
     ]
-    df_ml = df.drop(columns=cols_to_drop)
+    df_ml = df.drop(columns=cols_to_drop + LEAKAGE_COLS)
 
     # 2. Identify categorical columns
     cat_cols = df_ml.select_dtypes(include=["object"]).columns
@@ -41,6 +41,10 @@ def get_train_test_splits(df_ml, target="Churn Value", test_size=0.2, random_sta
     """
     X = df_ml.drop(columns=[target])
     y = df_ml[target]
+
+    leaked = [c for c in LEAKAGE_COLS if c in X.columns]
+    if leaked:
+        raise ValueError(f"Data leakage: columns still in features: {leaked}")
 
     X_train, X_test, y_train, y_test = train_test_split(
         X,

@@ -12,10 +12,10 @@ impacto financiero.
 - Target: `Churn Value`
 - Features: contrato, antiguedad, cargos, servicios y demografia
 
-### Resultados (segun notebook)
-- Accuracy: 0.93
-- Recall (Churn): 0.86
-- ROC-AUC: 0.9819
+### Resultados (test hold-out 20%, sin fuga de datos)
+- Accuracy: 0.80
+- Recall (Churn): 0.55
+- ROC-AUC: 0.8448
 
 ### Ejecucion
 ```bash
@@ -35,7 +35,7 @@ streamlit run dashboard/app.py
 This project delivers a **churn prediction system** with XGBoost. It identifies
 customers at risk, explains key drivers, and estimates financial impact.
 
-### Results (from notebook)
-- Accuracy: 0.93
-- Recall (Churn): 0.86
-- ROC-AUC: 0.9819
+### Results (hold-out test 20%, leakage-free)
+- Accuracy: 0.80
+- Recall (Churn): 0.55
+- ROC-AUC: 0.8448
