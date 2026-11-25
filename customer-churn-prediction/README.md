@@ -28,7 +28,7 @@ proactive retention by ranking customers and quantifying revenue at risk.
 
 ### Project Structure
 ```
-Proyecto 4/
+customer-churn-prediction/
 ├── dashboard/                 # Streamlit dashboard
 │   └── app.py
 ├── notebooks/                 # EDA and analysis
